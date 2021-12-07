@@ -1,7 +1,7 @@
 import React from "react";
 import Blogs from "./Blogs";
 import Contact from "./Contact";
-import Footer from "./footer";
+import Footer from "./Footer";
 import Header from "./Header";
 import NavigationMenu from "./NavigationMenu";
 
