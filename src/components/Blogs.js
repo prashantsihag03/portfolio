@@ -1,11 +1,12 @@
 import React from "react";
+import webRtcImage from 
 import '../css/Blogs.css';
 
 const Blogs = () => {
     const data = [
         {
             link: "https://prashant-sihag.medium.com/brief-explanation-of-webrtc-and-how-its-components-work-together-to-provide-real-time-communication-83cf4d2315da",
-            img: "../resources/images/webRTC.png", 
+            img: "../../resources/images/webRTC.png", 
             heading: "Simplifying WebRTC: A web technology for Real Time Communication.",
             desc: "In this blog, I have explained WebRTC, its components such as NAT, ICE, STUN, TURN, Signalling, etc, and their working in a simple and easy to understand manner using examples.",
         },
