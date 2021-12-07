@@ -42,6 +42,7 @@ li {
 
 body {
     max-width: 1499px;
+    margin: auto;
     overflow-x: hidden;
     position: relative;
     background-color: var(--background);
