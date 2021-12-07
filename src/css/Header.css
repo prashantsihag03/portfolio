@@ -1,0 +1,23 @@
+.quick-bio-flexcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .quick-bio-flexcontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 8vh;
+        margin-bottom: 5vh;
+    }
+}

@@ -1,0 +1,69 @@
+.quick-bio-button {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.quick-bio-button > a > button {
+    padding: 0.2em 1.5em;
+    margin: 0.25em 0.5em;
+    font-size: 1.3em;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 0.2em;
+    background-color: var(--background);
+    color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease-in-out;
+    width: 100%;
+}
+
+.quick-bio-button > a {
+    width: 30%;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .quick-bio-button {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quick-bio-button > a {
+        width: 100%;
+    }
+
+    .quick-bio-button > a > button {
+        margin: 0.25em 0.5em;
+        padding: 0.8em 1.5em;
+        width: inherit;
+        font-size: 1em;
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        border: 1px solid white;
+        border-radius: 0.2em;
+        background-color: var(--background);
+        color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.3s, 0.3s;
+        transition-timing-function: ease-in-out;
+    }
+}
+
+.quick-bio-button > a > button:hover {
+    cursor: pointer;
+    background-color: rgb(131, 74, 74);
+    border-color: rgb(131, 74, 74);
+    color: white;
+}

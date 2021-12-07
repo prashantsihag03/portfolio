@@ -1,0 +1,83 @@
+.contactForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    width: 100%;
+}
+
+.contactForm > h1 {
+    background-color: var(--background);
+    font-size: 1.2em;
+    padding: 0.5em;
+    text-align: center;
+    font-family: serif;
+    font-weight: 400;
+    letter-spacing: 2pt;
+    color: rgb(172, 172, 172);
+    border-radius: 0.3em;
+    width: 100%;
+}
+
+.contactForm > input, textarea {
+    color: steelblue;
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    margin-top: 1em;
+    border-radius: 0.2em;
+    border: none;
+    background-color: rgb(41, 41, 41);
+    letter-spacing: 0.1em;
+    transition: all 0.3s linear;
+}
+
+.contactForm > input::placeholder, textarea::placeholder {
+    color: rgb(128, 128, 128);
+}
+
+.contactForm > input:focus, textarea:focus {
+    outline: none;
+    color: green;
+    border-bottom: 2px solid green;
+}
+
+.contactForm > input.submitform {
+    min-height: 3em;
+    font-weight: 400;
+    background-color: var(--background);
+    color: green;
+    box-shadow: none;
+    transition: all 0.3s linear;
+    border-radius: 0.5em;
+    border: 1px solid var(--themeColor);
+}
+
+.contactForm > input.submitform:hover {
+    background-color: var(--themeColor);
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.contactForm > input.clearform {
+    min-height: 3em;
+    font-weight: 400;
+    color: lightgrey;
+    box-shadow: none;
+    transition: all 0.3s linear;
+    border-radius: 0.5em;
+}
+
+.contactForm > input.clearform:hover {
+    background-color: grey;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 600px) {
+    .contactForm > h1 {
+        font-size: 1em; 
+    }
+}

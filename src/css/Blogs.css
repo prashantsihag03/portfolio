@@ -1,0 +1,153 @@
+#blogs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 90%;
+    margin: auto;
+    margin-top: 8vh;
+    margin-bottom: 10vh;
+    font-family: "Roboto Slab", serif;
+}
+#blogs-heading {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid white;
+    margin-bottom: 1vh;
+}
+
+#blogs-heading > h2 {
+    text-align: left;
+    font-size: 2em;
+    font-family: 'Philosopher', sans-serif;
+    letter-spacing: 1pt;
+    width: 100%;
+}
+
+#blogs-heading > img {
+    width: 1em;
+}
+
+#blogs > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+}
+
+#blog {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    padding: 0.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+#blog:hover {
+    cursor: pointer;
+    background-color: rgb(36, 34, 34);
+}
+
+#blog:hover .blog-image{
+    opacity: 0.8;
+}
+
+.blog-image {
+    width: 20%;
+    opacity: 0.5;
+}
+
+.blog-image > img {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 1em;
+}
+
+.blog-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-family: "Roboto Slab", serif;
+    width: 80%;
+}
+
+.blog-heading {
+    color: lightcoral;
+    letter-spacing: 0.2em;
+    text-align: left;
+    word-wrap: normal;
+}
+
+.blog-overview {
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+    #blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2em;
+        padding: 1em;
+    }
+    
+    .blog-image {
+        width: 100%;
+    }
+
+    .blog-image:hover {
+        width: 100%;
+    }
+
+    .blog-image > img {
+        width: 100%;
+    }
+
+    .blog-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Roboto Slab", serif;
+        width: 100%;
+    }
+}
+
+#moreblogs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#moreblogs > h4 {
+    text-align: center;
+}
+
+#moreblogs > h4 > a {
+    padding: 0.2em;
+    border: 1px solid var(--background);
+    border-bottom-color: white;
+    border-radius: 0.2em;
+    border-bottom: 1px solid white;
+    transition: all 0.5s linear;
+    letter-spacing: 0.2em;
+}
+
+#moreblogs > h4 > a:hover  {
+    border: 1px solid white;
+}
+
