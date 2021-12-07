@@ -1,5 +1,8 @@
 import React from "react";
 import '../css/QuickBioIcons.css';
+import linkedIcon from "../../resources/images/linkedinIcon.svg";
+import GitHubIcon from "../../resources/images/githubIcon.svg";
+import MediumIcon from "../../resources/images/mediumIcon.svg";
 
 
 const QuickBioIcons = () => {
@@ -7,19 +10,19 @@ const QuickBioIcons = () => {
         {
             title: "My linkedIn Profile",
             href: "https://www.linkedin.com/in/prashantsihag",
-            iconSvg: "../resources/images/linkedinIcon.svg",
+            iconSvg: linkedIcon,
             imgAlt: "LinkedIn Icon",
         },
         {
             title: "My GitHub Profile",
             href: "https://github.com/prashantsihag03",
-            iconSvg: "../resources/images/githubIcon.svg",
+            iconSvg: GitHubIcon,
             imgAlt: "GitHub Icon",
         },
         {
             title: "My Medium Profile",
             href: "https://medium.com/@prashant-sihag",
-            iconSvg: "../resources/images/mediumIcon.svg",
+            iconSvg: MediumIcon,
             imgAlt: "Medium Icon",
         }
     ]
