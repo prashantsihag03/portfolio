@@ -6,7 +6,7 @@ import '../css/Contact.css';
 const Contact = () => {
     return (
         <section id="contact">
-            <SectionHeading heading="Get in touch..." icon="../resources/images/blog.svg"/>
+            <SectionHeading heading="Get in touch..." icon="../../resources/images/blog.svg"/>
             <ContactForm />
         </section>
     );
