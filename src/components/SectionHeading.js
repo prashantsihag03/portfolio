@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const SectionHeading = ({heading='', icon=''}) => {
     return (
@@ -7,6 +8,11 @@ const SectionHeading = ({heading='', icon=''}) => {
             <img src={icon} alt="" />
         </div>
     );
+}
+
+SectionHeading.PropTypes = {
+    heading: PropTypes.string,
+    icon: PropTypes.string
 }
 
 export default SectionHeading;

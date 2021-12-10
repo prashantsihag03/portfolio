@@ -5,6 +5,7 @@ import dynamoDBBlogImage from "../../resources/images/dynamoDBBlog.jpg";
 import facebookBlogImage from "../../resources/images/facebookBlog.png";
 import scientifcMethodForDataAnalysisImage from "../../resources/images/scientifcMethodForDataAnalysis.png";
 import '../css/Blogs.css';
+import SectionHeading from "./SectionHeading";
 
 const Blogs = () => {
     const data = [
@@ -36,10 +37,7 @@ const Blogs = () => {
 
     return (
         <section id="blogs">
-            <div id="blogs-heading">
-                <h2>Blogs</h2>
-                <img src={blogIcon} alt="" />
-            </div>
+            <SectionHeading heading={'Blogs'} icon={blogIcon} />
             <ul>
                 {data.map((blog, id) => {
                     return (
