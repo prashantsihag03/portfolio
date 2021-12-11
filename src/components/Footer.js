@@ -1,10 +1,11 @@
 import React from "react";
+import propTypes from "prop-types";
 import '../css/Footer.css';
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <div className="closingBlock">
-            <section className="about" id="about">
+            <section className="about" id="about" ref={props.passedRef}>
                 <h1> Something more about me </h1>
                 <p className="about-info">
                     I have been fascinated by what one can do with computers ever since I got first introduced to 
@@ -16,4 +17,9 @@ const Footer = () => {
         </div>
     );
 }
+
+Footer.propTypes = {
+    passedRef: propTypes.object.isRequired,
+}
+
 export default Footer;

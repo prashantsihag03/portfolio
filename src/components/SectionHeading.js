@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 const SectionHeading = ({heading='', icon=''}) => {
     return (
@@ -10,9 +10,9 @@ const SectionHeading = ({heading='', icon=''}) => {
     );
 }
 
-SectionHeading.PropTypes = {
-    heading: PropTypes.string,
-    icon: PropTypes.string
+SectionHeading.propTypes = {
+    heading: propTypes.string,
+    icon: propTypes.string
 }
 
 export default SectionHeading;

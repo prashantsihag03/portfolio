@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     "mode": "development",
@@ -36,10 +37,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|svg)$/,
-                use: {
-                  loader: 'url-loader',
-                },
+                "test": /\.(jpg|png|svg)$/,
+                "use": [
+                    {
+                        "loader": 'url-loader',
+                    },
+                ]
             },            
             {
                 "test": /\.html$/,
@@ -55,6 +58,6 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
-        })
+        }),
     ]
 }

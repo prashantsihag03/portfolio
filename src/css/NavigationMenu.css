@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.quick-bio-button > a > button {
+.quick-bio-button > button {
     padding: 0.2em 1.5em;
     margin: 0.25em 0.5em;
     font-size: 1.3em;
@@ -21,10 +21,6 @@
     transition-property: background-color, color;
     transition-duration: 0.3s, 0.3s;
     transition-timing-function: ease-in-out;
-    width: 100%;
-}
-
-.quick-bio-button > a {
     width: 30%;
 }
 
@@ -40,14 +36,10 @@
         align-items: center;
     }
 
-    .quick-bio-button > a {
-        width: 100%;
-    }
-
-    .quick-bio-button > a > button {
+    .quick-bio-button > button {
         margin: 0.25em 0.5em;
         padding: 0.8em 1.5em;
-        width: inherit;
+        width: 100%;
         font-size: 1em;
         font-family: 'Roboto Slab', serif;
         font-weight: bold;
@@ -61,7 +53,7 @@
     }
 }
 
-.quick-bio-button > a > button:hover {
+.quick-bio-button > button:hover {
     cursor: pointer;
     background-color: rgb(131, 74, 74);
     border-color: rgb(131, 74, 74);

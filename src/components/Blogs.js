@@ -1,13 +1,14 @@
 import React from "react";
+import propTypes from 'prop-types';
 import blogIcon from "../../resources/images/blog.svg";
 import webRtcImage from "../../resources/images/webRTC.png";
 import dynamoDBBlogImage from "../../resources/images/dynamoDBBlog.jpg";
 import facebookBlogImage from "../../resources/images/facebookBlog.png";
 import scientifcMethodForDataAnalysisImage from "../../resources/images/scientifcMethodForDataAnalysis.png";
-import '../css/Blogs.css';
 import SectionHeading from "./SectionHeading";
+import '../css/Blogs.css';
 
-const Blogs = () => {
+const Blogs = (props) => {
     const data = [
         {
             link: "https://prashant-sihag.medium.com/brief-explanation-of-webrtc-and-how-its-components-work-together-to-provide-real-time-communication-83cf4d2315da",
@@ -36,7 +37,7 @@ const Blogs = () => {
     ];
 
     return (
-        <section id="blogs">
+        <section id="blogs" ref={props.passedRef}>
             <SectionHeading heading={'Blogs'} icon={blogIcon} />
             <ul>
                 {data.map((blog, id) => {
@@ -57,8 +58,11 @@ const Blogs = () => {
                 <h4><a href="https://medium.com/@prashant-sihag" target="_blank" rel="noopener noreferrer nofollow">more on Medium</a></h4>
             </div>
         </section>
-
     )
+}
+
+Blogs.propTypes = {
+    passedRef: propTypes.object.isRequired,
 }
 
 export default Blogs;
