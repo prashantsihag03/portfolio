@@ -58,12 +58,12 @@
 }
 
 #blog:hover .blog-image{
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .blog-image {
     width: 20%;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .blog-image > img {
