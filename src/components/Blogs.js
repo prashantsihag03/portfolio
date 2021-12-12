@@ -7,6 +7,8 @@ import facebookBlogImage from "../../resources/images/facebookBlog.png";
 import scientifcMethodForDataAnalysisImage from "../../resources/images/scientifcMethodForDataAnalysis.png";
 import SectionHeading from "./SectionHeading";
 import '../css/Blogs.css';
+import LimitedContent from "./LimitedContent/LimitedContent";
+import MoreButton from "./MoreButton/MoreButton";
 
 const Blogs = (props) => {
     const data = [
@@ -40,23 +42,9 @@ const Blogs = (props) => {
         <section id="blogs" ref={props.passedRef}>
             <SectionHeading heading={'Blogs'} icon={blogIcon} />
             <ul>
-                {data.map((blog, id) => {
-                    return (
-                        <a key={id} href={blog.link} target="_blank" rel="noreferrer noopener nofollow" title="Click to read more">
-                            <li id="blog">
-                                <div className="blog-image"><img src={blog.img} alt=""/></div>
-                                <div className="blog-desc">
-                                    <div className="blog-heading"><h3>{blog.heading}</h3></div>
-                                    <div className="blog-overview"><p>{blog.desc}</p></div>
-                                </div>
-                            </li>
-                        </a>
-                    )
-                })}
+                {data.map((blog, id) => <LimitedContent {...blog} key={id}/> )}
             </ul>
-            <div id="moreblogs">
-                <h4><a href="https://medium.com/@prashant-sihag" target="_blank" rel="noopener noreferrer nofollow">more on Medium</a></h4>
-            </div>
+            <MoreButton link="https://medium.com/@prashant-sihag" content="more on Medium" />
         </section>
     )
 }
