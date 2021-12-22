@@ -2,7 +2,7 @@
 ## Version 2.0.0 
 
 *Diff from previous version*: 
-This version includes migrating the portfolio website to React
+This version migrates the portfolio website from vanilla Javascript to React.
 
 *Development Setup*
 1. Clone the git repo.
