@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-import ContentDescription from "../ContentDescription/ContentDescription";
+import ContentDescription from "../ContentDescription";
 
 const ImageDiv = styled.div`
     width: 20%;

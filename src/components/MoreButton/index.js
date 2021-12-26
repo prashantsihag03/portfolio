@@ -21,7 +21,7 @@ const A = styled.a`
     letter-spacing: 0.2em;
 
     &:hover {
-        border: 1px solid var(--themeColor);
+        border: 1px solid white;
     }
 `;
 

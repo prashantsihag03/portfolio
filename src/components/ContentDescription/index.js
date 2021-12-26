@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-import ContentOverview from "../ContentOverview/ContentOverview";
+import ContentOverview from "../ContentOverview";
 
 const DescriptionDiv = styled.div`
     display: flex;
@@ -19,7 +19,7 @@ const DescriptionDiv = styled.div`
 `;
 
 const HeadingDiv = styled.div`
-    color: lightcoral;
+    color: darkseagreen;
     letter-spacing: 0.2em;
     text-align: left;
     word-wrap: normal;

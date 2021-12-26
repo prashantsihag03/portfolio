@@ -1,7 +1,27 @@
 import React from "react";
 import propTypes from 'prop-types';
-import MenuButton from "./MenuButton";
-import '../css/NavigationMenu.css';
+import styled from 'styled-components';
+import MenuButton from "../MenuButton";
+
+const Nav = styled.nav`
+    display: flex;
+    width: 80%;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    @media only screen and (max-width: 800px) {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+`;
 
 /*
     This includes only the navigation buttons.
@@ -15,7 +35,7 @@ const NavigationMenu = (props) => {
     ];
 
     return (
-        <div className="quick-bio-button">
+        <Nav className="quick-bio-button">
             {ITEMS.map((item, id) => {
                 return (
                     <MenuButton 
@@ -24,7 +44,7 @@ const NavigationMenu = (props) => {
                     />
                 );
             })}
-        </div>
+        </Nav>
     );  
 }
 

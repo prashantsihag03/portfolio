@@ -56,9 +56,9 @@
 }
 
 .contactForm > input.submitform:hover {
-    background-color: white;
+    background-color: var(--themeColor);
+    color: white;
     cursor: pointer;
-    font-weight: bolder;
 }
 
 .contactForm > input.clearform {
@@ -71,9 +71,8 @@
 }
 
 .contactForm > input.clearform:hover {
-    background-color: grey;
+    background-color: gray;
     cursor: pointer;
-    font-weight: bolder;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,14 +1,35 @@
 import React from "react";
 import propTypes from 'prop-types';
-import blogIcon from "../../resources/images/blog.svg";
-import webRtcImage from "../../resources/images/webRTC.png";
-import dynamoDBBlogImage from "../../resources/images/dynamoDBBlog.jpg";
-import facebookBlogImage from "../../resources/images/facebookBlog.png";
-import scientifcMethodForDataAnalysisImage from "../../resources/images/scientifcMethodForDataAnalysis.png";
-import SectionHeading from "./SectionHeading";
-import '../css/Blogs.css';
-import LimitedContent from "./LimitedContent/LimitedContent";
-import MoreButton from "./MoreButton/MoreButton";
+import styled from 'styled-components';
+import blogIcon from "../../../resources/images/blog.svg";
+import webRtcImage from "../../../resources/images/webRTC.png";
+import dynamoDBBlogImage from "../../../resources/images/dynamoDBBlog.jpg";
+import facebookBlogImage from "../../../resources/images/facebookBlog.png";
+import scientifcMethodForDataAnalysisImage from "../../../resources/images/scientifcMethodForDataAnalysis.png";
+import SectionHeading from "../SectionHeading";
+import LimitedContent from "../LimitedContent";
+import MoreButton from "../MoreButton";
+
+const BlogSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 90%;
+    margin: auto;
+    margin-top: 8vh;
+    margin-bottom: 10vh;
+    font-family: "Roboto Slab", serif;  
+`;
+
+const Ul = styled.ul`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+`;
 
 const Blogs = (props) => {
     const data = [
@@ -39,13 +60,13 @@ const Blogs = (props) => {
     ];
 
     return (
-        <section id="blogs" ref={props.passedRef}>
+        <BlogSection ref={props.passedRef}>
             <SectionHeading heading={'Blogs'} icon={blogIcon} />
-            <ul>
+            <Ul>
                 {data.map((blog, id) => <LimitedContent {...blog} key={id}/> )}
-            </ul>
+            </Ul>
             <MoreButton link="https://medium.com/@prashant-sihag" content="more on Medium" />
-        </section>
+        </BlogSection>
     )
 }
 

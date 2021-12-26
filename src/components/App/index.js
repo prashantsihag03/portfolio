@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import Blogs from "./Blogs";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import Header from "./Header";
-import NavigationMenu from "./NavigationMenu";
-import ScrollToButton from "./ScrollToButton/ScrollToButton";
-// import upwardArrow from '../../resources/images/upwardArrow.svg';
+import Blogs from "../Blogs";
+import ClosingBlock from "../ClosingBlock";
+import Contact from "../Contact";
+import Header from "../Header";
+import NavigationMenu from "../NavigationMenu";
+import ScrollToButton from "../ScrollToButton";
 
 export default function App() {
 
@@ -41,7 +40,7 @@ export default function App() {
             <NavigationMenu blogsRef= {blogsRef} aboutRef= {aboutRef} contactRef={contactRef} />
             <Blogs passedRef={blogsRef} />
             <Contact passedRef={contactRef} />
-            <Footer passedRef={aboutRef} />
+            <ClosingBlock passedRef={aboutRef} />
         </React.Fragment>
     );
 }

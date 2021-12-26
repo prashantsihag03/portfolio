@@ -52,27 +52,3 @@ body {
     background-size: auto;
     background-attachment: scroll;
 }
-
-.section-heading {
-    display: flex;
-    width: 100%;
-    color: white;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid white;
-    margin-bottom: 1vh;
-    margin-top: 5vh;
-}
-
-.section-heading > h2 {
-    text-align: left;
-    font-size: 2em;
-    font-family: 'Philosopher', sans-serif;
-    letter-spacing: 1pt;
-    width: 100%;
-}
-
-.section-heading > img {
-    width: 1em;
-}
