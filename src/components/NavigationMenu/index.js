@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import styled from 'styled-components';
 import MenuButton from "../MenuButton";
 
-const Nav = styled.nav`
+const DefaultStyledNav = styled.nav`
     display: flex;
     width: 80%;
     margin: auto;
@@ -24,18 +24,20 @@ const Nav = styled.nav`
 `;
 
 /*
-    This includes only the navigation buttons.
+This includes only the navigation buttons.
 */
 const NavigationMenu = (props) => {
-
     const ITEMS = [ 
         {value: 'About', ref: props.aboutRef},
         {value: 'Blogs', ref: props.blogsRef},
         {value: 'Get in touch', ref: props.contactRef},
     ];
 
+    // apply custom stylings if any
+    const Nav = props.style ? styled(DefaultStyledNav)`${props.style}`: DefaultStyledNav;
+
     return (
-        <Nav className="quick-bio-button">
+        <Nav>
             {ITEMS.map((item, id) => {
                 return (
                     <MenuButton 
@@ -52,6 +54,7 @@ NavigationMenu.propTypes = {
     aboutRef: propTypes.object.isRequired,
     blogsRef: propTypes.object.isRequired,
     contactRef: propTypes.object.isRequired,
+    style: propTypes.any
 }
 
 export default NavigationMenu;
