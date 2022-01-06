@@ -35,9 +35,7 @@ const ClosingBlock = (props) => {
         <br /> <br />
         {`If you are a fellow software developer or anyone who is just as curious 
         about technology if not more and wants to collaborate on anything, 
-        or a recruiter looking for suitable candidate, or someone who wishes 
-        to network over a cup of coffee, please feel free to reach out to me by filling up the form above
-        just make sure to highlight the purpose.`}
+        or a recruiter looking for suitable candidate, or just wants to network, please feel free to reach out to me.`}
         <br /> <br />
         {`Thank you for visiting. Have a great day !`}
       </About>
