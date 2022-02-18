@@ -5,8 +5,9 @@ stages:
 
 default:
   image: "node"
-  variables:
-    COVERAGE_DIR: /coverage
+
+variables:
+  COVERAGE_DIR: /coverage
 
 build dist:
   stage: build
