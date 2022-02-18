@@ -3,8 +3,13 @@ stages:
   - test
   - OWASP Scan
 
+default:
+  image: "node"
+
 build dist:
   stage: build
+  inherit:
+    default: true
   script:
     - echo "building distributables..."
     - npm install
@@ -17,6 +22,8 @@ tests:
 
 Security Check:
   stage: OWASP Scan
+  inherit:
+    default: true
   script:
     - echo "checking for security vulnerabilities.."
     - npm audit
