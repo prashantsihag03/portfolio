@@ -17,5 +17,6 @@ tests:
 
 Security Check:
   stage: OWASP Scan
+  script:
     - echo "checking for security vulnerabilities.."
     - npm audit
