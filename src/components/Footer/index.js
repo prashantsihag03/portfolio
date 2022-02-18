@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
     margin: auto;
     text-align: center;
     padding: 0.1em;
-    color: #383838;
+    color: #b3b3b3;
     font-size: 1em;
     font-weight: bold;
     letter-spacing: 0.2em;
