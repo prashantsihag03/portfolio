@@ -32,6 +32,7 @@ Security Check:
     variables: true
   script:
     - mkdir -p ${COVERAGE_DIR}
+    - cd ${COVERAGE_DIR}
     - echo "checking for security vulnerabilities.."
     - npm audit --json > audit.json
   artifacts:
