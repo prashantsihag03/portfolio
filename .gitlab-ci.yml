@@ -5,6 +5,8 @@ stages:
 
 default:
   image: "node"
+  variables:
+    COVERAGE_DIR: /coverage
 
 build dist:
   stage: build
@@ -16,6 +18,8 @@ build dist:
     - npm run build
 
 tests:
+  inherit:
+    default: false
   stage: test
   script:
     - echo "testing project....no tests available."
@@ -24,6 +28,12 @@ Security Check:
   stage: OWASP Scan
   inherit:
     default: true
+    variables: true
   script:
+    - mkdir -p ${COVERAGE_DIR}
     - echo "checking for security vulnerabilities.."
-    - npm audit
+    - npm audit --json > audit.json
+  artifacts:
+    expire_in: 1 days
+    paths:
+      - ${COVERAGE_DIR}
