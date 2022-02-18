@@ -17,7 +17,7 @@ const AboutSection = styled.section`
 `;
 
 const Content = styled.p`
-  color: var(--themeColor);
+  color: white;
   width: 100%;
   padding: 0.5em;
   text-align: justify;
