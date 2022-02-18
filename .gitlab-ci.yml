@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+  - OWASP Scan
+
+build dist:
+  stage: build
+  script:
+    - echo "building distributables..."
+    - npm install
+    - npm run build
+
+tests:
+  stage: test
+  script:
+    - echo "testing project....no tests available."
+
+Security Check:
+  stage: OWASP Scan
+    - echo "checking for security vulnerabilities.."
+    - npm audit
