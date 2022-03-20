@@ -10,7 +10,6 @@ default:
 
 variables:
   COVERAGE_DIR: ./coverage
-  BUILD_DIR: ./build
   DIST_DIR: ./build/dist/
 
 build dist:
@@ -19,22 +18,20 @@ build dist:
     default: true
   script:
     - echo "building distributables..."
-    - mkdir ./build
-    - cp -r . ./build
-    - cd ./build
     - npm install
     - npm run build
+    - mkdir ./build
+    - cp -r ./dist ./build/dist
   artifacts:
     expire_in: 1 days
     paths:
-      - ${BUILD_DIR}
+      - ${DIST_DIR}
 
 tests:
   inherit:
     default: false
   stage: test
   script:
-    - cd ${BUILD_DIR}
     - npm test
     - echo "testing project....no tests available."
 
@@ -44,7 +41,6 @@ Security Check:
     default: true
     variables: true
   script:
-    - cd ${BUILD_DIR}
     - mkdir -p ${COVERAGE_DIR}
     - echo "checking for security vulnerabilities.."
     - npm audit --json --audit-level=critical > ${COVERAGE_DIR}/audit.json
@@ -67,5 +63,5 @@ deploy:
     default: true
     variables: true
   script:
-    - cd ${BUILD_DIR}
+    - npm install
     - npm run deploy -- --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir ${DIST_DIR}
