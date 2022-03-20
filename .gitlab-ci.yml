@@ -29,7 +29,7 @@ build dist:
 
 tests:
   inherit:
-    default: false
+    default: true
   stage: test
   script:
     - npm test
