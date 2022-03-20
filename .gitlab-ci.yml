@@ -9,8 +9,8 @@ default:
   image: "node"
 
 variables:
-  COVERAGE_DIR: /coverage
-  DIST_DIR: /build/dist/
+  COVERAGE_DIR: ./coverage
+  DIST_DIR: ./build/dist/
 
 build dist:
   stage: build
@@ -42,9 +42,8 @@ Security Check:
     variables: true
   script:
     - mkdir -p ${COVERAGE_DIR}
-    - cd ${COVERAGE_DIR}
     - echo "checking for security vulnerabilities.."
-    - npm audit --json > audit.json
+    - npm audit --json > ${COVERAGE_DIR}/audit.json
   artifacts:
     expire_in: 1 days
     paths:
