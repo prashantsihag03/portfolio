@@ -62,6 +62,8 @@ deploy:
   inherit:
     default: true
     variables: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
   script:
     - npm install
     - npm run deploy -- --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir ${DIST_DIR}
