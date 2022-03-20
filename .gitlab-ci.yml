@@ -43,7 +43,7 @@ Security Check:
   script:
     - mkdir -p ${COVERAGE_DIR}
     - echo "checking for security vulnerabilities.."
-    - npm audit --json > ${COVERAGE_DIR}/audit.json
+    - npm audit --json --audit-level=critical > ${COVERAGE_DIR}/audit.json
   artifacts:
     expire_in: 1 days
     paths:
