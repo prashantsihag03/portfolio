@@ -63,7 +63,4 @@ deploy:
     default: true
     variables: true
   script:
-    - cd ${DIST_DIR}
-    - echo "printing all contents in dist directory..."
-    - ls
     - npm run deploy -- --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir ${DIST_DIR}
