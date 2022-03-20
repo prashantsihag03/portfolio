@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "netlifyInit": "netlify init --manual",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "netlify deploy"
   },
   "author": "Prashant Sihag",
   "license": "SEE LICENSE FILE",
@@ -28,6 +30,7 @@
     "eslint-plugin-react": "^7.27.1",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "netlify-cli": "^9.13.3",
     "prop-types": "^15.7.2",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",

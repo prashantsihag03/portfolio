@@ -8,3 +8,5 @@ dist/*.png
 dist/*.svg
 dist/*.jpeg
 dist/*.jpg
+# Local Netlify folder
+.netlify

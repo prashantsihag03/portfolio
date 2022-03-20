@@ -2,6 +2,8 @@ stages:
   - build
   - test
   - OWASP Scan
+  - dockerise
+  - deploy
 
 default:
   image: "node"
@@ -39,3 +41,19 @@ Security Check:
     expire_in: 1 days
     paths:
       - ${COVERAGE_DIR}
+
+dockerise:
+  stage: dockerise
+  inherit:
+    default: true
+    variables: true
+  script:
+    - echo "Docker image creation implementaiton not yet finished! Skipping this stage..."
+
+deploy:
+  stage: deploy
+  inherit:
+    default: true
+    variables: true
+  script:
+    - npm run deploy -- --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir dist/
