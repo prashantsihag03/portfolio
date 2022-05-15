@@ -1,11 +1,9 @@
-import React from "react";
-import propTypes from 'prop-types';
-import styled from 'styled-components';
+import * as React from "react";
+import StyledComponents from 'styled-components';
 import ContactForm from "../ContactForm";
 import SectionHeading from "../SectionHeading";
-import blogIcon from "../../../resources/images/blog.svg";
 
-const ContactSection = styled.section`
+const ContactSection = StyledComponents.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,17 +14,17 @@ const ContactSection = styled.section`
     margin-bottom: 10vh;
 `;
 
-const Contact = (props) => {
+interface ContactProps {
+    passedRef: any
+}
+
+const Contact: React.FC<ContactProps> = (props) => {
     return (
         <ContactSection ref={props.passedRef}>
-            <SectionHeading heading="Get in touch..." icon={blogIcon}/>
+            <SectionHeading heading="Get in touch..." icon={"../../../resources/images/blog.svg"}/>
             <ContactForm />
         </ContactSection>
     );
-}
-
-Contact.propTypes = {
-    passedRef: propTypes.object.isRequired,
 }
 
 export default Contact;

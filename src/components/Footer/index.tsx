@@ -1,8 +1,7 @@
-import React from "react";
-import propTypes from "prop-types";
-import styled from "styled-components";
+import * as React from "react";
+import StyledComponents from "styled-components";
 
-const StyledFooter = styled.footer`
+const StyledFooter = StyledComponents.footer`
   display: block;
   width: 100%;
   margin: auto;
@@ -18,12 +17,8 @@ const StyledFooter = styled.footer`
   border-top: 1px solid white;
 `;
 
-const Footer = (props) => {
+const Footer: React.FC<{content: string}> = (props) => {
   return <StyledFooter> {props.content} </StyledFooter>;
-};
-
-Footer.propTypes = {
-  content: propTypes.string.isRequired,
 };
 
 export default Footer;

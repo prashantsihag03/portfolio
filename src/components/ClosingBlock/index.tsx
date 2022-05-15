@@ -1,10 +1,9 @@
-import React from "react";
-import propTypes from "prop-types";
-import styled from "styled-components";
+import * as React from "react";
+import StyledComponents from "styled-components";
 import About from "../About";
 import Footer from "../Footer";
 
-const ContainerDiv = styled.div`
+const ContainerDiv = StyledComponents.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,7 +14,11 @@ const ContainerDiv = styled.div`
   margin-top: 5vh;
 `;
 
-const ClosingBlock = (props) => {
+interface ClosingBlockProps {
+  passedRef: any,
+}
+
+const ClosingBlock: React.FC<ClosingBlockProps> = (props) => {
   return (
     <ContainerDiv className="closingBlock">
       <About heading="Something more about me" passedRef={props.passedRef}>
@@ -42,10 +45,6 @@ const ClosingBlock = (props) => {
       <Footer content="© 2022 Prashant Sihag. All rights reserved." />
     </ContainerDiv>
   );
-};
-
-ClosingBlock.propTypes = {
-  passedRef: propTypes.object.isRequired,
 };
 
 export default ClosingBlock;

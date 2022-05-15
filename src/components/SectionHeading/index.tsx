@@ -1,9 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import blogIcon from "../../../resources/images/blog.svg";
-import propTypes from "prop-types";
+import * as React from "react";
+import StyledComponents from "styled-components";
 
-const SectionHeadingDiv = styled.div`
+const SectionHeadingDiv = StyledComponents.div`
   display: flex;
   width: 100%;
   color: var(--highlightColor);
@@ -15,7 +13,7 @@ const SectionHeadingDiv = styled.div`
   margin-top: 5vh;
 `;
 
-const H2 = styled.h2`
+const H2 = StyledComponents.h2`
   text-align: left;
   font-size: 2em;
   font-family: "Philosopher", sans-serif;
@@ -23,23 +21,23 @@ const H2 = styled.h2`
   width: 100%;
 `;
 
-const SectionHeading = ({ heading, icon, iconAlt }) => {
+interface SectionHeadingProps {
+  heading: string,
+  icon: string,
+  iconAlt?: string,
+}
+
+const SectionHeading: React.FC<SectionHeadingProps> = (props) => {
   return (
     <SectionHeadingDiv>
-      <H2>{heading}</H2>
-      <img src={icon} alt={iconAlt} style={{ width: "1em" }} />
+      <H2>{props.heading}</H2>
+      <img src={props.icon} alt={props.iconAlt} style={{ width: "1em" }} />
     </SectionHeadingDiv>
   );
 };
 
-SectionHeading.propTypes = {
-  heading: propTypes.string.isRequired,
-  icon: propTypes.string,
-  iconAlt: propTypes.string,
-};
-
 SectionHeading.defaultProps = {
-  icon: blogIcon,
+  icon: "../../../resources/images/blog.svg",
   iconAlt: "Icon for this heading",
 };
 

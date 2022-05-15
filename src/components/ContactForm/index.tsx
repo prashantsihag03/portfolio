@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import "./ContactForm.css";
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [phone, setPhone] = useState("");
-  const [purpose, setPurpose] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  const encode = (data) => {
+  const encode = (data: any) => {
     return Object.keys(data)
       .map(
         (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
@@ -17,16 +18,16 @@ const ContactForm = () => {
       .join("&");
   };
 
-  const clearForm = () => {
+  const clearForm = (): void => {
     setFullName("");
     setEmail("");
     setMessage("");
     setPhone("");
-    setPurpose("");
+    setSubject("");
     setWebsite("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -36,7 +37,7 @@ const ContactForm = () => {
         email: email,
         website: website,
         phone: phone,
-        purpose: purpose,
+        subject: subject,
         message: message,
       }),
     })
@@ -49,12 +50,12 @@ const ContactForm = () => {
     e.preventDefault();
   };
 
-  const handleFullName = (e) => setFullName(e.target.value);
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handleWebsite = (e) => setWebsite(e.target.value);
-  const handlePhone = (e) => setPhone(e.target.value);
-  const handlePurpose = (e) => setPurpose(e.target.value);
-  const handleMessage = (e) => setMessage(e.target.value);
+  const handleFullName = (e: any) => setFullName(e.target.value);
+  const handleEmail = (e: any) => setEmail(e.target.value);
+  const handleWebsite = (e: any) => setWebsite(e.target.value);
+  const handlePhone = (e: any) => setPhone(e.target.value);
+  const handleSubject = (e: any) => setSubject(e.target.value);
+  const handleMessage = (e: any) => setMessage(e.target.value);
 
   return (
     <form
@@ -94,7 +95,7 @@ const ContactForm = () => {
         value={website}
         onChange={handleWebsite}
         id="contact-website"
-        placeholder="Website (Optional)"
+        placeholder="Website (Organization's or yours) (Optional)"
       />
       <input
         type="tel"
@@ -106,14 +107,14 @@ const ContactForm = () => {
       />
       <input
         type="text"
-        name="purpose"
-        value={purpose}
-        onChange={handlePurpose}
-        id="contact-purpose"
-        placeholder="Purpose"
+        name="subject"
+        value={subject}
+        onChange={handleSubject}
+        id="contact-subject"
+        placeholder="subject"
       />
       <textarea
-        maxLength="400"
+        maxLength={2000}
         name="message"
         value={message}
         onChange={handleMessage}

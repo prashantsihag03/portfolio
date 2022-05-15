@@ -1,8 +1,7 @@
-import React from "react";
-import propTypes from "prop-types";
-import styled from "styled-components";
+import * as React from "react";
+import StyledComponents from "styled-components";
 
-const DefaultButtonStyled = styled.button`
+const DefaultButtonStyled = StyledComponents.button`
   padding: 0.2em 1.5em;
   margin: 0.25em 0.5em;
   font-size: 1.3em;
@@ -31,10 +30,16 @@ const DefaultButtonStyled = styled.button`
   }
 `;
 
-const MenuButton = (props) => {
+interface MenuButtonProps {
+  customStyle?: any,
+  onClickScrollTo: any,
+  value: string,
+}
+
+const MenuButton: React.FC<MenuButtonProps> = (props) => {
   // apply custom stylings if any
   const Button = props.customStyle
-    ? styled(DefaultButtonStyled)`
+    ? StyledComponents(DefaultButtonStyled)`
         ${props.customStyle}
       `
     : DefaultButtonStyled;
@@ -47,16 +52,10 @@ const MenuButton = (props) => {
   };
 
   return (
-    <Button onClick={props.onClickScrollTo ? scrollTo : null}>
+    <Button onClick={props.onClickScrollTo ? scrollTo : ()=>{}}>
       {props.value}
     </Button>
   );
-};
-
-MenuButton.propTypes = {
-  value: propTypes.string.isRequired,
-  onClickScrollTo: propTypes.object,
-  customStyle: propTypes.any,
 };
 
 export default MenuButton;

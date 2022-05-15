@@ -1,9 +1,8 @@
-import React from "react";
-import propTypes from "prop-types";
-import styled from "styled-components";
+import * as React from "react";
+import StyledComponents from "styled-components";
 import ContentOverview from "../ContentOverview";
 
-const DescriptionDiv = styled.div`
+const DescriptionDiv = StyledComponents.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -17,33 +16,32 @@ const DescriptionDiv = styled.div`
   }
 `;
 
-const HeadingDiv = styled.div`
+const HeadingDiv = StyledComponents.div`
   color: var(--highlightColor);
   letter-spacing: 0.2em;
   text-align: left;
   word-wrap: normal;
 `;
 
-const ContentDescription = (props) => {
+interface ContentDescriptionProps {
+  heading: string,
+  desc: string,
+  overviewMaxWords?: number
+}
+
+const ContentDescription: React.FC<ContentDescriptionProps> = (props) => {
   return (
     <DescriptionDiv>
       <HeadingDiv>
         <h3>{props.heading}</h3>
       </HeadingDiv>
-      <ContentOverview content={props.desc} maxWords={props.OverviewMaxWords} />
+      <ContentOverview content={props.desc} maxWords={props.overviewMaxWords} />
     </DescriptionDiv>
   );
 };
 
-ContentDescription.propTypes = {
-  heading: propTypes.string.isRequired,
-  desc: propTypes.string,
-  OverviewMaxWords: propTypes.number,
-};
-
 ContentDescription.defaultProps = {
-  desc: "N/A",
-  OverviewMaxWords: 50,
+  overviewMaxWords: 50,
 };
 
 export default ContentDescription;
