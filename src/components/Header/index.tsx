@@ -2,9 +2,9 @@ import * as React from "react";
 import StyledComponents from "styled-components";
 import QuickBioIcons from "../QuickBioIcons";
 import QuickBioInfo from "../QuickBioInfo";
-// import "../../../resources/images/linkedinIcon.svg";
-// import "../../../resources/images/githubIcon.svg";
-// import "../../../resources/images/mediumIcon.svg";
+import mediumIcon from "../../assets/images/mediumIcon.svg";
+import gitHubIcon from "../../assets/images/githubIcon.svg";
+import linkedInIcon from "../../assets/images/linkedinIcon.svg";
 
 const HeaderContainer = StyledComponents.header`
   display: flex;
@@ -33,19 +33,19 @@ const Header: React.FC = () => {
     {
       title: "My linkedIn Profile",
       href: "https://www.linkedin.com/in/prashantsihag",
-      iconSvg: "../../../resources/images/linkedinIcon.svg",
+      iconSvg: linkedInIcon,
       imgAlt: "LinkedIn Icon",
     },
     {
       title: "My GitHub Profile",
       href: "https://github.com/prashantsihag03",
-      iconSvg: "../../../resources/images/githubIcon.svg",
+      iconSvg: gitHubIcon,
       imgAlt: "GitHub Icon",
     },
     {
       title: "My Medium Profile",
       href: "https://medium.com/@prashant-sihag",
-      iconSvg: "../../../resources/images/mediumIcon.svg",
+      iconSvg: mediumIcon,
       imgAlt: "Medium Icon",
     },
   ];

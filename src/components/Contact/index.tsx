@@ -2,6 +2,7 @@ import * as React from "react";
 import StyledComponents from 'styled-components';
 import ContactForm from "../ContactForm";
 import SectionHeading from "../SectionHeading";
+import blogImg from "../../assets/images/blog.svg";
 
 const ContactSection = StyledComponents.section`
     display: flex;
@@ -21,7 +22,7 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = (props) => {
     return (
         <ContactSection ref={props.passedRef}>
-            <SectionHeading heading="Get in touch..." icon={"../../../resources/images/blog.svg"}/>
+            <SectionHeading heading="Get in touch..." icon={blogImg}/>
             <ContactForm />
         </ContactSection>
     );

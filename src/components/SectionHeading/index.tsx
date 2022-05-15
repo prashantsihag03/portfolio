@@ -1,5 +1,6 @@
 import * as React from "react";
 import StyledComponents from "styled-components";
+import blogImg from '../../assets/images/blog.svg';
 
 const SectionHeadingDiv = StyledComponents.div`
   display: flex;
@@ -37,7 +38,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = (props) => {
 };
 
 SectionHeading.defaultProps = {
-  icon: "../../../resources/images/blog.svg",
+  icon: blogImg,
   iconAlt: "Icon for this heading",
 };
 

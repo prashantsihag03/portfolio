@@ -1,6 +1,7 @@
 import * as React from "react";
 import styledComponents from "styled-components";
 import SectionHeading from "../SectionHeading";
+import blogImg from '../../assets/images/blog.svg';
 
 const AboutSection = styledComponents.section`
   display: flex;
@@ -37,7 +38,7 @@ interface AboutProps {
 const About = ({ passedRef, heading, children }: AboutProps) => {
   return (
     <AboutSection ref={passedRef}>
-      <SectionHeading heading={heading} icon={"../../../resources/images/blog.svg"} />
+      <SectionHeading heading={heading} icon={blogImg} />
       <Content> {children} </Content>
     </AboutSection>
   );
