@@ -4,9 +4,7 @@ import "./ContactForm.css";
 
 const ContactForm: React.FC = () => {
   const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
-  const [phone, setPhone] = useState("");
+  const [linkedProfileUrl, setLinkedProfileUrl] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
@@ -20,11 +18,9 @@ const ContactForm: React.FC = () => {
 
   const clearForm = (): void => {
     setFullName("");
-    setEmail("");
     setMessage("");
-    setPhone("");
     setSubject("");
-    setWebsite("");
+    setLinkedProfileUrl("");
   };
 
   const handleSubmit = (e: any) => {
@@ -34,9 +30,7 @@ const ContactForm: React.FC = () => {
       body: encode({
         "form-name": "contact",
         fullname: fullName,
-        email: email,
-        website: website,
-        phone: phone,
+        linkedProfileUrl: linkedProfileUrl,
         subject: subject,
         message: message,
       }),
@@ -51,9 +45,7 @@ const ContactForm: React.FC = () => {
   };
 
   const handleFullName = (e: any) => setFullName(e.target.value);
-  const handleEmail = (e: any) => setEmail(e.target.value);
-  const handleWebsite = (e: any) => setWebsite(e.target.value);
-  const handlePhone = (e: any) => setPhone(e.target.value);
+  const handleLinkedProfileUrl = (e: any) => setLinkedProfileUrl(e.target.value);
   const handleSubject = (e: any) => setSubject(e.target.value);
   const handleMessage = (e: any) => setMessage(e.target.value);
 
@@ -81,29 +73,12 @@ const ContactForm: React.FC = () => {
         required
       />
       <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={handleEmail}
-        id="contact-email"
-        placeholder="Email address"
-        required
-      />
-      <input
         type="text"
-        name="website"
-        value={website}
-        onChange={handleWebsite}
-        id="contact-website"
-        placeholder="Website (Organization's or yours) (Optional)"
-      />
-      <input
-        type="tel"
-        name="phone"
-        value={phone}
-        onChange={handlePhone}
-        id="contact-phone"
-        placeholder="Phone number"
+        name="linkedProfileUrl"
+        value={linkedProfileUrl}
+        onChange={handleLinkedProfileUrl}
+        id="contact-linkedProfileUrl"
+        placeholder="Linked Profile Url"
       />
       <input
         type="text"
@@ -111,7 +86,7 @@ const ContactForm: React.FC = () => {
         value={subject}
         onChange={handleSubject}
         id="contact-subject"
-        placeholder="subject"
+        placeholder="Subject"
       />
       <textarea
         maxLength={2000}

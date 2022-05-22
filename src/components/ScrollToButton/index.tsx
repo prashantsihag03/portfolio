@@ -7,14 +7,15 @@ const Button = StyledComponents.button`
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: var(--background);
+  background-color: var(--highlightColor);
   border-radius: 0.5em;
   border: none;
   padding: 0.5em;
   bottom: 3%;
-  right: 1%;
+  right: 3%;
   cursor: pointer;
-  border: 1px solid var(--themeColor);
+  border: 1px solid white;
+  z-index: 10000;
 
   &:hover {
     background-color: #262626;
@@ -27,7 +28,7 @@ const Img = StyledComponents.img`
 `;
 
 const P = StyledComponents.p`
-  font-size: 2em;
+  font-size: 3em;
   color: var(--themeColor);
 `;
 

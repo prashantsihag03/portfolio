@@ -5,10 +5,6 @@ import ContentDescription from "../ContentDescription";
 const ImageDiv = StyledComponents.div`
   width: 20%;
   opacity: 0.7;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 `;
 
 const Img = StyledComponents.img`
@@ -27,7 +23,7 @@ const Li = StyledComponents.li`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   border-radius: 1em;
   padding: 0.5em;
   transition: all 0.2s ease-in-out;
@@ -57,9 +53,11 @@ interface LimitedContentProps {
   img: string,
   heading: string,
   desc: string,
+  mobileVersion: boolean,
 }
 
 const LimitedContent: React.FC<LimitedContentProps> = (props) => {
+
   return (
     <a
       href={props.link}
@@ -68,11 +66,15 @@ const LimitedContent: React.FC<LimitedContentProps> = (props) => {
       title="Click to read more"
     >
       <Li>
-        <ImageDiv>
-          <Img src={props.img} alt="" />
-        </ImageDiv>
+        { props.mobileVersion ? null : (
+          <ImageDiv>
+            <Img src={props.img} alt="" />
+          </ImageDiv>        
+        )}
         <ContentDescription
           heading={props.heading}
+          overlayHeadingOnImg={props.mobileVersion}
+          overlayedImg={props.img}
           desc={props.desc}
           overviewMaxWords={50}
         />
