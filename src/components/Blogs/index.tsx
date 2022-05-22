@@ -81,8 +81,8 @@ const Blogs: React.FC<BlogsProps> = (props) => {
       {
           link: "https://medium.com/analytics-vidhya/scientific-method-for-data-analysis-41798626371a",
           img: scientificMethodImg,
-          heading: "Scientific Method for Data Analysis that can also be applied to other aspects of life.",
-          desc: "In this blog, I have described in detail how scientific method for data analysis works and is utilised in data analysis which can also  be applied to other aspects of life for smoother planning and analysis.",
+          heading: "Scientific Method for Data Analysis",
+          desc: "In this blog, I have described in detail how scientific method for data analysis works and is utilised in data analysis while explainig what each stage of this process is concerned with.",
       },
   ];
 
