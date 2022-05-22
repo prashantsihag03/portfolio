@@ -58,10 +58,9 @@ const ContactForm: React.FC = () => {
       onReset={clearForm}
     >
       <h1>
-        Have something on your mind that you would like to discuss?
-        <br />
-        Get in touch by filling out the following form and I will get back to
-        you soon.
+        {/* Have something on your mind that you would like to discuss?
+        <br /> */}
+        Please fill out the following form and I will get back to you soon.
       </h1>
       <input
         type="text"

@@ -8,17 +8,19 @@ const DescriptionDiv = StyledComponents.div`
   justify-content: start;
   font-family: "Roboto Slab", serif;
   width: 80%;
+  letter-spacing: 1pt;
+  font-size: 1em;
 
   @media (max-width: 600px) {
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-size: 0.8em;
   }
 `;
 
 const H3 = StyledComponents.h3`
   color: var(--highlightColor);
-  letter-spacing: 0.2em;
   text-align: left;
   word-wrap: normal;
 `;
@@ -27,11 +29,11 @@ const H3OverlayedOnImg = StyledComponents.h3`
   position: absolute;
   bottom: 1%;
   color: var(--themeColor);
-  letter-spacing: 0.2em;
   text-align: left;
   word-wrap: normal;
-  padding: 1em;
+  padding: 0.5em;
   width: 100%;
+  font-weight: normal;
   background-color: rgba(8, 8, 8, 0.73);
 `;
 
