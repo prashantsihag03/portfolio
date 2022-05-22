@@ -7,10 +7,13 @@ const Button = StyledComponents.button`
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: var(--highlightColor);
-  border-radius: 0.5em;
+  background-color: var(--background);
+  border-radius: 50%;
   border: none;
-  padding: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
   bottom: 3%;
   right: 3%;
   cursor: pointer;
@@ -29,7 +32,7 @@ const Img = StyledComponents.img`
 
 const P = StyledComponents.p`
   font-size: 3em;
-  color: var(--themeColor);
+  color: white;
 `;
 
 interface ScrollToButtonProps {
