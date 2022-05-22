@@ -11,7 +11,7 @@ const AboutSection = styledComponents.section`
   width: 90%;
   margin: auto;
   background-color: var(--background);
-  margin-bottom: 10vh;
+  margin-bottom: 8vh;
   transition: all 0.5s ease-in-out;
 `;
 
@@ -26,6 +26,7 @@ const Content = styledComponents.p`
 
   @media only screen and (max-width: 600px) {
     width: 100%;
+    font-size: 0.8em;
   }
 `;
 
