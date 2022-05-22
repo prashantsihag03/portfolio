@@ -17,7 +17,7 @@ const Button = StyledComponents.button`
   bottom: 3%;
   right: 3%;
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid var(--highlightColor);
   z-index: 10000;
 
   &:hover {
@@ -32,7 +32,7 @@ const Img = StyledComponents.img`
 
 const P = StyledComponents.p`
   font-size: 3em;
-  color: white;
+  color: var(--highlightColor);
 `;
 
 interface ScrollToButtonProps {
