@@ -1,12 +1,5 @@
 node_modules
 .DS_Store
-dist/*.html
-dist/*.css
-dist/*.js
-dist/*.js.map
-dist/*.png
-dist/*.svg
-dist/*.jpeg
-dist/*.jpg
+dist
 # Local Netlify folder
 .netlify
