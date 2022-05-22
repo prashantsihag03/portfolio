@@ -19,14 +19,12 @@ const Content = styledComponents.p`
   color: white;
   width: 100%;
   padding: 0.5em;
-  text-align: justify;
-  font-size: 1em;
+  font-size: 0.9em;
   letter-spacing: 1pt;
   font-family: "Roboto Slab", serif;
 
   @media only screen and (max-width: 600px) {
     width: 100%;
-    font-size: 0.8em;
   }
 `;
 
