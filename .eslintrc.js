@@ -5,7 +5,7 @@ module.exports = {
   },
   plugins: ["react"],
   extends: ["eslint:recommended", "plugin:react/recommended"],
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   settings: {
     react: {
       version: "detect",

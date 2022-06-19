@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -14,17 +15,6 @@ module.exports = {
   devtool: "source-map",
   module: {
     rules: [
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-        options: {
-          emitWarning: true,
-          failOnError: false,
-          failOnWarning: false,
-        },
-      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -60,6 +50,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new ESLintPlugin({
+      extensions: [".js", ".ts"],
+      exclude: ["node_modules"],
+      emitWarning: true,
+      failOnError: false,
+      failOnWarning: false,
+    }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
