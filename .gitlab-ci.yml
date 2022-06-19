@@ -1,9 +1,8 @@
 stages:
-  - install
   - lint
-  - build
   - test
   - dependency scan
+  - build
   - staging
   - deploy
 
