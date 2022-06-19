@@ -30,6 +30,7 @@
     "@types/styled-components": "^5.1.25",
     "babel-loader": "^8.2.3",
     "babel-plugin-styled-components": "^2.0.2",
+    "browserslist": "^4.20.4",
     "copy-webpack-plugin": "^10.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",

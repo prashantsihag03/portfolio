@@ -1,8 +1,8 @@
 stages:
+  - lint
   - build
   - test
-  - OWASP Scan
-  - dockerise
+  - dependency scan
   - deploy
 
 default:
@@ -12,7 +12,17 @@ variables:
   COVERAGE_DIR: ./coverage
   DIST_DIR: ./build/dist/
 
-build dist:
+Linting:
+  stage: lint
+  inherit:
+    default: true
+  allow_failure: true
+  script:
+    - npm install
+    - npx browserslist@latest --update-db
+    - node_modules/eslint/bin/eslint.js .
+
+Building:
   stage: build
   inherit:
     default: true
@@ -27,7 +37,7 @@ build dist:
     paths:
       - ${DIST_DIR}
 
-tests:
+Testing:
   inherit:
     default: true
   stage: test
@@ -35,8 +45,8 @@ tests:
     - npm test
     - echo "testing project....no tests available."
 
-Security Check:
-  stage: OWASP Scan
+Dependency scanning:
+  stage: dependency scan
   inherit:
     default: true
     variables: true
@@ -49,15 +59,7 @@ Security Check:
     paths:
       - ${COVERAGE_DIR}
 
-dockerise:
-  stage: dockerise
-  inherit:
-    default: true
-    variables: true
-  script:
-    - echo "Docker image creation implementaiton not yet finished! Skipping this stage..."
-
-deploy:
+deploying:
   stage: deploy
   inherit:
     default: true
