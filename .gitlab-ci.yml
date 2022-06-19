@@ -102,7 +102,7 @@ Tests On Staging Env:
 
 Production Deploy:
   stage: deploy
-  needs: ["Tests On Staging Env"]
+  needs: ["Tests On Staging Env", "Build"]
   inherit:
     default: true
     variables: true
