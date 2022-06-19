@@ -7,7 +7,8 @@
     "build": "webpack",
     "netlifyInit": "netlify init --manual",
     "test": "echo \"Error: no test specified\"",
-    "deploy": "netlify deploy"
+    "deploy": "netlify deploy",
+    "lint": "rm -rf dist && npm install && npx browserslist@latest --update-db && node_modules/eslint/bin/eslint.js ."
   },
   "author": "Prashant Sihag",
   "license": "SEE LICENSE FILE",

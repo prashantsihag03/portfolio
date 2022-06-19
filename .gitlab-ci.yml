@@ -18,9 +18,8 @@ Linting:
     default: true
   allow_failure: true
   script:
-    - npm install
-    - npx browserslist@latest --update-db
-    - node_modules/eslint/bin/eslint.js .
+    - npm run lint
+    - echo "Mor eresearch is required to ensure the linter is checking every file in all sub directories"
 
 Building:
   stage: build
