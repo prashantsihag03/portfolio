@@ -88,10 +88,10 @@ Staging Deploy:
     - echo "need to deploy on separate site where its not visible to anybody but us"
 
 Tests On Staging Env:
+  stage: deploy
   needs: ["Staging Deploy"]
   inherit:
     default: true
-  stage: test
   script:
     - echo "Run tests to ensure deployment has been successfull and everything is working fine. Ensure any test doesn't mutate anything on website."
 
