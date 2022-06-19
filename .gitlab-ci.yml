@@ -1,4 +1,5 @@
 stages:
+  - install
   - lint
   - build
   - test
@@ -12,17 +13,56 @@ variables:
   COVERAGE_DIR: ./coverage
   DIST_DIR: ./build/dist/
 
-Linting:
+Lint:
   stage: lint
+  needs: []
   inherit:
     default: true
   allow_failure: true
   script:
     - npm run lint
-    - echo "Mor eresearch is required to ensure the linter is checking every file in all sub directories"
+    - echo "More research is required to ensure the linter is checking every file in all sub directories"
 
-Building:
+Unit & Int Tests:
+  inherit:
+    default: true
+  stage: test
+  needs: []
+  script:
+    - npm install
+    - npm test
+    - echo "testing project....no tests available."
+
+End-to-End Tests:
+  inherit:
+    default: true
+  stage: test
+  needs: []
+  script:
+    - npm install
+    - npm test
+    - echo "testing project....no tests available."
+
+Dependency Scan:
+  stage: dependency scan
+  needs: []
+  inherit:
+    default: true
+    variables: true
+  script:
+    - mkdir -p ${COVERAGE_DIR}
+    - echo "checking for security vulnerabilities.."
+    - npm install
+    - npm audit --json --audit-level=critical > ${COVERAGE_DIR}/audit.json
+    - echo "Need to also run OWASP CLI scan"
+  artifacts:
+    expire_in: 1 days
+    paths:
+      - ${COVERAGE_DIR}
+
+Build:
   stage: build
+  needs: []
   inherit:
     default: true
   script:
@@ -36,35 +76,33 @@ Building:
     paths:
       - ${DIST_DIR}
 
-Testing:
-  inherit:
-    default: true
-  stage: test
-  script:
-    - npm test
-    - echo "testing project....no tests available."
-
-Dependency scanning:
-  stage: dependency scan
-  inherit:
-    default: true
-    variables: true
-  script:
-    - mkdir -p ${COVERAGE_DIR}
-    - echo "checking for security vulnerabilities.."
-    - npm audit --json --audit-level=critical > ${COVERAGE_DIR}/audit.json
-  artifacts:
-    expire_in: 1 days
-    paths:
-      - ${COVERAGE_DIR}
-
-deploying:
+Staging Deploy:
   stage: deploy
+  needs: ["Build"]
   inherit:
     default: true
     variables: true
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
   script:
-    - npm install
+    - echo "need to deploy on separate site where its not visible to anybody but us"
+
+Tests On Staging Env:
+  need: ["Staging Deploy"]
+  inherit:
+    default: true
+  stage: test
+  script:
+    - echo "Run tests to ensure deployment has been successfull and everything is working fine. Ensure any test doesn't mutate anything on website."
+
+Production Deploy:
+  stage: deploy
+  needs: ["Tests On Staging Env"]
+  inherit:
+    default: true
+    variables: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+  script:
+    - npm install netlify-cli@9.16.4
     - npm run deploy -- --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir ${DIST_DIR}
