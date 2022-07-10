@@ -43,8 +43,12 @@ interface ScrollToButtonProps {
 
 const ScrollToButton:React.FC<ScrollToButtonProps> = (scrollToButtonProps) => {
   return (
-    <Button onClick={scrollToButtonProps.onClick}>
-      {scrollToButtonProps.img ? <Img src={scrollToButtonProps.img} /> : <P> {scrollToButtonProps.text} </P>}
+    <Button onClick={scrollToButtonProps.onClick} data-test-id="scrollToButton">
+      {
+        scrollToButtonProps.img 
+        ? <Img src={scrollToButtonProps.img} data-test-id="scrollToImg"/> 
+        : <P> {scrollToButtonProps.text} </P>
+      }
     </Button>
   );
 };
