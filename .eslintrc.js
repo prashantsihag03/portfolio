@@ -4,12 +4,8 @@ module.exports = {
     browser: true,
   },
   plugins: ["react"],
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-  ],
-  parser: ["@babel/eslint-parser", "@typescript-eslint"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+  parser: "@babel/eslint-parser",
   settings: {
     react: {
       version: "detect",
