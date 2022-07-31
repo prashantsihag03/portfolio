@@ -1,3 +1,5 @@
+import { SvgIcon, SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 import * as React from "react";
 import StyledComponents from "styled-components";
 import blogImg from '../../assets/images/blog.svg';
@@ -24,22 +26,17 @@ const H2 = StyledComponents.h2`
 
 interface SectionHeadingProps {
   heading: string,
-  icon: string,
-  iconAlt?: string,
+  iconComponent: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {muiName: string;},
+  iconStyle?: React.CSSProperties
 }
 
-const SectionHeading: React.FC<SectionHeadingProps> = (props) => {
+const SectionHeading: React.FC<SectionHeadingProps> = ({heading, iconComponent, iconStyle}: SectionHeadingProps) => {
   return (
     <SectionHeadingDiv>
-      <H2>{props.heading}</H2>
-      <img src={props.icon} alt={props.iconAlt} style={{ width: "1em" }} />
+      <H2>{heading}</H2>
+      <SvgIcon component={iconComponent} inheritViewBox fontSize="large" style={iconStyle} />
     </SectionHeadingDiv>
   );
-};
-
-SectionHeading.defaultProps = {
-  icon: blogImg,
-  iconAlt: "Icon for this heading",
 };
 
 export default SectionHeading;

@@ -5,7 +5,7 @@ import ClosingBlock from "../ClosingBlock";
 import Contact from "../Contact";
 import Header from "../Header";
 import NavigationMenu from "../NavigationMenu";
-import ScrollToButton from "../ScrollToButton";
+import ScrollToTopIcon from "../ScrollToButton";
 
 const App: React.FC = () => {
   // The back-to-top button is hidden at the beginning
@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-      {showButton ? <ScrollToButton text="&#8679;" onClick={scrollToTop} /> : null}
+      {showButton && <ScrollToTopIcon onClick={scrollToTop} />}
       <Header />
       <NavigationMenu
         blogsRef={blogsRef}

@@ -2,7 +2,7 @@ import * as React from "react";
 import StyledComponents from 'styled-components';
 import ContactForm from "../ContactForm";
 import SectionHeading from "../SectionHeading";
-import blogImg from "../../assets/images/blog.svg";
+import { ContactMailOutlined } from "@mui/icons-material";
 
 const ContactSection = StyledComponents.section`
     display: flex;
@@ -22,7 +22,7 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = (props) => {
     return (
         <ContactSection ref={props.passedRef}>
-            <SectionHeading heading="Get in touch..." icon={blogImg}/>
+            <SectionHeading heading="Get in touch..." iconComponent={ContactMailOutlined}/>
             <ContactForm />
         </ContactSection>
     );

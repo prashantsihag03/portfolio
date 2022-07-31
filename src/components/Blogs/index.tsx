@@ -9,26 +9,27 @@ import dynamoDbImg from '../../assets/images/dynamoDBBlog.jpg';
 import facebookImg from '../../assets/images/facebookBlog.png';
 import scientificMethodImg from '../../assets/images/scientifcMethodForDataAnalysis.png';
 import { debounce } from "lodash";
+import { ArticleOutlined } from "@mui/icons-material";
 
 const BlogSection = StyledComponents.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    width: 90%;
-    margin: auto;
-    margin-top: 8vh;
-    margin-bottom: 10vh;
-    font-family: "Roboto Slab", serif;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 90%;
+  margin: auto;
+  margin-top: 8vh;
+  margin-bottom: 10vh;
+  font-family: "Roboto Slab", serif;  
 `;
 
 const Ul = StyledComponents.ul`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
 `;
 
 interface BlogsProps {
@@ -85,7 +86,7 @@ const Blogs: React.FC<BlogsProps> = (props) => {
 
   return (
     <BlogSection ref={props.passedRef}>
-      <SectionHeading heading={'Blogs'} icon={blogImg} />
+      <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />
       <Ul>
         {data.map((blog, id) => 
           <LimitedContent 
