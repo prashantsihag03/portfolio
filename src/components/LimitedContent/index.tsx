@@ -4,7 +4,7 @@ import ContentDescription from "../ContentDescription";
 
 const ImageDiv = StyledComponents.div`
   width: 20%;
-  opacity: 0.7;
+  opacity: 0.9;
 `;
 
 const Img = StyledComponents.img`
@@ -33,7 +33,7 @@ const Li = StyledComponents.li`
     background-color: rgb(36, 34, 34);
   }
 
-  &:hover (ImageDiv) {
+  &:hover (img) {
     opacity: 0.9;
   }
 
