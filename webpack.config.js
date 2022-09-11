@@ -10,11 +10,16 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".webmanifest"],
   },
   devtool: "source-map",
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -25,11 +30,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
       },
       {
         test: /\.(jpg|png|svg)$/,
@@ -51,14 +51,14 @@ module.exports = {
   },
   plugins: [
     new ESLintPlugin({
-      extensions: [".js", ".ts"],
+      extensions: [".js", ".ts", ".jsx"],
       exclude: ["node_modules"],
       emitWarning: true,
       failOnError: false,
       failOnWarning: false,
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "./index.html",
       favicon: "./favicon.ico",
     }),

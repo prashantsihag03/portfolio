@@ -3,7 +3,6 @@ import StyledComponents from 'styled-components';
 import SectionHeading from "../SectionHeading";
 import LimitedContent from "../LimitedContent";
 import MoreButton from "../MoreButton";
-import blogImg from '../../assets/images/blog.svg';
 import webRTCImg from '../../assets/images/webRTC.png';
 import dynamoDbImg from '../../assets/images/dynamoDBBlog.jpg';
 import facebookImg from '../../assets/images/facebookBlog.png';

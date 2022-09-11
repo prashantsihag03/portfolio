@@ -2,7 +2,6 @@ import { SvgIcon, SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import * as React from "react";
 import StyledComponents from "styled-components";
-import blogImg from '../../assets/images/blog.svg';
 
 const SectionHeadingDiv = StyledComponents.div`
   display: flex;
