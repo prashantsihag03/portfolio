@@ -29,7 +29,6 @@ const H3OverlayedOnImg = StyledComponents.h3`
   position: absolute;
   bottom: 1%;
   color: var(--secondary);
-  text-decoration: underline;
   text-align: left;
   word-wrap: normal;
   padding: 0.5em;
