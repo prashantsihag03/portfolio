@@ -27,7 +27,7 @@ const Heading = StyledComponents.h1`
 `;
 
 const Span = StyledComponents.span`
-  color: var(--themeColor);
+  color: var(--primary);
   word-wrap: normal;
 `;
 

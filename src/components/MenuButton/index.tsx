@@ -7,9 +7,11 @@ const DefaultButtonStyled = StyledComponents.button`
   font-size: 1.3em;
   font-family: "Roboto Slab", serif;
   font-weight: bold;
-  border: 1px solid white;
+  border: none;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
   border-radius: 0.2em;
-  background-color: var(--background);
+  background: transparent;
   color: white;
   transition-property: background-color, color;
   transition-duration: 0.3s, 0.3s;
@@ -25,8 +27,8 @@ const DefaultButtonStyled = StyledComponents.button`
 
   &:hover {
     cursor: pointer;
-    background-color: var(--themeColor);
-    border-color: var(--themeColor);
+    background-color: var(--primary);
+    border-color: var(--primary);
   }
 `;
 

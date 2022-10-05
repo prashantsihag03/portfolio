@@ -11,7 +11,6 @@ const StyledFooter = StyledComponents.footer`
   font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.2em;
-  // background-color: var(--themeColor);
   padding-bottom: 1.5em;
   margin-top: 5vh;
   border-top: 1px solid white;

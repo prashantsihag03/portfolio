@@ -35,7 +35,7 @@ const Img = StyledComponents.img`
 
 const A = StyledComponents.a`
   &:hover ${Img} {
-    border-color: var(--themeColor);
+    border-color: var(--primary);
   }
 `;
 

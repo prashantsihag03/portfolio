@@ -20,7 +20,7 @@ const DescriptionDiv = StyledComponents.div`
 `;
 
 const H3 = StyledComponents.h3`
-  color: var(--highlightColor);
+  color: var(--secondary);
   text-align: left;
   word-wrap: normal;
 `;
@@ -28,7 +28,8 @@ const H3 = StyledComponents.h3`
 const H3OverlayedOnImg = StyledComponents.h3`
   position: absolute;
   bottom: 1%;
-  color: var(--themeColor);
+  color: var(--secondary);
+  text-decoration: underline;
   text-align: left;
   word-wrap: normal;
   padding: 0.5em;

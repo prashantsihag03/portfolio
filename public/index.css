@@ -37,9 +37,12 @@ li {
 }
 
 :root {
-  --background: rgb(22, 22, 22);
-  --themeColor: darkseagreen;
-  --highlightColor: rgb(131, 74, 74);
+  /* --background: rgb(22, 22, 22); */
+  /* --background: rgb(17, 57, 69); */
+  --background: #434343;
+  /* darkseagreen #243030 #DECBA4 #434343*/ 
+  --primary: #55B5AC; 
+  --secondary: #7e9de6;
 }
 
 body {
@@ -47,7 +50,7 @@ body {
   margin: auto;
   overflow-x: hidden;
   position: relative;
-  background-color: var(--background);
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
   background-position: center;
   background-repeat: repeat;
   background-size: auto;

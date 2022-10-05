@@ -9,7 +9,6 @@
 }
 
 .contactForm > h1 {
-    background-color: var(--background);
     font-size: 1.2em;
     padding: 0.5em;
     text-align: left;
@@ -28,14 +27,16 @@
     margin-top: 1em;
     border-radius: 0.2em;
     border: none;
+    color: white;
     background-color: rgb(41, 41, 41);
     letter-spacing: 0.1em;
     transition: all 0.3s linear;
     font-family: 'Roboto Slab';
+    box-shadow: 1px 1px 1px 1px rgb(115, 115, 115);
 }
 
 .contactForm > input::placeholder, textarea::placeholder {
-    color: rgb(128, 128, 128);
+    color: rgb(232, 232, 232);
 }
 
 .contactForm > input:focus, textarea:focus {
@@ -47,16 +48,16 @@
     -webkit-appearance: none;
     min-height: 2em;
     font-weight: normal;
-    background-color: var(--background);
-    color: var(--themeColor);
+    color: var(--primary);
     box-shadow: none;
     transition: all 0.3s linear;
     border-radius: 0.5em;
-    border: 1px solid var(--themeColor);
+    border: 1px solid transparent;
 }
 
 .contactForm > input.submitform:hover {
-    background-color: var(--themeColor);
+    background-color: var(--primary);
+    border-color: var(--primary);
     color: white;
     cursor: pointer;
 }

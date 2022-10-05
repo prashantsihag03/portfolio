@@ -6,7 +6,7 @@ import StyledComponents from "styled-components";
 const SectionHeadingDiv = StyledComponents.div`
   display: flex;
   width: 100%;
-  color: var(--highlightColor);
+  color: var(--primary);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

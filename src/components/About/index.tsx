@@ -10,7 +10,6 @@ const AboutSection = styledComponents.section`
   align-items: center;
   width: 90%;
   margin: auto;
-  background-color: var(--background);
   margin-bottom: 8vh;
   transition: all 0.5s ease-in-out;
 `;

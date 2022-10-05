@@ -10,7 +10,7 @@ const ContainerDiv = StyledComponents.div`
   justify-content: space-around;
   align-items: center;
   padding-bottom: 0.5em;
-  background-color: var(--background);
+  background: "transparent";
   margin-top: 5vh;
 `;
 

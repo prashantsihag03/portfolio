@@ -12,8 +12,8 @@ const Myh4 = StyledComponents.h4`text-align: center;`;
 
 const A = StyledComponents.a`
   padding: 0.2em;
-  border: 1px solid var(--background);
-  border-bottom-color: white;
+  color: var(--secondary);
+  border: 1px solid transparent;
   border-radius: 0.2em;
   border-bottom: 1px solid white;
   transition: all 0.5s linear;

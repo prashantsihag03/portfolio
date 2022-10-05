@@ -5,6 +5,7 @@ stages:
   - build
   - staging
   - deploy
+  # Trigger service project pipeline from here.
 
 default:
   image: "node"
@@ -110,3 +111,4 @@ Production Deploy:
   script:
     - npm install netlify-cli@9.16.4
     - npm run deploy -- --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod --dir ${DIST_DIR}
+    - echo "netlify deployment successful"

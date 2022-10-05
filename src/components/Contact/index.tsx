@@ -11,7 +11,7 @@ const ContactSection = StyledComponents.section`
     align-items: center;
     width: 90%;
     margin: auto;
-    background-color: var(--background);
+    background: "transparent";
     margin-bottom: 10vh;
 `;
 
