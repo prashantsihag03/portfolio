@@ -77,32 +77,9 @@ Build:
     paths:
       - ${DIST_DIR}
 
-Staging Deploy:
-  stage: staging
-  needs: ["Build"]
-  inherit:
-    default: true
-    variables: true
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-  script:
-    - echo "need to deploy on separate site where its not visible to anybody but us"
-
-Tests On Staging Env:
-  stage: staging
-  needs: ["Staging Deploy"]
-  inherit:
-    default: true
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-  script:
-    - echo "Run tests to ensure deployment has been successfull and everything is working fine. Ensure any test doesn't mutate anything on website."
-  after_script:
-    - echo "Destroy staging environment."
-
 Production Deploy:
   stage: deploy
-  needs: ["Tests On Staging Env", "Build"]
+  needs: [Build]
   inherit:
     default: true
     variables: true
