@@ -10,7 +10,6 @@ import ScrollToTopIcon from "../ScrollToButton";
 const App: React.FC = () => {
   // The back-to-top button is hidden at the beginning
   const [showButton, setShowButton] = useState(false);
-
   const blogsRef = useRef("BlogsSection");
   const aboutRef = useRef("AboutSection");
   const contactRef = useRef("ContsctSection");

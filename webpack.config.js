@@ -12,7 +12,6 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".webmanifest"],
   },
-  devtool: "source-map",
   module: {
     rules: [
       {

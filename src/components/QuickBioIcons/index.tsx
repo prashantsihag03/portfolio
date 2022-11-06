@@ -1,5 +1,7 @@
 import * as React from "react";
 import StyledComponents from 'styled-components';
+import Icon from "../Icon";
+import IconProp from "../Icon/type";
 
 const ContainerDiv = StyledComponents.div`
   display: flex;
@@ -21,46 +23,15 @@ const ContainerDiv = StyledComponents.div`
   }
 `;
 
-const Li = StyledComponents.li`
-  list-style: none;
-  width: 4em;
-`;
-
-const Img = StyledComponents.img`
-  width: 80%;
-  border: 4px solid transparent;
-  border-radius: 50%;
-  transition: all 0.5s linear;
-`;
-
-const A = StyledComponents.a`
-  &:hover ${Img} {
-    border-color: var(--primary);
-  }
-`;
-
-interface QuickBioItem {
-  title: string, 
-  href: string,
-  iconSvg: string,
-  imgAlt: string
-}
-
 interface QuickBioIconsProps {
-  items: QuickBioItem[]
+  items: IconProp[]
 }
 
 const QuickBioIcons: React.FC<QuickBioIconsProps> = (props) => {
   return (    
     <ContainerDiv>
       {props.items.map((item, id) => {
-        return (        
-          <A key={id} href={item.href} target="_blank" title={item.title} rel="noopener noreferrer nofollow">
-            <Li key={id}>
-              <Img src={item.iconSvg} alt={item.imgAlt} />
-            </Li>
-          </A>
-        )
+        return <Icon key={id} href={item.href} title={item.title} src={item.src} alt={item.alt} />
       })}        
     </ContainerDiv>
   );
