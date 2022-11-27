@@ -4,21 +4,22 @@ import IconProp from "./type";
 
 const Li = StyledComponents.li`
   list-style: none;
-  width: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 3em;
+  margin-right: 1em;
 `;
 
 const Img = StyledComponents.img`
   width: 80%;
-  border: 4px solid transparent;
+  border: 4px solid black;
   border-radius: 50%;
   transition: all 0.5s linear;
 `;
 
-const A = StyledComponents.a`
-  &:hover ${Img} {
-    border-color: var(--primary);
-  }
-`;
+const A = StyledComponents.a``;
 
 const Icon: React.FC<IconProp> = ({ href, title, src, alt}: IconProp) => {
   return (

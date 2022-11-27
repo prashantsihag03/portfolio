@@ -2,24 +2,23 @@ import * as React from "react";
 import StyledComponents from 'styled-components';
 import SectionHeading from "../SectionHeading";
 import LimitedContent from "../LimitedContent";
-import MoreButton from "../MoreButton";
 import webRTCImg from '../../assets/images/webRTC.png';
 import dynamoDbImg from '../../assets/images/dynamoDBBlog.jpg';
 import facebookImg from '../../assets/images/facebookBlog.png';
 import scientificMethodImg from '../../assets/images/scientifcMethodForDataAnalysis.png';
 import { debounce } from "lodash";
 import { ArticleOutlined } from "@mui/icons-material";
+import MenuButton from "../MenuButton";
+import useIntersectionObserver from "../App/useIntersectionObserver";
 
 const BlogSection = StyledComponents.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   color: white;
-  width: 90%;
+  width: 100%;
   margin: auto;
-  margin-top: 8vh;
-  margin-bottom: 10vh;
   font-family: "Roboto Slab", serif;  
 `;
 
@@ -29,13 +28,15 @@ const Ul = StyledComponents.ul`
   justify-content: space-around;
   align-items: center;
   padding: 0.5em;
+  padding-top: 2em;
 `;
 
-interface BlogsProps {
-    passedRef: any
+interface Blogs {
+  observer: IntersectionObserver
 }
 
-const Blogs: React.FC<BlogsProps> = (props) => {
+const Blogs: React.FC<Blogs> = ({observer}: Blogs) => {
+  const {setElement} = useIntersectionObserver(observer);
   const [currentSiteWidth, setCurrentSiteWidth] = React.useState(window.innerWidth);
   const mediaMaxWidth = 850;
 
@@ -84,7 +85,7 @@ const Blogs: React.FC<BlogsProps> = (props) => {
   ];
 
   return (
-    <BlogSection ref={props.passedRef}>
+    <BlogSection id="blogs" ref={(node) => {setElement(node)}}>
       <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />
       <Ul>
         {data.map((blog, id) => 
@@ -95,7 +96,9 @@ const Blogs: React.FC<BlogsProps> = (props) => {
           /> 
         )}
       </Ul>
-      <MoreButton link="https://medium.com/@prashant-sihag" content="more on Medium" />
+      <a href='https://medium.com/@prashant-sihag' target="_blank">
+          <MenuButton value='more on Medium' />
+      </a>
     </BlogSection>
   )
 }

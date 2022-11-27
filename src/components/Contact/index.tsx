@@ -9,19 +9,15 @@ const ContactSection = StyledComponents.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin: auto;
     background: "transparent";
     margin-bottom: 10vh;
 `;
 
-interface ContactProps {
-    passedRef: any
-}
-
-const Contact: React.FC<ContactProps> = (props) => {
+const Contact: React.FC = (props) => {
     return (
-        <ContactSection ref={props.passedRef}>
+        <ContactSection id="contact">
             <SectionHeading heading="Get in touch..." iconComponent={ContactMailOutlined}/>
             <ContactForm />
         </ContactSection>

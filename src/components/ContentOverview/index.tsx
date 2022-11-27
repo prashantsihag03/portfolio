@@ -6,6 +6,7 @@ const OverviewDiv = StyledComponents.div`
   font-size: 1em;
   letter-spacing: 0.1em;
   text-align: justify;
+  color: grey;
 `;
 
 interface ContentOverviewProps {

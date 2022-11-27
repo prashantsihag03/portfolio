@@ -9,11 +9,9 @@ const HeaderContainer = StyledComponents.header`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: auto;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-  height: auto;
+  height: 100vh;
 
   @media only screen and (max-width: 800px) {
     display: flex;
@@ -29,7 +27,7 @@ const HeaderContainer = StyledComponents.header`
 const Header: React.FC = () => {
   return (
     <HeaderContainer className="quick-bio-flexcontainer">
-      <QuickBioInfo />
+      {/* <QuickBioInfo /> */}
       <QuickBioIcons items={QuickIconData} />
     </HeaderContainer>
   );

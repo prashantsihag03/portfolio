@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "build": "rm -rf ./dist/*; webpack --mode=production",
+    "watch": "rm -rf ./dist/*; webpack --watch",
     "netlifyInit": "netlify init --manual",
     "test": "jest",
     "test:watch": "jest --watch",

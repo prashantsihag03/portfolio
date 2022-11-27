@@ -10,11 +10,103 @@
         <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet" />  
         <link rel="stylesheet" href="index.css" />   
         <link rel="manifest" href="/site.webmanifest" />
-        <title>Prashant Portfolio</title>
+        <title>Prashant Sihag</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            :root {
+                --background: black;
+                /* --primary: #66dbcf;  */
+                --primary: #7e9de6;
+                --secondary: #7e9de6;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                font-family: "Roboto Slab", serif;
+            }
+
+            h2,
+            h1 {
+                font-family: "Philosopher", sans-serif;
+                letter-spacing: 1pt;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+            input:required {
+                outline: none;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            body {
+                margin: auto;
+                overflow-x: hidden;
+                position: relative;
+                background-color: black;
+                background-position: center;
+                background-repeat: repeat;
+                background-size: auto;
+                background-attachment: scroll;
+            }
+
+            #root {
+                background-color: black;
+            }
+
+            .spinContainer {
+                display: flex; 
+                height: 100vh; 
+                width: 100%; 
+                justify-content: center; 
+                align-items: center;
+            }
+
+            .spin {
+                display: inline-block;
+                width: 4em;
+                height: 4em;
+                border: 0.3em solid rgba(255, 255, 255, 0);
+                border-radius: 50%;
+                border-top-color: var(--primary);
+                border-right-color: var(--primary);
+                animation: spin 1s ease-in-out infinite;
+                -webkit-animation: spin 1s ease-in-out infinite;
+            }
+            @keyframes spin {
+                to {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+            @-webkit-keyframes spin {
+                to {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+        </style>
     </head>
     <body>
         <div id='root'>
-            Loading...
+            <div class="spinContainer">
+                <div class="spin"></div>            
+            </div>
         </div>
     </body>
 </html>

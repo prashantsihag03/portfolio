@@ -6,11 +6,11 @@ import StyledComponents from "styled-components";
 const SectionHeadingDiv = StyledComponents.div`
   display: flex;
   width: 100%;
-  color: var(--primary);
+  color: white;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid white;
+  border-top: 1px solid grey;
   margin-bottom: 1vh;
   margin-top: 5vh;
 `;

@@ -15,11 +15,12 @@ const AboutSection = styledComponents.section`
 `;
 
 const Content = styledComponents.p`
-  color: white;
+  color: grey;
   width: 100%;
   padding: 0.5em;
-  font-size: 0.9em;
+  font-size: 1em;
   letter-spacing: 1pt;
+  line-height: 1.5em;
   font-family: "Roboto Slab", serif;
 
   @media only screen and (max-width: 600px) {
@@ -28,14 +29,13 @@ const Content = styledComponents.p`
 `;
 
 interface AboutProps {
-  passedRef: any,
   heading: string,
   children: any,
 }
 
-const About = ({ passedRef, heading, children }: AboutProps) => {
+const About = ({ heading, children }: AboutProps) => {
   return (
-    <AboutSection ref={passedRef}>
+    <AboutSection id="about">
       <SectionHeading heading={heading} iconComponent={PersonOutlined} />
       <Content> {children} </Content>
     </AboutSection>

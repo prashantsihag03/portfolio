@@ -2,9 +2,13 @@ import * as React from "react";
 import StyledComponents from "styled-components";
 import ContentDescription from "../ContentDescription";
 
+const Container = StyledComponents.a`
+  margin-bottom: 3em;
+`;
+
 const ImageDiv = StyledComponents.div`
   width: 20%;
-  opacity: 0.9;
+  opacity: 0.7;
 `;
 
 const Img = StyledComponents.img`
@@ -44,7 +48,7 @@ const Li = StyledComponents.li`
     justify-content: center;
     width: 100%;
     margin-bottom: 2em;
-    padding: 1em;
+    padding: 3em;
   }
 `;
 
@@ -59,7 +63,7 @@ interface LimitedContentProps {
 const LimitedContent: React.FC<LimitedContentProps> = (props) => {
 
   return (
-    <a
+    <Container
       href={props.link}
       target="_blank"
       rel="noreferrer noopener nofollow"
@@ -79,7 +83,7 @@ const LimitedContent: React.FC<LimitedContentProps> = (props) => {
           overviewMaxWords={50}
         />
       </Li>
-    </a>
+    </Container>
   );
 };
 

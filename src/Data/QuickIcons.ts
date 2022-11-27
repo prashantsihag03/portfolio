@@ -1,7 +1,7 @@
 import IconProp from "../components/Icon/type";
-import mediumIcon from "../assets/images/mediumIcon.svg";
-import gitHubIcon from "../assets/images/githubIcon.svg";
-import linkedInIcon from "../assets/images/linkedinIcon.svg";
+import mediumIcon from "../assets/icons/medium.svg";
+import gitHubIcon from "../assets/icons/github.svg";
+import linkedInIcon from "../assets/icons/linkedIn.svg";
 
 const QuickIconData: IconProp[] = [
   {

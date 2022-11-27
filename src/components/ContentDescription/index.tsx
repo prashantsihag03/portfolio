@@ -10,6 +10,7 @@ const DescriptionDiv = StyledComponents.div`
   width: 80%;
   letter-spacing: 1pt;
   font-size: 1em;
+  line-height: 1.5em;
 
   @media (max-width: 600px) {
     justify-content: center;
@@ -20,7 +21,8 @@ const DescriptionDiv = StyledComponents.div`
 `;
 
 const H3 = StyledComponents.h3`
-  color: var(--secondary);
+  color: white;
+  font-weight: normal;
   text-align: left;
   word-wrap: normal;
 `;
@@ -28,13 +30,13 @@ const H3 = StyledComponents.h3`
 const H3OverlayedOnImg = StyledComponents.h3`
   position: absolute;
   bottom: 1%;
-  color: var(--secondary);
+  color: white;
   text-align: left;
   word-wrap: normal;
   padding: 0.5em;
   width: 100%;
   font-weight: normal;
-  background-color: rgba(8, 8, 8, 0.73);
+  background-color: rgba(90, 88, 88, 0.73);
 `;
 
 const Img = StyledComponents.img`
