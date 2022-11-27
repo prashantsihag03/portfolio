@@ -45,7 +45,7 @@ const App: React.FC = () => {
           <QuickBioIcons items={QuickIconData}/>
         </SocialIcons>
       </WebOnly>
-      <main style={{marginLeft: "10%", marginRight: "10%", maxWidth: "1499px"}}>
+      <main style={{marginLeft: "10%", marginRight: "10%"}}>
         <QuickBioInfo observer={intersectionObserver}/>
         <Blogs observer={intersectionObserver}/>
         <ClosingBlock observer={intersectionObserver}/>
