@@ -1,4 +1,4 @@
-import { setRef } from '@mui/material';
+import { Fade, setRef, Zoom } from '@mui/material';
 import * as React from 'react';
 import StyledComponents from 'styled-components';
 import useIntersectionObserver from '../App/useIntersectionObserver';
@@ -76,17 +76,19 @@ const QuickBioInfo: React.FC<QuickBioInfoProps> = ({observer}: QuickBioInfoProps
 
   return (
     <ContainerDiv ref={(node) => {setElement(node)}} className="quick-bio-info" id='intro'>
-      <div>
-        <Greeting>Hi, I am</Greeting>
-        <Name>Prashant Sihag.</Name> 
-        {/* <Brief> I solve problems on Web.</Brief><br/> */}
-        <QuickAbout>I am a software developer specialising in developing and occasionally architecting full stack web applications. Currently, I'm helping <Highlight>Alex Solutions</Highlight> develop exceptional Metadata Management web apps.</QuickAbout>
-        <QuickActionContainer>
-          <a href='#blogs'>
-          <MenuButton value='Check out my blogs' />
-          </a>
-        </QuickActionContainer>
-      </div>
+      <Fade in={true} style={{transitionDelay: "300ms"}}>
+        <div>
+          <Greeting>Hi, I am</Greeting>
+          <Name>Prashant Sihag.</Name> 
+          {/* <Brief> I solve problems on Web.</Brief><br/> */}
+          <QuickAbout>I am a software developer specialising in developing and occasionally architecting full stack web applications. Currently, I'm helping <Highlight>Alex Solutions</Highlight> develop exceptional Metadata Management web apps.</QuickAbout>
+          <QuickActionContainer>
+            <a href='#blogs'>
+            <MenuButton value='Check out my blogs' />
+            </a>
+          </QuickActionContainer>
+        </div>
+      </Fade>
     </ContainerDiv>
   );
 }

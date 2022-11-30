@@ -27,7 +27,6 @@ const App: React.FC = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setActive(entry.target.id);
-          console.log(entry.target.id + " is intersecting!");
         }
       })
     }, {
@@ -37,9 +36,9 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-      <WebOnly>
+      {/* <WebOnly>
         <NavigationMenu active={active} items={['intro', 'blogs', 'about']}/>
-      </WebOnly>
+      </WebOnly> */}
       <WebOnly>
         <SocialIcons>
           <QuickBioIcons items={QuickIconData}/>

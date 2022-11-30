@@ -25,8 +25,8 @@ const VerticalLine = StyledComponents.div`
   top: 0;
   left: 50%;
   height: 100%;
-  width: 2px;
-  background-color: white;
+  width: 1px;
+  background-color: grey;
 `;
 
 const ItemContainer = StyledComponents.div`
@@ -51,6 +51,7 @@ const Nav = StyledComponents.nav`
 
 const NavItem = StyledComponents.a`
   background-color: black;
+  color: grey;
   margin-top: 2em;
   margin-bottom: 2em;
   padding: 0.5em;

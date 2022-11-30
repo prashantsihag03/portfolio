@@ -1,3 +1,4 @@
+import { Fade, Zoom } from "@mui/material";
 import * as React from "react";
 import StyledComponents from 'styled-components';
 import Icon from "../Icon";
@@ -20,7 +21,13 @@ const QuickBioIcons: React.FC<QuickBioIconsProps> = (props) => {
   return (    
     <ContainerDiv>
       {props.items.map((item, id) => {
-        return <Icon key={id} href={item.href} title={item.title} src={item.src} alt={item.alt} />
+        return (
+          <Fade key={id} in={true} style={{transitionDelay: "300ms"}}>
+            <div>
+              <Icon key={id} href={item.href} title={item.title} src={item.src} alt={item.alt} />
+            </div>
+          </Fade>
+        )
       })}        
     </ContainerDiv>
   );

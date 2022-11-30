@@ -20,7 +20,7 @@ const useIntersectionObserver = (observer: IntersectionObserver) => {
       }
     }, [element]);
 
-    return {setElement}
+    return {element, setElement}
 }
 
 export default useIntersectionObserver;

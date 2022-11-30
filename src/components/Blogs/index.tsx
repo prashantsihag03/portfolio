@@ -1,7 +1,6 @@
 import * as React from "react";
 import StyledComponents from 'styled-components';
 import SectionHeading from "../SectionHeading";
-import LimitedContent from "../LimitedContent";
 import webRTCImg from '../../assets/images/webRTC.png';
 import dynamoDbImg from '../../assets/images/dynamoDBBlog.jpg';
 import facebookImg from '../../assets/images/facebookBlog.png';
@@ -10,6 +9,7 @@ import { debounce } from "lodash";
 import { ArticleOutlined } from "@mui/icons-material";
 import MenuButton from "../MenuButton";
 import useIntersectionObserver from "../App/useIntersectionObserver";
+import Blog from "./Blog";
 
 const BlogSection = StyledComponents.section`
   display: flex;
@@ -24,21 +24,29 @@ const BlogSection = StyledComponents.section`
 
 const Ul = StyledComponents.ul`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.5em;
-  padding-top: 2em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 1em;
 `;
+
+const mediaMaxWidth = 850;
 
 interface Blogs {
   observer: IntersectionObserver
 }
 
 const Blogs: React.FC<Blogs> = ({observer}: Blogs) => {
-  const {setElement} = useIntersectionObserver(observer);
+  const {element, setElement} = useIntersectionObserver(observer);
   const [currentSiteWidth, setCurrentSiteWidth] = React.useState(window.innerWidth);
-  const mediaMaxWidth = 850;
+  const [visible, setVisible] = React.useState<boolean>(false);
+  const [intersectionObserver] = React.useState<IntersectionObserver>(new IntersectionObserver((entries) => {
+    const blogContainerElement = entries.find(entry => entry.target.id === "blogs");
+    if (blogContainerElement && blogContainerElement.isIntersecting && !visible) {
+      setVisible(true);
+    }
+  }, {root: null, rootMargin: '0px', threshold: 1}))
 
   const debouncedHandleResize = React.useCallback(
     // debouncing as not needed to call at every resize which is a lot of calls which also impacts performance.
@@ -56,6 +64,15 @@ const Blogs: React.FC<Blogs> = ({observer}: Blogs) => {
       window.removeEventListener('resize', debouncedHandleResize)
     }
   }, [])
+
+  React.useEffect(() => {
+    if (element) {
+      intersectionObserver.observe(element);
+    }
+    () => {
+      intersectionObserver.disconnect();
+    }
+  }, [element])
   
   const data = [
       {
@@ -87,15 +104,13 @@ const Blogs: React.FC<Blogs> = ({observer}: Blogs) => {
   return (
     <BlogSection id="blogs" ref={(node) => {setElement(node)}}>
       <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />
-      <Ul>
-        {data.map((blog, id) => 
-          <LimitedContent 
-            key={id}
-            mobileVersion={currentSiteWidth < mediaMaxWidth} 
-            {...blog} 
-          /> 
-        )}
-      </Ul>
+      {visible  
+        ? (<Ul>
+          {data.map((blog, index) => 
+            <Blog key={index} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*100}/>
+          )}
+        </Ul>)
+        : null}
       <a href='https://medium.com/@prashant-sihag' target="_blank">
           <MenuButton value='more on Medium' />
       </a>

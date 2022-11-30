@@ -10,12 +10,13 @@ const SectionHeadingDiv = StyledComponents.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid grey;
+  border-top: 1px solid var(--heading);
   margin-bottom: 1vh;
   margin-top: 5vh;
 `;
 
 const H2 = StyledComponents.h2`
+  color: white;
   text-align: left;
   font-size: 2em;
   font-family: "Philosopher", sans-serif;
