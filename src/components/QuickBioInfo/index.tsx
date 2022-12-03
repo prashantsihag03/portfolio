@@ -40,7 +40,7 @@ const Brief = StyledComponents.div`
 
 const QuickAbout = StyledComponents.div`
   color: var(--light);
-  font-size: 1em;
+  font-size: 1.2em;
   font-family: "Roboto Slab";
   letter-spacing: 0.5pt;
   line-height: 1.5em;

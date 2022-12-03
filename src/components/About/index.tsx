@@ -18,7 +18,7 @@ const Content = styledComponents.p`
   color: var(--light);
   width: 100%;
   padding: 0.5em;
-  font-size: 1em;
+  font-size: 1.2em;
   letter-spacing: 0.5pt;
   line-height: 1.5em;
   font-family: "Roboto Slab", serif;
