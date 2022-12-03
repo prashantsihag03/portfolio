@@ -1,4 +1,5 @@
-import { Fade, setRef, Zoom } from '@mui/material';
+import { Fade, Link } from '@mui/material';
+import { Box } from '@mui/system';
 import * as React from 'react';
 import StyledComponents from 'styled-components';
 import useIntersectionObserver from '../App/useIntersectionObserver';
@@ -24,37 +25,30 @@ const Greeting = StyledComponents.div`
 `;
 
 const Name = StyledComponents.h1`
-  font-size: 4em;
+  font-size: clamp(40px, 5vw, 60px);
   font-weight: "bolder";
   font-family: "Roboto Slab";
-
-  @media only screen and (max-width: 800px) {
-    font-size: 3em;
-  }
 `;
 
 const Brief = StyledComponents.div`
   word-wrap: normal;
-  font-size: 2.7em;
+  font-size: clamp(40px, 5vw, 60px);;
   font-family: "Roboto Slab";
   color: grey;
   font-weight: "bolder";
-
-  @media only screen and (max-width: 800px) {
-    font-size: 1.7em;
-  }
 `;
 
 const QuickAbout = StyledComponents.div`
-  color: grey;
-  font-size: 1.2em;
+  color: var(--light);
+  font-size: 1em;
   font-family: "Roboto Slab";
-  letter-spacing: 1pt;
+  letter-spacing: 0.5pt;
   line-height: 1.5em;
   width: 70%;
 
   @media only screen and (max-width: 800px) {
     width: 100%;
+    font-size: 0.9em;
   }
 `;
 
@@ -65,6 +59,12 @@ const Highlight = StyledComponents.span`
 
 const QuickActionContainer = StyledComponents.div`
   margin-top: 2em;
+`;
+
+const QuickAnchor = StyledComponents.a`
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 interface QuickBioInfoProps {
@@ -83,9 +83,9 @@ const QuickBioInfo: React.FC<QuickBioInfoProps> = ({observer}: QuickBioInfoProps
           {/* <Brief> I solve problems on Web.</Brief><br/> */}
           <QuickAbout>I am a software developer specialising in developing and occasionally architecting full stack web applications. Currently, I'm helping <Highlight>Alex Solutions</Highlight> develop exceptional Metadata Management web apps.</QuickAbout>
           <QuickActionContainer>
-            <a href='#blogs'>
-            <MenuButton value='Check out my blogs' />
-            </a>
+            <QuickAnchor href='#blogs'>
+              <MenuButton value='Check out my blogs' />
+            </QuickAnchor>
           </QuickActionContainer>
         </div>
       </Fade>

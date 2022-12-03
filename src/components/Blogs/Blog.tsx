@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Card, CardActions, CardContent, CardMedia, Typography, Zoom } from "@mui/material";
+import React from "react";
+import { Box, Card, CardActions, CardContent, CardMedia, SxProps, Theme, Typography, Zoom } from "@mui/material";
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 interface Blog {
@@ -11,35 +11,49 @@ interface Blog {
   delay: number;
 }
 
+const BoxStyles: SxProps<Theme> = {
+  margin: "1em",
+  boxSizing: "border-box",
+
+  ["@media only screen and (max-width: 600px)"]: {
+    width: "100%",
+  }
+}
+
+const cardStyles: SxProps<Theme> = {
+  position: "relative", 
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  maxWidth: 445, 
+  height: '100%', 
+  backgroundColor: "black", 
+  color: "white", 
+  padding: "2em 1em", 
+  "&:hover": {
+    color: "var(--primary)",
+  },
+  ["@media only screen and (max-width: 1100px)"]: {
+    maxWidth: 600,
+  }
+}
+
+const cardMediaStyles: SxProps<Theme> = {
+  opacity: 0.1, 
+  position: "absolute", 
+  top: "0", 
+  left: "0", 
+  objectFit: "cover", 
+}
+
 const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay}: Blog) => {
-  const [headingColor, setHeadingColor] = useState<string>();
 
   return (
-    <div style={{margin: "1em", boxSizing: "border-box"}}>
+    <Box sx={BoxStyles}>
       <Zoom in style={{transitionDelay: `${delay}ms`}}>
-        <Card sx={{ 
-          position: "relative", 
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          maxWidth: 445, 
-          height: '100%', 
-          backgroundColor: "black", 
-          color: "white", 
-          padding: "2em 1em", 
-          "&:hover": {
-            // backgroundColor: "var(--heading)",
-            color: "var(--primary)",
-          }
-        }}>
+        <Card sx={cardStyles}>
           <CardMedia
-            sx={{
-              opacity: 0.1, 
-              position: "absolute", 
-              top: "0", 
-              left: "0", 
-              objectFit: "cover", 
-            }}
+            sx={cardMediaStyles}
             component="img"
             height="100%"
             width="100%"
@@ -47,10 +61,10 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay}: Blog) =
             alt={alt}
           />
           <CardContent style={{background: "transparent", zIndex: 2}}>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" style={{fontSize: "clamp(1.2rem, 2vw, 1.8rem)"}}>
               {title}
             </Typography>
-            <Typography variant="body2" fontSize={15} style={{color: "grey", letterSpacing: "0.5pt"}}>
+            <Typography variant="body2" fontSize={15} style={{color: "var(--light)", letterSpacing: "0.5pt"}}>
               {content}
             </Typography>
           </CardContent>
@@ -72,7 +86,7 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay}: Blog) =
           </CardActions>
         </Card>
       </Zoom>
-    </div>
+    </Box>
   );
 }
 

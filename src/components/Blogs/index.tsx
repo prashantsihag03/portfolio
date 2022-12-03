@@ -5,7 +5,6 @@ import webRTCImg from '../../assets/images/webRTC.png';
 import dynamoDbImg from '../../assets/images/dynamoDBBlog.jpg';
 import facebookImg from '../../assets/images/facebookBlog.png';
 import scientificMethodImg from '../../assets/images/scientifcMethodForDataAnalysis.png';
-import { debounce } from "lodash";
 import { ArticleOutlined } from "@mui/icons-material";
 import MenuButton from "../MenuButton";
 import useIntersectionObserver from "../App/useIntersectionObserver";
@@ -28,10 +27,8 @@ const Ul = StyledComponents.ul`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
-  padding: 1em;
+  padding: 0.2em;
 `;
-
-const mediaMaxWidth = 850;
 
 interface Blogs {
   observer: IntersectionObserver
@@ -39,7 +36,6 @@ interface Blogs {
 
 const Blogs: React.FC<Blogs> = ({observer}: Blogs) => {
   const {element, setElement} = useIntersectionObserver(observer);
-  const [currentSiteWidth, setCurrentSiteWidth] = React.useState(window.innerWidth);
   const [visible, setVisible] = React.useState<boolean>(false);
   const [intersectionObserver] = React.useState<IntersectionObserver>(new IntersectionObserver((entries) => {
     const blogContainerElement = entries.find(entry => entry.target.id === "blogs");
@@ -47,23 +43,6 @@ const Blogs: React.FC<Blogs> = ({observer}: Blogs) => {
       setVisible(true);
     }
   }, {root: null, rootMargin: '0px', threshold: 1}))
-
-  const debouncedHandleResize = React.useCallback(
-    // debouncing as not needed to call at every resize which is a lot of calls which also impacts performance.
-    debounce(() => {
-      setCurrentSiteWidth(window.innerWidth);  
-    }, 500), 
-    []
-  )    
-    
-  React.useEffect(()=>{
-    window.addEventListener('resize', debouncedHandleResize);
-    // executes on component unMount
-    // deregistering event listener to avoid memory leak on multiple renders
-    return () => {
-      window.removeEventListener('resize', debouncedHandleResize)
-    }
-  }, [])
 
   React.useEffect(() => {
     if (element) {

@@ -42,7 +42,7 @@ const ClosingBlock: React.FC<ClosingBlock> = ({observer}: ClosingBlock) => {
 
   return (
     <ContainerDiv id="about" className="closingBlock" ref={(node) => {setElement(node)}}>
-      <About heading="Something more about me">
+      <About heading="A bit about me">
         {`I have been fascinated by what one can do with computers ever since I
         got first introduced to programming in the year 10 of my school.`}
         <br /> <br />

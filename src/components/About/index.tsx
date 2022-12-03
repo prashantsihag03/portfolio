@@ -15,16 +15,17 @@ const AboutSection = styledComponents.section`
 `;
 
 const Content = styledComponents.p`
-  color: grey;
+  color: var(--light);
   width: 100%;
   padding: 0.5em;
   font-size: 1em;
-  letter-spacing: 1pt;
+  letter-spacing: 0.5pt;
   line-height: 1.5em;
   font-family: "Roboto Slab", serif;
 
   @media only screen and (max-width: 600px) {
     width: 100%;
+    font-size: 0.9em;
   }
 `;
 

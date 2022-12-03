@@ -1,11 +1,20 @@
+import { Box } from "@mui/material";
 import * as React from "react";
 import StyledComponents from "styled-components";
 import QuickIconData from "../../Data/QuickIcons";
 import Blogs from "../Blogs";
 import ClosingBlock from "../ClosingBlock";
-import NavigationMenu from "../NavigationMenu";
 import QuickBioIcons from "../QuickBioIcons";
 import QuickBioInfo from "../QuickBioInfo";
+
+const Main = StyledComponents(Box)`
+  margin-left: 10%;
+  margin-right: 10%;
+  @media only screen and (max-width: 800px) {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+`;
 
 const SocialIcons = StyledComponents.div`
   position: absolute;
@@ -44,11 +53,11 @@ const App: React.FC = () => {
           <QuickBioIcons items={QuickIconData}/>
         </SocialIcons>
       </WebOnly>
-      <main style={{marginLeft: "10%", marginRight: "10%"}}>
+      <Main component="main">
         <QuickBioInfo observer={intersectionObserver}/>
         <Blogs observer={intersectionObserver}/>
         <ClosingBlock observer={intersectionObserver}/>
-      </main>
+      </Main>
     </React.Fragment>
   );
 }
