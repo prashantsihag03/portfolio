@@ -16,6 +16,9 @@ const BoxStyles: SxProps<Theme> = {
   boxSizing: "border-box",
 
   ["@media only screen and (max-width: 600px)"]: {
+    margin: "0%",
+    marginBottom: "1em",
+    marginTop: "1em",
     width: "100%",
   }
 }

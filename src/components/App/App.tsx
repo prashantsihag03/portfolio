@@ -12,8 +12,8 @@ const Main = StyledComponents(Box)`
   margin-left: 10%;
   margin-right: 10%;
   @media only screen and (max-width: 800px) {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `;
 
@@ -51,6 +51,7 @@ const BoxStyles: SxProps<Theme> = {
 
   ["@media only screen and (max-width: 600px)"]: {
     top: "80vh",
+    width: "100%",
   }
 }
 
@@ -61,6 +62,10 @@ const StyledTypograghy = StyledComponents(Typography)`
   flex-direction: row;
   justify-content: center; 
   align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    writing-mode: horizontal-tb;
+  }
 `
 
 const App: React.FC = () => {
