@@ -1,11 +1,23 @@
 import React from "react";
 import App from "./App";
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 describe("<App />", () => {
-    it('does not show scrollTo button when page first loads', () => {
-        const { queryByTestId } = render(<App />);
-        const scrollButton = queryByTestId("scrollToButton");
-        expect(scrollButton).not.toBeInTheDocument();
-    });
+    // beforeEach(() => {
+    //     global.IntersectionObserver = (callback: IntersectionObserverCallback, options?: IntersectionObserverInit | undefined): IntersectionObserver => {
+    //         return {
+    //             disconnect: () => {},
+    //             observe: () => {},
+    //             root: null,
+    //             rootMargin: "",
+    //             thresholds: [],
+    //             takeRecords: () => {return[];},
+    //             unobserve: () => {}
+    //         }
+    //     }
+    // });
+    // it('renders social icons', () => {
+    //     render(<App />);
+    //     expect(screen.findByTestId("social-icons")).toBeInTheDocument();
+    // });
 })

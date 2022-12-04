@@ -6,6 +6,7 @@ module.exports = {
   plugins: ["react"],
   extends: ["eslint:recommended", "plugin:react/recommended"],
   parser: "@babel/eslint-parser",
+  ignorePatterns: ["*.config.js", "__mocks__/*"],
   settings: {
     react: {
       version: "detect",
