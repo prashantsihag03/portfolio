@@ -69,6 +69,7 @@
 
             #root {
                 background-color: black;
+                position: "relative";
                 max-width: 1499px;
                 margin: auto;
             }
@@ -100,6 +101,20 @@
             @-webkit-keyframes spin {
                 to {
                     -webkit-transform: rotate(360deg);
+                }
+            }
+            @keyframes bounce {
+                0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                }
+                50% {
+                -webkit-transform: translateY(15px);
+                transform: translateY(15px);
+                }
+                100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
                 }
             }
         </style>
