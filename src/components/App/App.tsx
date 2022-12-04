@@ -93,7 +93,7 @@ const App: React.FC = () => {
         </SocialIcons>
       </WebOnly>
       <Box component="div" sx={BoxStyles}>
-        <StyledTypograghy>scroll down</StyledTypograghy>
+        {/* <StyledTypograghy>scroll down</StyledTypograghy> */}
         <Scroller fontSize={"medium"}/>
       </Box>
       <Main component="main">
