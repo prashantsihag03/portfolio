@@ -1,6 +1,6 @@
 import * as React from "react";
 import StyledComponents from 'styled-components';
-import truncateText from "../../Utilities/StringUtility";
+import truncateText from "../../../Utilities/StringUtility";
 
 const OverviewDiv = StyledComponents.div`
   font-size: 1em;

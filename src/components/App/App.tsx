@@ -1,12 +1,14 @@
-import { Box, SxProps, Theme, Typography } from "@mui/material";
+import { Box, Link, SxProps, Theme, Typography } from "@mui/material";
 import * as React from "react";
 import StyledComponents from "styled-components";
 import QuickIconData from "../../Data/QuickIcons";
 import Blogs from "../Blogs";
 import ClosingBlock from "../ClosingBlock";
-import QuickBioIcons from "../QuickBioIcons";
+import Socials from "../Socials";
 import QuickBioInfo from "../QuickBioInfo";
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import logoSvg from "../../assets/icons/ps.svg";
+import Icon from "../Icon";
 
 const Main = StyledComponents(Box)`
   margin-left: 10%;
@@ -15,6 +17,31 @@ const Main = StyledComponents(Box)`
     margin-left: 5%;
     margin-right: 5%;
   }
+`;
+
+const LogoContainer = StyledComponents(Link)`
+  border-radius: 50%;
+  border: none;
+  width: 3em;
+  height: 3em;
+  padding: 0.1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s linear;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  &:hover {
+    background-color: var(--lightHover);
+    cursor: pointer;
+  }
+`;
+
+const Img = StyledComponents.img`
+  width: 100%;
 `;
 
 const SocialIcons = StyledComponents.div`
@@ -64,9 +91,9 @@ const StyledTypograghy = StyledComponents(Typography)`
   align-items: center;
 
   @media only screen and (max-width: 600px) {
-    writing-mode: horizontal-tb;
+    display: none;
   }
-`
+`;
 
 const App: React.FC = () => {
   const [active, setActive] = React.useState<string>("intro");
@@ -84,16 +111,16 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-      {/* <WebOnly>
-        <NavigationMenu active={active} items={['intro', 'blogs', 'about']}/>
-      </WebOnly> */}
+      <LogoContainer href="/">
+        <Img src={logoSvg} />
+      </LogoContainer>
       <WebOnly>
         <SocialIcons data-testid="social-icons">
-          <QuickBioIcons items={QuickIconData}/>
+          <Socials items={QuickIconData}/>
         </SocialIcons>
       </WebOnly>
       <Box component="div" sx={BoxStyles}>
-        {/* <StyledTypograghy>scroll down</StyledTypograghy> */}
+        <StyledTypograghy>scroll down</StyledTypograghy>
         <Scroller fontSize={"medium"}/>
       </Box>
       <Main component="main">

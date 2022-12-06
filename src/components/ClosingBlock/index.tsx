@@ -4,7 +4,7 @@ import QuickIconData from "../../Data/QuickIcons";
 import About from "../About";
 import useIntersectionObserver from "../App/useIntersectionObserver";
 import Footer from "../Footer";
-import QuickBioIcons from "../QuickBioIcons";
+import Socials from "../Socials";
 
 const ContainerDiv = StyledComponents.div`
   display: flex;
@@ -62,7 +62,7 @@ const ClosingBlock: React.FC<ClosingBlock> = ({observer}: ClosingBlock) => {
       <MobileOnly>
         <SocialIcons>
           <SocialIconsContainer>
-            <QuickBioIcons items={QuickIconData}/>
+            <Socials items={QuickIconData}/>
           </SocialIconsContainer>
         </SocialIcons>
       </MobileOnly>

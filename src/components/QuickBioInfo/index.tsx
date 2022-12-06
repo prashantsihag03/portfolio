@@ -29,7 +29,7 @@ const Name = StyledComponents.h1`
   font-weight: "bolder";
   font-family: "Roboto Slab";
 `;
-
+ 
 const Brief = StyledComponents.div`
   word-wrap: normal;
   font-size: clamp(40px, 5vw, 60px);;

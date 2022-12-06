@@ -1,7 +1,7 @@
 import * as React from "react";
 import StyledComponents from "styled-components";
 import QuickIconData from "../../Data/QuickIcons";
-import QuickBioIcons from "../QuickBioIcons";
+import QuickBioIcons from "../Socials";
 import QuickBioInfo from "../QuickBioInfo";
 
 const HeaderContainer = StyledComponents.header`

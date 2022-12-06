@@ -1,4 +1,4 @@
-import { Fade, Zoom } from "@mui/material";
+import { Fade } from "@mui/material";
 import * as React from "react";
 import StyledComponents from 'styled-components';
 import Icon from "../Icon";
@@ -13,11 +13,11 @@ const ContainerDiv = StyledComponents.div`
   width: auto;
 `;
 
-interface QuickBioIconsProps {
+interface SocialsProps {
   items: IconProp[]
 }
 
-const QuickBioIcons: React.FC<QuickBioIconsProps> = (props) => {
+const Socials: React.FC<SocialsProps> = (props) => {
   return (    
     <ContainerDiv>
       {props.items.map((item, id) => {
@@ -33,4 +33,4 @@ const QuickBioIcons: React.FC<QuickBioIconsProps> = (props) => {
   );
 }
 
-export default QuickBioIcons;
+export default Socials;

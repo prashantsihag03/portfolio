@@ -9,6 +9,7 @@ const Li = StyledComponents.li`
   justify-content: end;
   align-items: center;
   width: 3em;
+  height: 3em;
 `;
 
 const Img = StyledComponents.img`
