@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
@@ -60,6 +61,14 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html",
       favicon: "./public/favicon.ico",
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public/font/",
+          to: "font",
+        },
+      ],
     }),
   ],
 };

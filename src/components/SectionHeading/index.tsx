@@ -19,7 +19,8 @@ const H2 = StyledComponents.h2`
   color: white;
   text-align: left;
   font-size: 2em;
-  font-family: "Philosopher", sans-serif;
+  font-family: "Roboto Slab", serif;
+  font-weight: normal;
   letter-spacing: 1pt;
   width: 100%;
 `;

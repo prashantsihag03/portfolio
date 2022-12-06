@@ -9,7 +9,6 @@ const StyledFooter = StyledComponents.footer`
   padding: 0.1em;
   color: white;
   font-size: 1em;
-  font-weight: bold;
   letter-spacing: 0.2em;
   padding-bottom: 1.5em;
   margin-top: 5vh;
