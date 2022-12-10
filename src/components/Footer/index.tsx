@@ -1,22 +1,27 @@
+import { SxProps, Typography } from "@mui/material";
+import { Theme } from "@mui/system";
 import * as React from "react";
-import StyledComponents from "styled-components";
 
-const StyledFooter = StyledComponents.footer`
-  display: block;
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  padding: 0.1em;
-  color: white;
-  font-size: 1em;
-  letter-spacing: 0.2em;
-  padding-bottom: 1.5em;
-  margin-top: 5vh;
-  border-top: 1px solid white;
-`;
+const typographyStyles: SxProps<Theme> = {
+  display: "block",
+  width: "100%",
+  margin: "auto",
+  textAlign: "center",
+  padding: "0.1em",
+  color: "white",
+  fontSize: "1em",
+  letterSpacing: "0.2em",
+  paddingBottom: "1.5em",
+  marginTop: "5vh",
+  borderTop: "1px solid white",
+}
 
-const Footer: React.FC<{content: string}> = (props) => {
-  return <StyledFooter> {props.content} </StyledFooter>;
+const Footer: React.FC = () => {
+  return (
+    <Typography component="p" sx={typographyStyles}>
+      © 2022 Prashant Sihag. All rights reserved.
+    </Typography>
+  );
 };
 
 export default Footer;

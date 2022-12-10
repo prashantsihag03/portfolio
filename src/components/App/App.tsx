@@ -8,7 +8,7 @@ import Socials from "../Socials";
 import QuickBioInfo from "../QuickBioInfo";
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import logoSvg from "../../assets/icons/ps.svg";
-import Icon from "../Icon";
+import Footer from "../Footer";
 
 const Main = StyledComponents(Box)`
   margin-left: 10%;
@@ -96,19 +96,6 @@ const StyledTypograghy = StyledComponents(Typography)`
 `;
 
 const App: React.FC = () => {
-  const [active, setActive] = React.useState<string>("intro");
-  const [intersectionObserver] = React.useState<IntersectionObserver>(
-    new IntersectionObserver((entries)=>{ 
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
-      })
-    }, {
-      threshold: 0.2
-    })
-  );
-
   return (
     <React.Fragment>
       <LogoContainer href="/">
@@ -124,10 +111,11 @@ const App: React.FC = () => {
         <Scroller fontSize={"medium"}/>
       </Box>
       <Main component="main">
-        <QuickBioInfo observer={intersectionObserver}/>
-        <Blogs observer={intersectionObserver}/>
-        <ClosingBlock observer={intersectionObserver}/>
+        <QuickBioInfo />
+        <Blogs />
+        <ClosingBlock />
       </Main>
+      <Footer />
     </React.Fragment>
   );
 }

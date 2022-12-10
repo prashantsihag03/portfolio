@@ -1,8 +1,6 @@
-import { Fade, Link } from '@mui/material';
-import { Box } from '@mui/system';
+import { Fade } from '@mui/material';
 import * as React from 'react';
 import StyledComponents from 'styled-components';
-import useIntersectionObserver from '../App/useIntersectionObserver';
 import MenuButton from '../MenuButton';
 
 const ContainerDiv = StyledComponents.div`
@@ -67,15 +65,9 @@ const QuickAnchor = StyledComponents.a`
   }
 `;
 
-interface QuickBioInfoProps {
-  observer: IntersectionObserver;
-}
-
-const QuickBioInfo: React.FC<QuickBioInfoProps> = ({observer}: QuickBioInfoProps) => {
-  const {setElement} = useIntersectionObserver(observer);
-
+const QuickBioInfo: React.FC = () => {
   return (
-    <ContainerDiv ref={(node) => {setElement(node)}} className="quick-bio-info" id='intro'>
+    <ContainerDiv className="quick-bio-info" id='intro'>
       <Fade in={true} style={{transitionDelay: "300ms"}}>
         <div>
           <Greeting>Hi, I am</Greeting>
