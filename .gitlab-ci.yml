@@ -1,6 +1,5 @@
 stages:
   - lint
-  - test
   - dependency scan
   - build
   - staging
@@ -20,15 +19,6 @@ Lint:
     default: true
   script:
     - npm run lint
-
-Unit & Int Tests:
-  inherit:
-    default: true
-  stage: test
-  needs: []
-  script:
-    - npm install
-    - npm test
 
 Dependency Scan:
   stage: dependency scan
