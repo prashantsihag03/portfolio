@@ -67,7 +67,7 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay}: Blog) =
               <Typography gutterBottom variant="h5" component="div" style={{fontSize: "clamp(1.2rem, 2vw, 1.5rem)"}}>
                 {title}
               </Typography>
-              <Typography variant="body2" style={{color: "var(--light)", fontSize: "1.1rem"}}>
+              <Typography variant="body2" style={{color: "var(--light)", fontSize: "1rem"}}>
                 {content}
               </Typography>
             </CardContent>
