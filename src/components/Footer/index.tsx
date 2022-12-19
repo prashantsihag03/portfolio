@@ -13,7 +13,7 @@ const typographyStyles: SxProps<Theme> = {
   letterSpacing: "0.5pt",
   paddingBottom: "1.5em",
   marginTop: "5vh",
-  borderTop: "1px solid white",
+  borderTop: "1px solid var(--heading)",
 }
 
 const Footer: React.FC = () => {
