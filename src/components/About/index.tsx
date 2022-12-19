@@ -19,7 +19,7 @@ const contentStyles: SxProps<Theme> = {
   color: "var(--light)",
   width: "100%",
   padding: "0.5em",
-  fontSize: "1.2em",
+  fontSize: "1rem",
   letterSpacing: "0.5pt",
   lineHeight: "1.5em",
   fontFamily: "'Roboto Slab', serif",

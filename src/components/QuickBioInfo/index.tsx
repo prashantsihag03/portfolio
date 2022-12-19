@@ -24,8 +24,6 @@ const Greeting = StyledComponents.div`
 
 const Name = StyledComponents.h1`
   font-size: clamp(40px, 5vw, 60px);
-  font-weight: "bolder";
-  font-family: "Roboto Slab";
 `;
  
 const Brief = StyledComponents.div`
@@ -38,15 +36,15 @@ const Brief = StyledComponents.div`
 
 const QuickAbout = StyledComponents.div`
   color: var(--light);
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-family: "Roboto Slab";
   letter-spacing: 0.5pt;
   line-height: 1.5em;
   width: 70%;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
-    font-size: 0.9em;
+    font-size: 1rem;
   }
 `;
 

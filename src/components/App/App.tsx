@@ -1,4 +1,4 @@
-import { Box, Link, SxProps, Theme, Typography } from "@mui/material";
+import { Box, createTheme, SxProps, Theme, ThemeProvider } from "@mui/material";
 import * as React from "react";
 import StyledComponents from "styled-components";
 import QuickIconData from "../../Data/QuickIcons";
@@ -7,8 +7,8 @@ import ClosingBlock from "../ClosingBlock";
 import Socials from "../Socials";
 import QuickBioInfo from "../QuickBioInfo";
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-import logoSvg from "../../assets/icons/ps.svg";
 import Footer from "../Footer";
+import Logo from "../Logo";
 
 const Main = StyledComponents(Box)`
   margin-left: 10%;
@@ -17,31 +17,6 @@ const Main = StyledComponents(Box)`
     margin-left: 5%;
     margin-right: 5%;
   }
-`;
-
-const LogoContainer = StyledComponents(Link)`
-  border-radius: 50%;
-  border: none;
-  width: 3em;
-  height: 3em;
-  padding: 0.1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s linear;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-
-  &:hover {
-    background-color: var(--lightHover);
-    cursor: pointer;
-  }
-`;
-
-const Img = StyledComponents.img`
-  width: 100%;
 `;
 
 const SocialIcons = StyledComponents.div`
@@ -82,39 +57,38 @@ const BoxStyles: SxProps<Theme> = {
   }
 }
 
-const StyledTypograghy = StyledComponents(Typography)`
-  writing-mode: vertical-lr;
-  letter-spacing: 0.5pt; 
-  display: flex;
-  flex-direction: row;
-  justify-content: center; 
-  align-items: center;
-
-  @media only screen and (max-width: 600px) {
-    display: none;
-  }
-`;
+const mytheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#8dafff',
+    },
+    secondary: {
+      main: '#8dafff'
+    },
+  },
+});
 
 const App: React.FC = () => {
   return (
     <React.Fragment>
-      <LogoContainer href="/">
-        <Img src={logoSvg} />
-      </LogoContainer>
-      <WebOnly>
-        <SocialIcons data-testid="social-icons">
-          <Socials items={QuickIconData}/>
-        </SocialIcons>
-      </WebOnly>
-      <Box component="div" sx={BoxStyles}>
-        <Scroller fontSize={"medium"}/>
-      </Box>
-      <Main component="main">
-        <QuickBioInfo />
-        <Blogs />
-        <ClosingBlock />
-      </Main>
-      <Footer />
+      <ThemeProvider theme={mytheme}>
+        <Logo />
+        <WebOnly>
+          <SocialIcons data-testid="social-icons">
+            <Socials items={QuickIconData}/>
+          </SocialIcons>
+        </WebOnly>
+        <Box component="div" sx={BoxStyles}>
+          <Scroller fontSize={"medium"}/>
+        </Box>
+        <Main component="main">
+          <QuickBioInfo />
+          <Blogs />
+          <ClosingBlock />
+        </Main>
+        <Footer />
+      </ThemeProvider>
     </React.Fragment>
   );
 }

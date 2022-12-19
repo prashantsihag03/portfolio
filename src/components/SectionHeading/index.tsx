@@ -18,7 +18,7 @@ const SectionHeadingDiv = StyledComponents.div`
 const H2 = StyledComponents.h2`
   color: white;
   text-align: left;
-  font-size: 2em;
+  font-size: 1.8rem;
   font-family: "Roboto Slab", serif;
   font-weight: normal;
   letter-spacing: 1pt;
