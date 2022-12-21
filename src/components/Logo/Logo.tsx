@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logoSvg from "../../assets/icons/ps.svg";
-import StyledComponents from "styled-components";
 import { Link, Slide, SxProps } from "@mui/material";
 import { Theme } from "@mui/system";
-
-const Img = StyledComponents.img`
-  width: 100%;
-`;
 
 const linkStyles: SxProps<Theme> = {
   position: 'absolute',
@@ -46,7 +41,7 @@ const Logo: React.FC<LogoProps> = ({delayInMs}: LogoProps) => {
     return (
       <Slide in={show} direction="right">
         <Link sx={linkStyles} href="/">
-          <Img src={logoSvg} />
+          <img style={{width: "100%"}} src={logoSvg} />
         </Link>
       </Slide>
     );

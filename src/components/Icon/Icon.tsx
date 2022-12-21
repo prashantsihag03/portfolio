@@ -1,33 +1,32 @@
+import { Box, Link, SxProps } from "@mui/material";
+import { Theme } from "@mui/system";
 import * as React from "react";
-import StyledComponents from 'styled-components';
 import IconProp from "./type";
 
-const Li = StyledComponents.li`
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  width: 3em;
-  height: 3em;
-`;
+const listStyle: SxProps<Theme> = {
+  listStyle: "none",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "end",
+  alignItems: "center",
+  width: "3em",
+  height: "3em",
+};
 
-const Img = StyledComponents.img`
-  width: 80%;
-  border: 4px solid transparent;
-  border-radius: 50%;
-  transition: all 0.5s linear;
-`;
-
-const A = StyledComponents.a``;
+const imgStyle: SxProps<Theme> = {
+  width: "80%",
+  border: "4px solid transparent",
+  borderRadius: "50%",
+  transition: "all 0.5s linear",
+};
 
 const Icon: React.FC<IconProp> = ({ href, title, src, alt}: IconProp) => {
   return (
-    <A href={href} target="_blank" title={title} rel="noopener noreferrer nofollow">
-      <Li>
-        <Img src={src} alt={alt} />
-      </Li>
-    </A>
+    <Link href={href} target="_blank" title={title} rel="noopener noreferrer nofollow">
+      <Box component={"li"} sx={listStyle}>
+        <Box component={"img"} sx={imgStyle} src={src} alt={alt} />
+      </Box>
+    </Link>
   )
 }
 

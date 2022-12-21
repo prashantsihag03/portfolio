@@ -25,7 +25,6 @@ const Blogs: React.FC = () => {
     }
   }, [element])
   
-
   return (
     <BlogSection id="blogs" ref={(node) => {setElement(node)}}>
       <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />

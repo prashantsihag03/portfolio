@@ -1,6 +1,5 @@
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, createTheme, SxProps, ThemeProvider } from "@mui/material";
 import * as React from "react";
-import StyledComponents from "styled-components";
 import Blogs from "../Blogs";
 import ClosingBlock from "../ClosingBlock";
 import QuickBioInfo from "../QuickBioInfo";
@@ -8,15 +7,16 @@ import Footer from "../Footer";
 import Logo from "../Logo";
 import WebSocialIcons from "../WebSocialIcons";
 import ScrollerGuide from "../ScrollGuide";
+import { Theme } from "@mui/system";
 
-const Main = StyledComponents(Box)`
-  margin-left: 10%;
-  margin-right: 10%;
-  @media only screen and (max-width: 800px) {
-    margin-left: 5%;
-    margin-right: 5%;
+const mainStyles: SxProps<Theme> = {
+  marginLeft: "10%",
+  marginRight: "10%",
+  ["@media only screen and (max-width: 800px)"]: {
+    marginLeft: "5%",
+    marginRight: "5%",
   }
-`;
+};
 
 // const mytheme = createTheme({
 //   palette: {
@@ -37,11 +37,11 @@ const App: React.FC = () => {
         <Logo delayInMs={500}/>
         <WebSocialIcons />
         <ScrollerGuide />
-        <Main component="main">
+        <Box component="main" sx={mainStyles}>
           <QuickBioInfo />
           <Blogs />
           <ClosingBlock />
-        </Main>
+        </Box>
         <Footer />
       {/* </ThemeProvider> */}
     </React.Fragment>
