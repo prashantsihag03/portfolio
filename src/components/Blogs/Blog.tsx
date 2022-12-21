@@ -8,6 +8,7 @@ interface Blog {
   content: string;
   link: string;
   delay: number;
+  visible: boolean;
 }
 
 const BoxStyles: SxProps<Theme> = {
@@ -29,8 +30,8 @@ const cardStyles: SxProps<Theme> = {
   justifyContent: "center",
   maxWidth: 500, 
   height: '100%', 
-  backgroundColor: "black", 
-  color: "white", 
+  backgroundColor: "var(--background)", 
+  color: "var(--color)", 
   padding: "2em 1em", 
   "&:hover": {
     color: "primary.main",
@@ -48,11 +49,11 @@ const cardMediaStyles: SxProps<Theme> = {
   objectFit: "cover", 
 }
 
-const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay}: Blog) => {
+const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay, visible}: Blog) => {
 
   return (
-    <Box sx={BoxStyles}>
-      <Zoom in style={{transitionDelay: `${delay}ms`}}>
+    <Zoom in={visible} appear timeout={delay} easing={"ease-in-out"}>
+      <Box sx={BoxStyles}>
         <Link href={link} target="_blank" rel="noreferrer noopener nofollow" title="Click to read more" style={{textDecoration: 'none'}}>
           <Card sx={cardStyles}>
             <CardMedia
@@ -67,14 +68,14 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay}: Blog) =
               <Typography gutterBottom variant="h5" component="div" style={{fontSize: "clamp(1.2rem, 2vw, 1.5rem)"}}>
                 {title}
               </Typography>
-              <Typography variant="body2" style={{color: "var(--light)", fontSize: "1rem"}}>
+              <Typography variant="body2" style={{color: "var(--text)", fontSize: "1rem"}}>
                 {content}
               </Typography>
             </CardContent>
           </Card>
         </Link>
-      </Zoom>
-    </Box>
+      </Box>
+    </Zoom>
   );
 }
 

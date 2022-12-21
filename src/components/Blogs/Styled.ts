@@ -5,10 +5,10 @@ export const BlogSection = StyledComponents.section`
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  color: white;
+  color: var(--color);
   width: 100%;
   margin: auto;
-  font-family: "Roboto Slab", serif;  
+  font-family: var(--fontFamily), serif;  
 `;
 
 export const Ul = StyledComponents.ul`

@@ -8,16 +8,16 @@ const ContainerDiv = StyledComponents.div`
   width: 100%;
   height: 100vh;
   flex-direction: row;
-  font-family: "Roboto Slab";
+  font-family: var(--fontFamily);
   justify-content: left;
   align-items: center;
-  color: white;
+  color: var(--color);
   text-align: left;
 `;
 
 const Greeting = StyledComponents.div`
   color: var(--primary);
-  font-family: "Roboto Slab";
+  font-family: var(--fontFamily);
   font-size: 1.2em;
   letter-spacing: 1pt;
 `;
@@ -29,15 +29,15 @@ const Name = StyledComponents.h1`
 const Brief = StyledComponents.div`
   word-wrap: normal;
   font-size: clamp(40px, 5vw, 60px);;
-  font-family: "Roboto Slab";
+  font-family: var(--fontFamily);
   color: grey;
   font-weight: "bolder";
 `;
 
 const QuickAbout = StyledComponents.div`
-  color: var(--light);
+  color: var(--text);
   font-size: 1.2rem;
-  font-family: "Roboto Slab";
+  font-family: var(--fontFamily);
   letter-spacing: 0.5pt;
   line-height: 1.5em;
   width: 70%;

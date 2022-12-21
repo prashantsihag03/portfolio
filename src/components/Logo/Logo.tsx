@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logoSvg from "../../assets/icons/ps.svg";
 import StyledComponents from "styled-components";
-import { Link, SxProps } from "@mui/material";
+import { Link, Slide, SxProps } from "@mui/material";
 import { Theme } from "@mui/system";
 
 const Img = StyledComponents.img`
@@ -11,12 +11,14 @@ const Img = StyledComponents.img`
 const linkStyles: SxProps<Theme> = {
   position: 'absolute',
   top: '20px',
-  left: '20px',
+  left: '0px',
   border: 'none',
-  borderRadius: '50%',
-  width: '3rem',
+  borderRadius: '0em 0.5em 0.5em 0em',
+  backgroundColor: 'var(--logoBg)',
+  width: '5rem',
   height: '3rem',
-  padding: '0.1rem',
+  padding: '0.3rem',
+  paddingLeft: '20px',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
@@ -24,16 +26,29 @@ const linkStyles: SxProps<Theme> = {
   transition: 'all 0.5s linear',
 
   "&:hover": {
-    backgroundColor: 'primary.main',
+    backgroundColor: 'var(--lightHover)',
     cursor: 'pointer',
   },
 }
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  delayInMs: number
+}
+
+const Logo: React.FC<LogoProps> = ({delayInMs}: LogoProps) => {
+  const [show, setShow] = useState<boolean>(false);
+  useEffect(() => {
+    setTimeout(()=>{
+      setShow(true);
+    }, delayInMs);
+  }, []);
+  
     return (
-      <Link sx={linkStyles} href="/">
-        <Img src={logoSvg} />
-      </Link>
+      <Slide in={show} direction="right">
+        <Link sx={linkStyles} href="/">
+          <Img src={logoSvg} />
+        </Link>
+      </Slide>
     );
 }
 

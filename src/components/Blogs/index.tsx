@@ -14,7 +14,7 @@ const Blogs: React.FC = () => {
     if (blogContainerElement && blogContainerElement.isIntersecting && !visible) {
       setVisible(true);
     }
-  }, {root: null, rootMargin: '0px', threshold: 1}))
+  }, {root: null, rootMargin: '0px', threshold: 0.3}))
 
   React.useEffect(() => {
     if (element) {
@@ -29,16 +29,14 @@ const Blogs: React.FC = () => {
   return (
     <BlogSection id="blogs" ref={(node) => {setElement(node)}}>
       <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />
-      {visible  
-        ? (<Ul>
-          {BlogItems.map((blog, index) => 
-            <Blog key={index} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*50}/>
-          )}
-        </Ul>)
-        : null}
+      <Ul>
+        {BlogItems.map((blog, index) => 
+          <Blog key={index} visible={visible} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*50}/>
+        )}
+      </Ul>
       <a href='https://medium.com/@prashant-sihag' target="_blank">
           <MenuButton value='more on Medium' />
-      </a>
+      </a>  
     </BlogSection>
   )
 }

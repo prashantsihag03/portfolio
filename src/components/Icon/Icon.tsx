@@ -14,7 +14,7 @@ const Li = StyledComponents.li`
 
 const Img = StyledComponents.img`
   width: 80%;
-  border: 4px solid black;
+  border: 4px solid transparent;
   border-radius: 50%;
   transition: all 0.5s linear;
 `;

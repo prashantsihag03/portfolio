@@ -15,6 +15,10 @@
                 src: url('font/RobotoSlab-Light.ttf');
             }
             @font-face {
+                font-family: 'Roboto Slab Regular';
+                src: url('font/RobotoSlab-Regular.ttf');
+            }
+            @font-face {
                 font-family: 'Roboto Slab Bold';
                 src: url('font/RobotoSlab-Bold.ttf');
             }
@@ -25,12 +29,26 @@
                 letter-spacing: 0.5pt;
             }
             :root {
+                --color: white;
+                --fontFamily: 'Roboto Slab';
                 --background: black;
                 --primary: #8dafff;
                 --secondary: #8dafff;
                 --heading: #141d35;
-                --light: #a5a5a5;
+                --text: #a5a5a5;
+                --logoBg: black;
                 --lightHover: rgba(128, 128, 128, 0.2);
+            }
+
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --color: black;
+                    --fontFamily: 'Roboto Slab Regular';
+                    --background: white;
+                    --primary: #2b6bff;
+                    --heading: #7298ff;
+                    --text: #1a1a1a;
+                }
             }
 
             html {

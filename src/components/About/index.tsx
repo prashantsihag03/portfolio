@@ -16,13 +16,13 @@ const containerStyles: SxProps<Theme> = {
 }
 
 const contentStyles: SxProps<Theme> = {
-  color: "var(--light)",
+  color: "var(--text)",
   width: "100%",
   padding: "0.5em",
   fontSize: "1rem",
   letterSpacing: "0.5pt",
   lineHeight: "1.5em",
-  fontFamily: "'Roboto Slab', serif",
+  fontFamily: "var(--fontFamily), serif",
 
   ["@media only screen and (max-width: 600px)"]: {
     width: "100%",

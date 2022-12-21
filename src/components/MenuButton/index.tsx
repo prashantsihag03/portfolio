@@ -4,7 +4,7 @@ import StyledComponents from "styled-components";
 const DefaultButtonStyled = StyledComponents.button`
   padding: 0.8em 1em;
   font-size: 1.1rem;
-  font-family: "Roboto Slab", serif;
+  font-family: var(--fontFamily), serif;
   letter-spacing: 1pt;
   border: 1px solid var(--primary);
   border-radius: 0.2em;

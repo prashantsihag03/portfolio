@@ -6,7 +6,7 @@ import StyledComponents from "styled-components";
 const SectionHeadingDiv = StyledComponents.div`
   display: flex;
   width: 100%;
-  color: white;
+  color: var(--color);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -16,10 +16,10 @@ const SectionHeadingDiv = StyledComponents.div`
 `;
 
 const H2 = StyledComponents.h2`
-  color: white;
+  color: var(--color);
   text-align: left;
   font-size: 1.8rem;
-  font-family: "Roboto Slab", serif;
+  font-family: var(--fontFamily), serif;
   font-weight: normal;
   letter-spacing: 1pt;
   width: 100%;

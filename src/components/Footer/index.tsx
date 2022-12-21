@@ -8,7 +8,7 @@ const typographyStyles: SxProps<Theme> = {
   margin: "auto",
   textAlign: "center",
   padding: "0.1em",
-  color: "white",
+  color: "var(--color)",
   fontSize: "1rem",
   letterSpacing: "0.5pt",
   paddingBottom: "1.5em",
