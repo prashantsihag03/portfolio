@@ -41,16 +41,16 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
       },
       subtitle1: {
         color: mode === "light" ? '#1a1a1a' : '#a5a5a5',
-        fontSize: "1.1rem",
+        fontSize: "1.2rem",
         ["@media only screen and (max-width: 1000px)"]: {
-          fontSize: "1rem",
+          fontSize: "1.1rem",
         }
       },
       subtitle2:{  
         color: mode === "light" ? '#2b6bff' : '#8dafff',
-        fontSize: "1.1rem",
+        fontSize: "1.2rem",
         ["@media only screen and (max-width: 1000px)"]: {
-          fontSize: "1rem",
+          fontSize: "1.1rem",
         }
       },
       body1: {
@@ -58,9 +58,9 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         fontSize: "1rem",
       },
       body2: {
-        fontSize: "clamp(40px, 5vw, 60px)", 
+        fontSize: "clamp(50px, 5vw, 60px)", 
         fontWeight: 900,
-        fontFamily: '"Roboto Slab Bold","Helvetica", -apple-system, system-ui, serif', 
+        fontFamily: '"Roboto Slab Bold", -apple-system, system-ui, serif', 
       }
     },
     components: {
