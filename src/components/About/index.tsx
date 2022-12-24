@@ -16,17 +16,11 @@ const containerStyles: SxProps<Theme> = {
 }
 
 const contentStyles: SxProps<Theme> = {
-  color: "var(--text)",
   width: "100%",
   padding: "0.5em",
-  fontSize: "1rem",
-  letterSpacing: "0.5pt",
-  lineHeight: "1.5em",
-  fontFamily: "var(--fontFamily), serif",
 
   ["@media only screen and (max-width: 600px)"]: {
     width: "100%",
-    fontSize: "0.9em",
   }
 }
 
@@ -34,7 +28,7 @@ const About = () => {
   return (
     <Box component="div" sx={containerStyles} id="about">
       <SectionHeading heading="A bit about me" iconComponent={PersonOutlined} />
-      <Typography sx={contentStyles}>
+      <Typography variant="body1" sx={contentStyles}>
         I have been fascinated by what one can do with computers ever since I
         got first introduced to programming in the year 10 of my school.
         <br /> <br />

@@ -22,7 +22,7 @@ const BoxStyles: SxProps<Theme> = {
   alignItems: "center",
   right: "1%",
   top: "90vh",
-  color: "var(--color)",
+  color: "primary.main",
 
   ["@media only screen and (max-width: 600px)"]: {
     top: "80vh",

@@ -9,7 +9,7 @@ const linkStyles: SxProps<Theme> = {
   left: '0px',
   border: 'none',
   borderRadius: '0em 0.5em 0.5em 0em',
-  backgroundColor: 'var(--logoBg)',
+  backgroundColor: 'primary.dark',
   width: '5rem',
   height: '3rem',
   padding: '0.3rem',
@@ -21,7 +21,7 @@ const linkStyles: SxProps<Theme> = {
   transition: 'all 0.5s linear',
 
   "&:hover": {
-    backgroundColor: 'var(--lightHover)',
+    backgroundColor: 'action.hover',
     cursor: 'pointer',
   },
 }

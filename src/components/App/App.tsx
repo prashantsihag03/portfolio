@@ -1,4 +1,4 @@
-import { Box, createTheme, SxProps, ThemeProvider } from "@mui/material";
+import { Box, SxProps, ThemeProvider } from "@mui/material";
 import * as React from "react";
 import Blogs from "../Blogs";
 import ClosingBlock from "../ClosingBlock";
@@ -8,6 +8,7 @@ import Logo from "../Logo";
 import WebSocialIcons from "../WebSocialIcons";
 import ScrollerGuide from "../ScrollGuide";
 import { Theme } from "@mui/system";
+import useDisplayMode from "./useDisplayMode";
 
 const mainStyles: SxProps<Theme> = {
   marginLeft: "10%",
@@ -18,33 +19,29 @@ const mainStyles: SxProps<Theme> = {
   }
 };
 
-// const mytheme = createTheme({
-//   palette: {
-//     mode: 'light',
-//     primary: {
-//       main: '#8dafff',
-//     },
-//     secondary: {
-//       main: '#8dafff'
-//     },
-//   },
-// });
-
 const App: React.FC = () => {
+  const { theme, displayMode, toggleDisplayMode } = useDisplayMode();
   return (
-    <React.Fragment>
-      {/* <ThemeProvider theme={mytheme}> */}
+    <ThemeProvider theme={theme}>
+      <Box id="content" sx={{
+        position: "relative",
+        width: '100%',
+        margin: "auto",
+        backgroundColor: 'background.default',
+      }}>
         <Logo delayInMs={500}/>
-        <WebSocialIcons />
+        <WebSocialIcons darkMode={displayMode==="dark"} onClick={toggleDisplayMode}/>
         <ScrollerGuide />
-        <Box component="main" sx={mainStyles}>
-          <QuickBioInfo />
-          <Blogs />
-          <ClosingBlock />
+        <Box sx={{maxWidth: "1499px", margin: 'auto'}}>
+          <Box component="main" sx={mainStyles}>
+            <QuickBioInfo />
+            <Blogs />
+            <ClosingBlock />
+          </Box>
         </Box>
         <Footer />
-      {/* </ThemeProvider> */}
-    </React.Fragment>
+      </Box>
+    </ThemeProvider>
   );
 }
 

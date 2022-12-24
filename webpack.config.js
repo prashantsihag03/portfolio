@@ -5,7 +5,12 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   mode: "development",
+  cache: false,
   entry: "./src/index.tsx",
+  watchOptions: {
+    ignored: /node_modules/,
+    aggregateTimeout: 100,
+  },
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js",

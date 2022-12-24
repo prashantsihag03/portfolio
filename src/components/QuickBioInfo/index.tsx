@@ -1,4 +1,4 @@
-import { Box, Fade, Link, Typography } from '@mui/material';
+import { Box, Fade, Typography } from '@mui/material';
 import { SxProps, Theme } from '@mui/system';
 import * as React from 'react';
 import MenuButton from '../MenuButton';
@@ -8,10 +8,8 @@ const containerStyles: SxProps<Theme> = {
   width: "100%",
   height: "100vh",
   flexDirection: "row",
-  fontFamily: "var(--fontFamily)",
   justifyContent: "left",
   alignItems: "center",
-  color: "var(--color)",
   textAlign: "left",
 };
 
@@ -25,18 +23,13 @@ const subContainerStyles: SxProps<Theme> = {
 };
 
 const greetingStyles: SxProps<Theme> = {
-  color: "var(--primary)",
-  fontFamily: "var(--fontFamily)",
+  color: "secondary.main",
   fontSize: "1.2rem",
-  letterSpacing: "1pt",
 };
  
 const quickAboutStyles: SxProps<Theme> = {
-  color: "var(--text)",
+  color: "text.secondary",
   fontSize: "1.2rem",
-  fontFamily: "var(--fontFamily)",
-  lineHeight: "1.5em",
-  letterSpacing: "0.5pt",
 
   ["@media only screen and (max-width: 1000px)"]: {
     fontSize: "1rem",
@@ -44,11 +37,9 @@ const quickAboutStyles: SxProps<Theme> = {
 };
 
 const highlight: SxProps<Theme> = {
-  color: "var(--primary)",
+  color: "secondary.main",
   whiteSpace: "nowrap",
-  fontFamily: "var(--fontFamily)",
   fontSize: "1.2rem",
-  lineHeight: "1.5em",
 
   ["@media only screen and (max-width: 1000px)"]: {
     fontSize: "1rem",
@@ -58,26 +49,24 @@ const highlight: SxProps<Theme> = {
 const QuickBioInfo: React.FC = () => {
   return (
     <Fade in={true} appear timeout={300}>
-      <Box component="div" sx={containerStyles} className="quick-bio-info" id='intro'>
-        <Box component="div" sx={subContainerStyles}>
+      <Box sx={containerStyles} className="quick-bio-info" id='intro'>
+        <Box sx={subContainerStyles}>
           <Box component="p">
-            <Typography component="span" sx={greetingStyles}>
+            <Typography variant='body1' component={"span"} sx={greetingStyles}>
               Hi, I am
             </Typography> 
             <br />
-            <Typography component="span" sx={{fontSize: "clamp(40px, 5vw, 60px)", fontFamily: "Roboto Slab Bold",}}>
+            <Typography variant='body2' component={"span"}>
               Prashant Sihag.
             </Typography> 
             <br />
-            <Typography component="span" sx={quickAboutStyles}>
+            <Typography variant='body1' component={"span"} sx={quickAboutStyles}>
               I am a software developer specialising in developing and occasionally architecting full stack web applications. 
-              Currently, I'm helping <Typography component="span" sx={highlight}>Alex Solutions</Typography> develop exceptional Metadata Management web apps.
+              Currently, I'm helping <Typography variant='body1' component={"span"} sx={highlight}>Alex Solutions</Typography> develop exceptional Metadata Management web apps.
             </Typography>
           </Box>
-          <Box component="div" sx={{marginTop: "2em"}}>
-            <Link href='#blogs' sx={{"&:hover": { cursor: "pointer"}}}>
-              <MenuButton value='Check out my blogs' />
-            </Link>
+          <Box sx={{marginTop: "2em"}}>
+            <MenuButton value='Check out my blogs' link='#blogs'/>
           </Box>
         </Box>
       </Box>

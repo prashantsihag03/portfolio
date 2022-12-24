@@ -4,7 +4,8 @@ import { ArticleOutlined } from "@mui/icons-material";
 import MenuButton from "../MenuButton";
 import Blog from "./Blog";
 import BlogItems from "../../Data/BlogItems";
-import { BlogSection, Ul } from "./Styled";
+import { BlogSection, listStyles} from "./Styled";
+import { Box } from "@mui/material";
 
 const Blogs: React.FC = () => {
   const [element, setElement] = React.useState<HTMLElement | null>(null);
@@ -28,13 +29,13 @@ const Blogs: React.FC = () => {
   return (
     <BlogSection id="blogs" ref={(node) => {setElement(node)}}>
       <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />
-      <Ul>
+      <Box component="ul" sx={listStyles}>
         {BlogItems.map((blog, index) => 
           <Blog key={index} visible={visible} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*50}/>
         )}
-      </Ul>
+      </Box>
       <a href='https://medium.com/@prashant-sihag' target="_blank">
-          <MenuButton value='more on Medium' />
+          <MenuButton value='more on Medium'/>
       </a>  
     </BlogSection>
   )

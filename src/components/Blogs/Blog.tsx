@@ -30,12 +30,8 @@ const cardStyles: SxProps<Theme> = {
   justifyContent: "center",
   maxWidth: 500, 
   height: '100%', 
-  backgroundColor: "var(--background)", 
-  color: "var(--color)", 
+  backgroundColor: "background.default", 
   padding: "2em 1em", 
-  "&:hover": {
-    color: "primary.main",
-  },
   ["@media only screen and (max-width: 1350px)"]: {
     maxWidth: '100%',
   }
@@ -54,7 +50,7 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay, visible}
   return (
     <Zoom in={visible} appear timeout={delay} easing={"ease-in-out"}>
       <Box sx={BoxStyles}>
-        <Link href={link} target="_blank" rel="noreferrer noopener nofollow" title="Click to read more" style={{textDecoration: 'none'}}>
+        <Link href={link} target="_blank" rel="noreferrer noopener nofollow" title="Click to read more">
           <Card sx={cardStyles}>
             <CardMedia
               sx={cardMediaStyles}
@@ -65,10 +61,10 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay, visible}
               alt={alt}
             />
             <CardContent style={{background: "transparent", zIndex: 2}}>
-              <Typography gutterBottom variant="h5" component="div" style={{fontSize: "clamp(1.2rem, 2vw, 1.5rem)"}}>
+              <Typography gutterBottom variant="h5" component="h5" sx={{"&:hover": {color: "secondary.main"}}}>
                 {title}
               </Typography>
-              <Typography variant="body2" style={{color: "var(--text)", fontSize: "1rem"}}>
+              <Typography variant="body1" style={{color: "text.secondary"}}>
                 {content}
               </Typography>
             </CardContent>

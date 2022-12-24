@@ -1,50 +1,43 @@
+import { Box, SxProps, useMediaQuery } from "@mui/material";
+import { Theme } from "@mui/system";
 import * as React from "react";
-import StyledComponents from "styled-components";
 import QuickIconData from "../../Data/QuickIcons";
 import About from "../About";
-import Footer from "../Footer";
 import Socials from "../Socials";
 
-const ContainerDiv = StyledComponents.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  padding-bottom: 0.5em;
-  background: "transparent";
-  margin-top: 10vh;
-`;
+const containerStyle: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-around",
+  alignItems: "center",
+  paddingBottom: "0.5em",
+  background: "transparent",
+  marginTop: "10vh",
+}
 
-const MobileOnly = StyledComponents.div`
-  @media only screen and (min-width: 800px) {
-    display: none;
-  }
-`;
-
-const SocialIcons = StyledComponents.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-
-const SocialIconsContainer = StyledComponents.div``;
+const socialIconContainerStyles: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "row",
+  width: "100%",
+  justifyContent: "center",
+  alignItems: "center",
+}
 
 const ClosingBlock: React.FC = () => {
+  const isMobile = useMediaQuery("only screen and (max-width: 800px)");
 
   return (
-    <ContainerDiv id="about" className="closingBlock">
+    <Box id="about" className="closingBlock" sx={containerStyle}>
       <About />
-      <MobileOnly>
-        <SocialIcons>
-          <SocialIconsContainer>
+      { isMobile ?
+        (<Box sx={socialIconContainerStyles}>
+          <Box>
             <Socials items={QuickIconData}/>
-          </SocialIconsContainer>
-        </SocialIcons>
-      </MobileOnly>
-    </ContainerDiv>
+          </Box>
+        </Box>)
+        : null }
+    </Box>
   );
 };
 

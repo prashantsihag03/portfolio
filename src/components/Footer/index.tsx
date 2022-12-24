@@ -8,12 +8,8 @@ const typographyStyles: SxProps<Theme> = {
   margin: "auto",
   textAlign: "center",
   padding: "0.1em",
-  color: "var(--color)",
-  fontSize: "1rem",
-  letterSpacing: "0.5pt",
   paddingBottom: "1.5em",
   marginTop: "5vh",
-  borderTop: "1px solid var(--heading)",
 }
 
 const Footer: React.FC = () => {

@@ -1,35 +1,90 @@
-import { Box, Slide, SxProps, useMediaQuery } from "@mui/material";
+import { Box, Slide, SxProps, useMediaQuery, Zoom } from "@mui/material";
 import { Theme } from "@mui/system";
 import React from "react";
 import QuickIconData from "../../Data/QuickIcons";
 import Socials from "../Socials";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { NoEncryption } from "@mui/icons-material";
 
 const boxStyle: SxProps<Theme> = {
   position: "absolute",
-  backgroundColor: "var(--logoBg)",
   top: "20px",
   right: "0px",
-  paddingRight: "20px",
-  borderRadius: "0.5em 0em 0em 0.5em",
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+}
 
-  ["@media only screen and (max-width: 800px)"]: {
-    display: "none",
+const displayModeBoxStyle: SxProps<Theme> = {
+  height: '3em', 
+  width: '3rem', 
+  paddingRight: "20px", 
+  display: 'flex', 
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  border: 'none',
+  borderRightColor: 'primary.light', 
+  borderRightStyle: 'solid', 
+  borderRightWidth: '1px',
+  ['@media only screen and (max-width: 800px)']: {
+    borderRight: 'none',
   }
 }
 
-const WebSocialIcons = () => {
+const lightModeIconStyle: SxProps<Theme> = {
+  color: 'primary.light', 
+  '&:hover': {
+    cursor: 'pointer'
+  }
+}
+
+const darkModeIconStyle: SxProps<Theme> = {
+  color: 'primary.dark', 
+  '&:hover': {
+    cursor: 'pointer'
+  }
+}
+
+const socialIconsContainerStyle: SxProps<Theme> = {
+  backgroundColor: "primary.dark", 
+  paddingRight: "20px", 
+  borderRadius: "0.5em 0em 0em 0.5em"
+};
+
+interface IconHeaderProps {
+  onClick?: () => void;
+  darkMode: boolean;
+}
+
+const WebSocialIcons = ({onClick, darkMode}:IconHeaderProps) => {
     const [showSocialIcons, setShowSocialIcons] = React.useState<boolean>(false);
+    const isMobile = useMediaQuery("only screen and (max-width: 800px)");
     
     React.useEffect(() => {
-        setTimeout(() => {
-            setShowSocialIcons(true);
-        }, 500);
+      setTimeout(() => {
+          setShowSocialIcons(true);
+      }, 500);
     }, []);
 
     return (
-      <Slide in={showSocialIcons} direction={"left"}>
-        <Box component="div" sx={boxStyle} data-testid="social-icons">
-          <Socials items={QuickIconData}/>
+      <Slide in={showSocialIcons} direction="left">
+        <Box sx={boxStyle} data-testid="social-icons">
+          <Box sx={displayModeBoxStyle}>
+            {darkMode ? (
+              <Zoom in mountOnEnter unmountOnExit>
+                  <LightModeIcon titleAccess="Switch to light mode" onClick={onClick ? onClick : ()=>{}} fontSize="medium" sx={lightModeIconStyle} />
+              </Zoom>
+            ) : (
+              <Zoom in mountOnEnter unmountOnExit>
+                <DarkModeIcon titleAccess="Switch to dark mode" onClick={onClick ? onClick : ()=>{}} fontSize="medium" color="secondary" sx={darkModeIconStyle} />
+              </Zoom>
+            )}
+          </Box>
+          <Box sx={socialIconsContainerStyle}>
+            { !isMobile ? <Socials items={QuickIconData}/> : null }
+          </Box>
         </Box>
       </Slide>
     );

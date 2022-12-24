@@ -1,39 +1,25 @@
+import { Button } from "@mui/material";
 import * as React from "react";
-import StyledComponents from "styled-components";
-
-const DefaultButtonStyled = StyledComponents.button`
-  padding: 0.8em 1em;
-  font-size: 1.1rem;
-  font-family: var(--fontFamily), serif;
-  letter-spacing: 1pt;
-  border: 1px solid var(--primary);
-  border-radius: 0.2em;
-  background: transparent;
-  color: var(--primary);
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-
-  @media only screen and (max-width: 800px) {
-    font-size: 1em;
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgba(128, 128, 128, 0.2);
-  }
-`;
 
 interface MenuButtonProps {
   onClick?: any,
+  link?: string,
   value: string,
 }
 
-const MenuButton: React.FC<MenuButtonProps> = (props) => {
+const MenuButton: React.FC<MenuButtonProps> = ({value, onClick, link}: MenuButtonProps) => {
   return (
-    <DefaultButtonStyled onClick={props.onClick}>
-      {props.value}
-    </DefaultButtonStyled>
+    <Button 
+      variant="outlined" 
+      sx={{padding: '0.8rem 1rem', fontSize: '1.1rem'}}
+      onClick={onClick}
+      disableElevation
+      color="secondary"
+      size="large"
+      href={link}
+    >
+      {value}
+    </Button>
   );
 };
 

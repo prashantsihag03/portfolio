@@ -11,7 +11,7 @@
         <title>Prashant Sihag</title>
         <style>
             @font-face {
-                font-family: 'Roboto Slab';
+                font-family: 'Roboto Slab Light';
                 src: url('font/RobotoSlab-Light.ttf');
             }
             @font-face {
@@ -26,28 +26,16 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                letter-spacing: 0.5pt;
             }
             :root {
-                --color: white;
-                --fontFamily: 'Roboto Slab';
                 --background: black;
                 --primary: #8dafff;
-                --secondary: #8dafff;
-                --heading: #141d35;
-                --text: #a5a5a5;
-                --logoBg: black;
-                --lightHover: rgba(128, 128, 128, 0.2);
             }
 
             @media (prefers-color-scheme: light) {
                 :root {
-                    --color: black;
-                    --fontFamily: 'Roboto Slab Regular';
                     --background: white;
                     --primary: #2b6bff;
-                    --heading: #7298ff;
-                    --text: #1a1a1a;
                 }
             }
 
@@ -55,18 +43,7 @@
                 scroll-behavior: smooth;
                 font-family: "Roboto Slab", serif;
             }
-
-            h2,
-            h1 {
-                font-family: "Roboto Slab Bold", sans-serif;
-                letter-spacing: 1pt;
-            }
-
-            a {
-                text-decoration: none;
-                color: white;
-            }
-
+            
             input:focus {
                 outline: none;
             }
@@ -87,6 +64,7 @@
                 margin: auto;
                 overflow-x: hidden;
                 position: relative;
+                width: 100%;
                 background-color: var(--background);
                 background-position: center;
                 background-repeat: repeat;
@@ -96,9 +74,7 @@
 
             #root {
                 background-color: var(--background);
-                position: "relative";
-                max-width: 1499px;
-                margin: auto;
+                width: '100%',
             }
 
             .spinContainer {

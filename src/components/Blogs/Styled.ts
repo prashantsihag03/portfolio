@@ -1,3 +1,5 @@
+import { SxProps } from '@mui/material';
+import { Theme } from '@mui/system';
 import StyledComponents from 'styled-components';
 
 export const BlogSection = StyledComponents.section`
@@ -5,17 +7,15 @@ export const BlogSection = StyledComponents.section`
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  color: var(--color);
   width: 100%;
   margin: auto;
-  font-family: var(--fontFamily), serif;  
 `;
 
-export const Ul = StyledComponents.ul`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: stretch;
-  padding: 0.2em;
-`;
+export const listStyles: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-evenly",
+  alignItems: "stretch",
+  padding: "0.2em",
+};
