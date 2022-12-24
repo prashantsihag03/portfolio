@@ -39,12 +39,23 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
       h5: {
         fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
       },
+      subtitle1: {
+        color: mode === "light" ? '#1a1a1a' : '#a5a5a5',
+        fontSize: "1.1rem",
+        ["@media only screen and (max-width: 1000px)"]: {
+          fontSize: "1rem",
+        }
+      },
+      subtitle2:{  
+        color: mode === "light" ? '#2b6bff' : '#8dafff',
+        fontSize: "1.1rem",
+        ["@media only screen and (max-width: 1000px)"]: {
+          fontSize: "1rem",
+        }
+      },
       body1: {
         color: mode === "light" ? '#1a1a1a' : '#a5a5a5',
         fontSize: "1rem",
-        ["@media only screen and (max-width: 600px)"]: {
-          fontSize: "0.9rem",
-        }
       },
       body2: {
         fontSize: "clamp(40px, 5vw, 60px)", 
@@ -59,6 +70,12 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
             props: {variant: 'outlined'},
             style: {
               textTransform: 'none',
+              padding: '0.8rem 1rem', 
+              fontSize: '1.1rem',
+              ["@media only screen and (max-width: 600px)"]: {
+                fontSize: "1rem",
+                padding: '0.6rem 0.8rem', 
+              }
             }
           }
         ]

@@ -7,8 +7,16 @@ const useDisplayMode = () => {
   const [displayMode, setDisplayMode] = React.useState<"light" | "dark">(prefersDarkMode ? "dark" : "light");
 
   const toggleDisplayMode = () => {
-    if (displayMode==="light") setDisplayMode("dark");
-    else setDisplayMode("light");
+    if (displayMode==="light") {
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
+      if (metaThemeColor) metaThemeColor.setAttribute("content", "#000000");
+      setDisplayMode("dark");
+    }
+    else {
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
+      if (metaThemeColor) metaThemeColor.setAttribute("content", "#FFF");
+      setDisplayMode("light");
+    }
   }
 
   const theme = React.useMemo(

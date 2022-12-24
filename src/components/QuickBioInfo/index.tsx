@@ -22,37 +22,13 @@ const subContainerStyles: SxProps<Theme> = {
   }
 };
 
-const greetingStyles: SxProps<Theme> = {
-  color: "secondary.main",
-  fontSize: "1.2rem",
-};
- 
-const quickAboutStyles: SxProps<Theme> = {
-  color: "text.secondary",
-  fontSize: "1.2rem",
-
-  ["@media only screen and (max-width: 1000px)"]: {
-    fontSize: "1rem",
-  }
-};
-
-const highlight: SxProps<Theme> = {
-  color: "secondary.main",
-  whiteSpace: "nowrap",
-  fontSize: "1.2rem",
-
-  ["@media only screen and (max-width: 1000px)"]: {
-    fontSize: "1rem",
-  }
-};
-
 const QuickBioInfo: React.FC = () => {
   return (
     <Fade in={true} appear timeout={300}>
       <Box sx={containerStyles} className="quick-bio-info" id='intro'>
         <Box sx={subContainerStyles}>
           <Box component="p">
-            <Typography variant='body1' component={"span"} sx={greetingStyles}>
+            <Typography variant='subtitle2' component={"span"}>
               Hi, I am
             </Typography> 
             <br />
@@ -60,9 +36,9 @@ const QuickBioInfo: React.FC = () => {
               Prashant Sihag.
             </Typography> 
             <br />
-            <Typography variant='body1' component={"span"} sx={quickAboutStyles}>
+            <Typography variant='subtitle1' component={"span"}>
               I am a software developer specialising in developing and occasionally architecting full stack web applications. 
-              Currently, I'm helping <Typography variant='body1' component={"span"} sx={highlight}>Alex Solutions</Typography> develop exceptional Metadata Management web apps.
+              Currently, I'm helping <Typography variant='body1' component={"span"}>Alex Solutions</Typography> develop exceptional Metadata Management web apps.
             </Typography>
           </Box>
           <Box sx={{marginTop: "2em"}}>

@@ -34,9 +34,7 @@ const Blogs: React.FC = () => {
           <Blog key={index} visible={visible} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*50}/>
         )}
       </Box>
-      <a href='https://medium.com/@prashant-sihag' target="_blank">
-          <MenuButton value='more on Medium'/>
-      </a>  
+      <MenuButton value='more on Medium' link="https://medium.com/@prashant-sihag"/>
     </BlogSection>
   )
 }

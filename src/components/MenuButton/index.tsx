@@ -11,7 +11,6 @@ const MenuButton: React.FC<MenuButtonProps> = ({value, onClick, link}: MenuButto
   return (
     <Button 
       variant="outlined" 
-      sx={{padding: '0.8rem 1rem', fontSize: '1.1rem'}}
       onClick={onClick}
       disableElevation
       color="secondary"
