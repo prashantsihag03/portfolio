@@ -84,7 +84,7 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         styleOverrides: {
           root: {textDecoration: 'none'}
         }
-      }
+      },
     }
   }
 }

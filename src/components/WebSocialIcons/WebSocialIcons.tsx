@@ -50,7 +50,7 @@ const darkModeIconStyle: SxProps<Theme> = {
 const socialIconsContainerStyle: SxProps<Theme> = {
   backgroundColor: "primary.dark", 
   paddingRight: "20px", 
-  borderRadius: "0.5em 0em 0em 0.5em"
+  borderRadius: "0.3em 0em 0em 0.3em"
 };
 
 interface IconHeaderProps {

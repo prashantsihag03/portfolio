@@ -8,7 +8,7 @@ const linkStyles: SxProps<Theme> = {
   top: '20px',
   left: '0px',
   border: 'none',
-  borderRadius: '0em 0.5em 0.5em 0em',
+  borderRadius: '0em 0.3em 0.3em 0em',
   backgroundColor: 'primary.dark',
   width: '5rem',
   height: '3rem',
@@ -32,8 +32,9 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({delayInMs}: LogoProps) => {
   const [show, setShow] = useState<boolean>(false);
+
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       setShow(true);
     }, delayInMs);
   }, []);
