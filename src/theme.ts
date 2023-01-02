@@ -16,11 +16,11 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
       },
       text: {
         primary: mode === "light" ? '#000000' : '#FFF',
-        secondary: mode === "light" ? '#1a1a1a' : '#a5a5a5',
+        secondary: mode === "light" ? '#1a1a1a' : '#b5b5b5',
       },
       background: {
-        default: mode === "light" ? '#FFF' : '#000000',
-        paper: mode === "light" ? '#FFF' : '#000000',
+        default: mode === "light" ? '#f0f0f0' : '#171717',
+        paper: mode === "light" ? '#f0f0f0' : '#171717',
       },
       action: {
         active: '#FFF',
@@ -40,7 +40,7 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
       },
       subtitle1: {
-        color: mode === "light" ? '#1a1a1a' : '#a5a5a5',
+        color: mode === "light" ? '#1a1a1a' : '#b5b5b5',
         fontSize: "1.2rem",
         ["@media only screen and (max-width: 1000px)"]: {
           fontSize: "1.1rem",
@@ -54,7 +54,7 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         }
       },
       body1: {
-        color: mode === "light" ? '#1a1a1a' : '#a5a5a5',
+        color: mode === "light" ? '#1a1a1a' : '#b5b5b5',
         fontSize: "1rem",
       },
       body2: {
@@ -85,6 +85,15 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
           root: {textDecoration: 'none'}
         }
       },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            "&:hover": {
+              cursor: mode === "dark" ? "url('./images/whiteCursor.svg'), pointer" : "url('./images/darkCursor.svg'), pointer",
+            }
+          }
+        }
+      }
     }
   }
 }

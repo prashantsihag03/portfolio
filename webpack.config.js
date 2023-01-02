@@ -73,6 +73,10 @@ module.exports = {
           from: "public/font/",
           to: "font",
         },
+        {
+          from: "public/images/",
+          to: "images",
+        },
       ],
     }),
   ],

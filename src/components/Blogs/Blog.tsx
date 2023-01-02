@@ -31,9 +31,16 @@ const cardStyles: SxProps<Theme> = {
   maxWidth: 500, 
   height: '100%', 
   backgroundColor: "background.default", 
-  padding: "2em 1em", 
+  padding: "2em 1em",
+  borderWidth: "1px",
+  borderStyle: "solid",
+  borderColor: "transparent",
   ["@media only screen and (max-width: 1350px)"]: {
     maxWidth: '100%',
+  },
+  "&:hover": {
+    borderColor: "secondary.main",
+    transition: "all 0.3s ease-in-out",
   }
 }
 
@@ -50,7 +57,7 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay, visible}
   return (
     <Zoom in={visible} appear timeout={delay} easing={"ease-in-out"}>
       <Box sx={BoxStyles}>
-        <Link href={link} target="_blank" rel="noreferrer noopener nofollow" title="Click to read more">
+        <Link href={link} target="_blank" rel="noreferrer noopener nofollow">
           <Card sx={cardStyles}>
             <CardMedia
               sx={cardMediaStyles}
@@ -61,7 +68,7 @@ const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay, visible}
               alt={alt}
             />
             <CardContent style={{background: "transparent", zIndex: 2}}>
-              <Typography gutterBottom variant="h5" component="h5" sx={{"&:hover": {color: "secondary.main"}}}>
+              <Typography gutterBottom variant="h5" component="h5">
                 {title}
               </Typography>
               <Typography variant="body1" style={{color: "text.secondary"}}>
