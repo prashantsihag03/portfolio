@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
-import logoSvg from "../../assets/icons/ps.svg";
+import lightBgLogo from "../../assets/icons/lightBgLogo.svg";
+import darkBgLogo from "../../assets/icons/darkBgLogo.svg";
 import { Link, Slide, SxProps } from "@mui/material";
 import { Theme } from "@mui/system";
 
 const linkStyles: SxProps<Theme> = {
   position: 'absolute',
   top: '20px',
-  left: '0px',
-  border: 'none',
-  borderRadius: '0em 0.3em 0.3em 0em',
-  backgroundColor: 'primary.dark',
-  width: '5rem',
+  left: '20px',
+  border: '2px solid transparent',
+  borderRadius: '100vw',
+  width: '3rem',
   height: '3rem',
-  padding: '0.3rem',
-  paddingLeft: '20px',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
@@ -22,15 +20,18 @@ const linkStyles: SxProps<Theme> = {
 
   "&:hover": {
     backgroundColor: 'action.hover',
+    borderColor: 'secondary.main',
     cursor: 'pointer',
+    padding: '0.2rem',
   },
 }
 
 interface LogoProps {
-  delayInMs: number
+  delayInMs: number,
+  darkMode: boolean,
 }
 
-const Logo: React.FC<LogoProps> = ({delayInMs}: LogoProps) => {
+const Logo: React.FC<LogoProps> = ({delayInMs, darkMode}: LogoProps) => {
   const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ const Logo: React.FC<LogoProps> = ({delayInMs}: LogoProps) => {
     return (
       <Slide in={show} direction="right">
         <Link sx={linkStyles} href="/">
-          <img style={{width: "100%"}} src={logoSvg} />
+          <img style={{width: "100%", backgroundColor: 'primary.dark'}} src={darkMode ? darkBgLogo : lightBgLogo} />
         </Link>
       </Slide>
     );

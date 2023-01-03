@@ -5,7 +5,6 @@ import QuickIconData from "../../Data/QuickIcons";
 import Socials from "../Socials";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { NoEncryption } from "@mui/icons-material";
 
 const boxStyle: SxProps<Theme> = {
   position: "absolute",
@@ -48,7 +47,6 @@ const darkModeIconStyle: SxProps<Theme> = {
 }
 
 const socialIconsContainerStyle: SxProps<Theme> = {
-  backgroundColor: "primary.dark", 
   paddingRight: "20px", 
   borderRadius: "0.3em 0em 0em 0.3em"
 };

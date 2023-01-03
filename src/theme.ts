@@ -5,9 +5,9 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
     palette: {
       mode: mode,
       primary: {
-        main: mode === "light" ? '#FFF': '#000000',
-        light: '#FFF',
-        dark: '#000000',
+        main: mode === "light" ? '#f0f0f0': '#101010',
+        light: '#f0f0f0',
+        dark: '#101010',
       },
       secondary: {
         main: mode === "light" ? '#2b6bff' : '#8dafff',
@@ -19,8 +19,8 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         secondary: mode === "light" ? '#1a1a1a' : '#b5b5b5',
       },
       background: {
-        default: mode === "light" ? '#f0f0f0' : '#171717',
-        paper: mode === "light" ? '#f0f0f0' : '#171717',
+        default: mode === "light" ? '#f0f0f0' : '#101010',
+        paper: mode === "light" ? '#f0f0f0' : '#101010',
       },
       action: {
         active: '#FFF',

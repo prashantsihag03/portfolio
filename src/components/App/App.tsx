@@ -20,7 +20,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box id="content" sx={contentStyles}>
-        <Logo delayInMs={500}/>
+        <Logo delayInMs={500} darkMode={displayMode==="dark"}/>
         <WebSocialIcons darkMode={displayMode==="dark"} onClick={toggleDisplayMode}/>
         <ScrollerGuide />
         <Main />

@@ -29,7 +29,7 @@ const QuickBioInfo: React.FC = () => {
         <Box sx={subContainerStyles}>
           <Box component="p">
             <Typography variant='subtitle2' component={"span"}>
-              Hi, I'm
+              Hi, I&apos;m
             </Typography> 
             <br />
             <Typography variant='body2' component={"span"}>
@@ -38,7 +38,7 @@ const QuickBioInfo: React.FC = () => {
             <br />
             <Typography variant='subtitle1' component={"span"}>
               I am a software developer specialising in developing and occasionally architecting full stack web applications. 
-              Currently, I'm helping <Typography variant='subtitle2' component={"span"}>Alex Solutions</Typography> develop exceptional Metadata Management web apps.
+              Currently, I&apos;m helping <Typography variant='subtitle2' component={"span"}>Alex Solutions</Typography> develop exceptional Metadata Management web apps.
             </Typography>
           </Box>
           <Box sx={{marginTop: "2em"}}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Card, CardContent, CardMedia, Link, SxProps, Theme, Typography, Zoom } from "@mui/material";
 
-interface Blog {
+interface BlogProps {
   media: any;
   alt: string;
   title: string;
@@ -52,7 +52,7 @@ const cardMediaStyles: SxProps<Theme> = {
   objectFit: "cover", 
 }
 
-const Blog: React.FC<Blog> = ({media, alt, title, content, link, delay, visible}: Blog) => {
+const Blog: React.FC<BlogProps> = ({media, alt, title, content, link, delay, visible}: BlogProps) => {
 
   return (
     <Zoom in={visible} appear timeout={delay} easing={"ease-in-out"}>
