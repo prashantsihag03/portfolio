@@ -5,8 +5,8 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
     palette: {
       mode: mode,
       primary: {
-        main: mode === "light" ? '#f0f0f0': '#101010',
-        light: '#f0f0f0',
+        main: mode === "light" ? '#f9f9f9': '#101010',
+        light: '#f9f9f9',
         dark: '#101010',
       },
       secondary: {
@@ -19,8 +19,8 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         secondary: mode === "light" ? '#1a1a1a' : '#b5b5b5',
       },
       background: {
-        default: mode === "light" ? '#f0f0f0' : '#101010',
-        paper: mode === "light" ? '#f0f0f0' : '#101010',
+        default: mode === "light" ? '#f9f9f9' : '#101010',
+        paper: mode === "light" ? '#f9f9f9' : '#101010',
       },
       action: {
         active: '#FFF',
@@ -89,7 +89,7 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
         styleOverrides: {
           root: {
             "&:hover": {
-              cursor: mode === "dark" ? "url('./images/whiteCursor.svg'), pointer" : "url('./images/darkCursor.svg'), pointer",
+              cursor: mode === "dark" ? "url('./images/whiteReadMoreCursor.svg'), pointer" : "url('./images/darkReadMoreCursor.svg'), pointer",
             }
           }
         }
