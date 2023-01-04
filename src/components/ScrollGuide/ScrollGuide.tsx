@@ -25,7 +25,6 @@ const BoxStyles: SxProps<Theme> = {
 
   ["@media only screen and (max-width: 600px)"]: {
     top: "80vh",
-    width: "100%",
   }
 };
 

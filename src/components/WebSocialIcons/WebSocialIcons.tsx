@@ -29,6 +29,7 @@ const displayModeBoxStyle: SxProps<Theme> = {
   borderRightWidth: '1px',
   ['@media only screen and (max-width: 800px)']: {
     borderRight: 'none',
+    paddingRight: '0px',
   }
 }
 
