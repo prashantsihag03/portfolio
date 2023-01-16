@@ -1,27 +1,11 @@
 import { Box, Fade, Typography } from '@mui/material';
-import { SxProps, Theme } from '@mui/system';
 import * as React from 'react';
 import MenuButton from '../MenuButton';
+import { containerStyles, subContainerStyles } from './styles';
 
-const containerStyles: SxProps<Theme> = {
-  display: "flex",
-  width: "100%",
-  height: "100vh",
-  flexDirection: "row",
-  justifyContent: "left",
-  alignItems: "center",
-  textAlign: "left",
-};
-
-const subContainerStyles: SxProps<Theme> = {
-  display: "flex", 
-  flexDirection: "column",
-  width: "70%",
-  ["@media only screen and (max-width: 1000px)"]: {
-    width: "100%",
-  }
-};
-
+/**
+ * Component that provides Quick Biographical Information including some quick call to actions for users.
+ */
 const QuickBioInfo: React.FC = () => {
   return (
     <Fade in={true} appear timeout={300}>

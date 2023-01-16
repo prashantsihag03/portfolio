@@ -1,10 +1,11 @@
 import { createTheme, useMediaQuery } from "@mui/material";
 import * as React from "react";
-import getDesignTokens from "../../theme";
+import getDesignTokens from "../../Theme";
+import { DisplayMode } from "../../types";
 
 const useDisplayMode = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const [displayMode, setDisplayMode] = React.useState<"light" | "dark">(prefersDarkMode ? "dark" : "light");
+  const [displayMode, setDisplayMode] = React.useState<DisplayMode>(prefersDarkMode ? "dark" : "light");
 
   const toggleDisplayMode = () => {
     if (displayMode==="light") {
