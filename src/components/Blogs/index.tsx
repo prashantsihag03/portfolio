@@ -2,10 +2,10 @@ import * as React from "react";
 import SectionHeading from "../SectionHeading";
 import { ArticleOutlined } from "@mui/icons-material";
 import MenuButton from "../MenuButton";
-import Blog from "./Blog";
 import BlogItems from "../../Data/BlogItems";
 import { BlogSection, listStyles} from "./Styled";
 import { Box } from "@mui/material";
+import BlogItem from "../BlogItem";
 
 const Blogs: React.FC = () => {
   const [element, setElement] = React.useState<HTMLElement | null>(null);
@@ -31,7 +31,7 @@ const Blogs: React.FC = () => {
       <SectionHeading heading={'Blogs'} iconComponent={ArticleOutlined} />
       <Box component="ul" sx={listStyles}>
         {BlogItems.map((blog, index) => 
-          <Blog key={index} visible={visible} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*50}/>
+          <BlogItem key={index} visible={visible} alt="blog" title={blog.heading} content={blog.desc} media={blog.img} link={blog.link} delay={index*50}/>
         )}
       </Box>
       <MenuButton value='more on Medium' link="https://medium.com/@prashant-sihag"/>
