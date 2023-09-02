@@ -10,12 +10,12 @@ const typographyStyles: SxProps<Theme> = {
   padding: "0.1em",
   paddingBottom: "1.5em",
   marginTop: "5vh",
-}
+};
 
 const Footer: React.FC = () => {
   return (
     <Typography component="p" sx={typographyStyles}>
-      © 2022 Prashant Sihag. All rights reserved.
+      © 2023 Prashant Sihag. All rights reserved.
     </Typography>
   );
 };

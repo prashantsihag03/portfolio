@@ -22,7 +22,7 @@ const useDisplayMode = () => {
 
   const theme = React.useMemo(
     () => createTheme(getDesignTokens(displayMode)), 
-    [displayMode, prefersDarkMode]
+    [displayMode]
   );
   
   return {
