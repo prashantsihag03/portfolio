@@ -8,48 +8,14 @@ import { Box } from "@mui/material";
 import BlogItem from "../BlogItem";
 
 const Blogs: React.FC = () => {
-  const [element, setElement] = React.useState<HTMLElement | null>(null);
-  const [visible, setVisible] = React.useState<boolean>(false);
-  const [intersectionObserver] = React.useState<IntersectionObserver>(
-    new IntersectionObserver(
-      (entries) => {
-        const blogContainerElement = entries.find(
-          (entry) => entry.target.id === "blogs"
-        );
-        if (
-          blogContainerElement &&
-          blogContainerElement.isIntersecting &&
-          !visible
-        ) {
-          setVisible(true);
-        }
-      },
-      { root: null, rootMargin: "0px", threshold: 0.3 }
-    )
-  );
-
-  React.useEffect(() => {
-    if (element) {
-      intersectionObserver.observe(element);
-    }
-    () => {
-      intersectionObserver.disconnect();
-    };
-  }, [element]);
-
   return (
-    <BlogSection
-      id="blogs"
-      ref={(node) => {
-        setElement(node);
-      }}
-    >
+    <BlogSection id="blogs">
       <SectionHeading heading={"Blogs"} iconComponent={ArticleOutlined} />
       <Box component="ul" sx={listStyles}>
         {BlogItems.map((blog, index) => (
           <BlogItem
             key={index}
-            visible={visible}
+            visible={true}
             alt="blog"
             title={blog.heading}
             content={blog.desc}

@@ -41,7 +41,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       <SvgIcon
         sx={{ color: "text.primary", marginRight: "3px" }}
         component={iconComponent}
-        fontSize="small"
+        fontSize="medium"
         inheritViewBox
       />
       <Typography variant="h2" component="h2" sx={headingStyles}>

@@ -13,32 +13,32 @@ export const getTypographyTheme = (palette: Palette): TypographyOptions => {
           : '"Roboto Slab Light", "Helvetica", -apple-system, system-ui, serif',
     },
     h2: {
-      fontSize: "18px",
+      fontSize: "20px",
       ["@media only screen and (max-width: 900px)"]: {
-        fontSize: "16px",
+        fontSize: "18px",
       },
     },
     h3: {
-      fontSize: "16px",
+      fontSize: "18px",
       ["@media only screen and (max-width: 900px)"]: {
-        fontSize: "15px",
+        fontSize: "16px",
       },
     },
     h5: {
       fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
     },
     subtitle1: {
-      fontSize: "16px",
+      fontSize: "18px",
       ["@media only screen and (max-width: 900px)"]: {
-        fontSize: "14px",
+        fontSize: "16px",
       },
     },
     subtitle2: {
       color: palette.text.secondary,
-      fontSize: "14px",
+      fontSize: "16px",
       lineHeight: "1.5rem",
       ["@media only screen and (max-width: 900px)"]: {
-        fontSize: "13px",
+        fontSize: "14px",
       },
     },
     body1: {
@@ -46,7 +46,8 @@ export const getTypographyTheme = (palette: Palette): TypographyOptions => {
       fontSize: "1rem",
     },
     body2: {
-      fontSize: "clamp(30px, 5vw, 50px)",
+      fontSize: "clamp(40px, 5vw, 50px)",
+      fontWeight: "bold",
       fontFamily: '"Roboto Slab Bold", -apple-system, system-ui, serif',
     },
   };
