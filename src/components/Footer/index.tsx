@@ -10,12 +10,21 @@ const typographyStyles: SxProps<Theme> = {
   padding: "0.1em",
   paddingBottom: "1.5em",
   marginTop: "5vh",
+  fontSize: "13px",
+};
+
+const highlight: React.CSSProperties = {
+  color: "whitesmoke",
 };
 
 const Footer: React.FC = () => {
   return (
     <Typography component="p" sx={typographyStyles}>
-      © 2023 Prashant Sihag. All rights reserved.
+      Coded in <span style={highlight}>Visual Studio Code</span> by yours truly.
+      Built with
+      <span style={highlight}> React</span> and
+      <span style={highlight}> Typescript</span>, deployed with
+      <span style={highlight}> Netlify</span>.
     </Typography>
   );
 };
