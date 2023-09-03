@@ -7,24 +7,16 @@ const typographyStyles: SxProps<Theme> = {
   width: "100%",
   margin: "auto",
   textAlign: "center",
-  padding: "0.1em",
   paddingBottom: "1.5em",
   marginTop: "5vh",
-  fontSize: "13px",
-};
-
-const highlight: React.CSSProperties = {
-  color: "whitesmoke",
 };
 
 const Footer: React.FC = () => {
   return (
-    <Typography component="p" sx={typographyStyles}>
-      Coded in <span style={highlight}>Visual Studio Code</span> by yours truly.
-      Built with
-      <span style={highlight}> React</span> and
-      <span style={highlight}> Typescript</span>, deployed with
-      <span style={highlight}> Netlify</span>.
+    <Typography variant="subtitle2" component="p" sx={typographyStyles}>
+      Coded in Visual Studio Code by yours truly.
+      <br />
+      Built with React and Typescript, deployed with Netlify.
     </Typography>
   );
 };

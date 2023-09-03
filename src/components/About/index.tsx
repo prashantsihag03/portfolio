@@ -9,41 +9,34 @@ const containerStyles: SxProps<Theme> = {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  width: "90%",
+  width: "100%",
   margin: "auto",
-  marginBottom: "8vh",
   transition: "all 0.5s ease-in-out",
-}
+};
 
 const contentStyles: SxProps<Theme> = {
   width: "100%",
-  padding: "0.5em",
-
-  ["@media only screen and (max-width: 600px)"]: {
-    width: "100%",
-  }
-}
+  padding: "0em 0.5em",
+};
 
 const About = () => {
   return (
     <Box component="div" sx={containerStyles} id="about">
       <SectionHeading heading="A bit about me" iconComponent={PersonOutlined} />
-      <Typography variant="body1" sx={contentStyles}>
-        I have been fascinated by what one can do with computers ever since I
-        got first introduced to programming in the year 10 of my school.
+      <Typography variant="subtitle2" sx={contentStyles}>
+        Ever since I got first introduced to programming in the year 10 of my
+        school, I have been fascinated by what one can do with computers. These
+        days, I work as a{" "}
+        <Typography variant="subtitle2" component="span">
+          Software developer at Alex Solutions
+        </Typography>{" "}
+        where I have had the opportunity to work on full spectrum of web
+        application development as well as CI/CD pipeline development.
         <br /> <br />
-        Currently, I work as a Software developer at Alex Solutions where I help
-        in designing, architecting, developing, documenting, and maintaining
-        efficient and performant software by effectively communicating and
-        utilising tools and technologies such as Java, SpringBoot, Play
-        Framework, React, Redux, ElasticSearch, Gitlab, Jenkins, RabbitMQ, AWS,
-        and many more.
-        <br /> <br />
-        If you are a fellow software developer or anyone who is just as curious 
-        about technology if not more and wants to collaborate on anything, 
-        or a recruiter looking for suitable candidate, or just wants to network, please feel free to reach out to me.
-        <br /> <br />
-        Thank you for visiting. Have a great day !
+        If you are a fellow software developer or anyone who is just as curious
+        about technology if not more and wants to collaborate on anything, or a
+        recruiter looking for suitable candidate, or just wants to network,
+        please feel free to reach out to me.
       </Typography>
     </Box>
   );

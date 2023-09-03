@@ -11,6 +11,10 @@ const listStyle: SxProps<Theme> = {
   alignItems: "center",
   width: "3em",
   height: "3em",
+  ["@media only screen and (max-width: 900px)"]: {
+    width: "3em",
+    height: "3em",
+  },
 };
 
 const imgStyle: SxProps<Theme> = {
@@ -20,14 +24,19 @@ const imgStyle: SxProps<Theme> = {
   transition: "all 0.5s linear",
 };
 
-const Icon: React.FC<IconProp> = ({ href, title, src, alt}: IconProp) => {
+const Icon: React.FC<IconProp> = ({ href, title, src, alt }: IconProp) => {
   return (
-    <Link href={href} target="_blank" title={title} rel="noopener noreferrer nofollow">
+    <Link
+      href={href}
+      target="_blank"
+      title={title}
+      rel="noopener noreferrer nofollow"
+    >
       <Box component={"li"} sx={listStyle}>
         <Box component={"img"} sx={imgStyle} src={src} alt={alt} />
       </Box>
     </Link>
-  )
-}
+  );
+};
 
 export default Icon;

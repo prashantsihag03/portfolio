@@ -7,8 +7,8 @@ const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
   return {
     palette: getPaletteTheme(mode),
     typography: (palette) => getTypographyTheme(palette),
-    components: getComponentsTheme(mode)
-  }
-}
+    components: getComponentsTheme(),
+  };
+};
 
 export default getDesignTokens;

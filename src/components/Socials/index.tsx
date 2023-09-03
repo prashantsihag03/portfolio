@@ -14,21 +14,27 @@ const boxStyles: SxProps<Theme> = {
 };
 
 interface SocialsProps {
-  items: IconProp[]
+  items: IconProp[];
 }
 
 const Socials: React.FC<SocialsProps> = (props) => {
-  return (    
+  return (
     <Box sx={boxStyles}>
       {props.items.map((item, id) => {
         return (
           <Box key={id}>
-            <Icon key={id} href={item.href} title={item.title} src={item.src} alt={item.alt} />
+            <Icon
+              key={id}
+              href={item.href}
+              title={item.title}
+              src={item.src}
+              alt={item.alt}
+            />
           </Box>
-        )
-      })}        
+        );
+      })}
     </Box>
   );
-}
+};
 
 export default Socials;
