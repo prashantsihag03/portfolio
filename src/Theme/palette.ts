@@ -5,9 +5,9 @@ export const getPaletteTheme = (mode: DisplayMode): PaletteOptions => {
   return {
     mode: mode,
     primary: {
-      main: mode === "light" ? "#f9f9f9" : "#101010",
-      light: "#f9f9f9",
-      dark: "#101010",
+      main: mode === "light" ? "#101010" : "#f9f9f9",
+      light: "#101010",
+      dark: "#f9f9f9",
     },
     secondary: {
       main: mode === "light" ? "#2b6bff" : "#8dafff",
@@ -16,11 +16,11 @@ export const getPaletteTheme = (mode: DisplayMode): PaletteOptions => {
     },
     text: {
       primary: mode === "light" ? "#000000" : "#FFF",
-      secondary: mode === "light" ? "#1a1a1a" : "#b5b5b5",
+      secondary: mode === "light" ? "rgba(26, 26, 26, 0.8)" : "#b5b5b5",
     },
     background: {
-      default: mode === "light" ? "#f9f9f9" : "#101010",
-      paper: mode === "light" ? "#f9f9f9" : "#101010",
+      default: mode === "light" ? "#f9f9f9" : "#000000",
+      paper: mode === "light" ? "#f9f9f9" : "#000000",
     },
     action: {
       active: "#FFF",

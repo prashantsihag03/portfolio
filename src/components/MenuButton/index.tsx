@@ -2,18 +2,22 @@ import { Button } from "@mui/material";
 import * as React from "react";
 
 interface MenuButtonProps {
-  onClick?: any,
-  link?: string,
-  value: string,
+  onClick?: any;
+  link?: string;
+  value: string;
 }
 
-const MenuButton: React.FC<MenuButtonProps> = ({value, onClick, link}: MenuButtonProps) => {
+const MenuButton: React.FC<MenuButtonProps> = ({
+  value,
+  onClick,
+  link,
+}: MenuButtonProps) => {
   return (
-    <Button 
-      variant="outlined" 
+    <Button
+      variant="outlined"
       onClick={onClick}
       disableElevation
-      color="secondary"
+      color="primary"
       size="large"
       href={link}
     >
@@ -24,6 +28,6 @@ const MenuButton: React.FC<MenuButtonProps> = ({value, onClick, link}: MenuButto
 
 MenuButton.defaultProps = {
   onClick: () => {},
-}
+};
 
 export default MenuButton;

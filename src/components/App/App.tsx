@@ -8,6 +8,7 @@ import { Theme } from "@mui/system";
 const contentStyles: SxProps<Theme> = {
   position: "relative",
   width: "100%",
+  minHeight: "100vh",
   margin: "auto",
   backgroundColor: "background.default",
 };

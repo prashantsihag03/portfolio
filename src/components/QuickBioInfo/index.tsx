@@ -1,6 +1,6 @@
 import { Box, Fade, Typography } from "@mui/material";
 import * as React from "react";
-import MenuButton from "../MenuButton";
+// import MenuButton from "../MenuButton";
 import { containerStyles, subContainerStyles } from "./styles";
 import Socials from "../Socials";
 import QuickIconData from "../../Data/QuickIcons";
@@ -28,9 +28,9 @@ const QuickBioInfo: React.FC = () => {
             </Typography>
           </Box>
           <Box sx={{ marginTop: "1em", display: "flex", alignItems: "center" }}>
-            <Box>
+            {/* <Box>
               <MenuButton value="Check out my blogs" link="#blogs" />
-            </Box>
+            </Box> */}
             <Socials items={QuickIconData} />
           </Box>
         </Box>
