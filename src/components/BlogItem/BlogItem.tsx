@@ -17,11 +17,10 @@ const BlogItem: React.FC<BlogProps> = ({
   title,
   content,
   link,
-  delay,
   visible,
 }: BlogProps) => {
   return (
-    <Zoom in={visible} appear timeout={delay} easing={"ease-in-out"}>
+    <Zoom in={visible} appear easing={"ease-in-out"}>
       <Box sx={BoxStyles}>
         <Link
           href={link}

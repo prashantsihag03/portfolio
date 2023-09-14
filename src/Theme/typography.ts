@@ -14,6 +14,7 @@ export const getTypographyTheme = (palette: Palette): TypographyOptions => {
     },
     h2: {
       fontSize: "20px",
+      fontWeight: "bold",
       ["@media only screen and (max-width: 900px)"]: {
         fontSize: "18px",
       },
@@ -43,7 +44,13 @@ export const getTypographyTheme = (palette: Palette): TypographyOptions => {
     },
     body1: {
       color: palette.text.secondary,
-      fontSize: "1rem",
+      width: "100%",
+      fontSize: "16px",
+      lineHeight: "1.5rem",
+      padding: "0em 0.5em",
+      ["@media only screen and (max-width: 900px)"]: {
+        fontSize: "14px",
+      },
     },
     body2: {
       fontSize: "clamp(40px, 5vw, 50px)",

@@ -4,10 +4,11 @@ import { getPaletteTheme } from "./palette";
 import { getTypographyTheme } from "./typography";
 
 const getDesignTokens = (mode: "light" | "dark"): ThemeOptions => {
+  const palette = getPaletteTheme(mode);
   return {
-    palette: getPaletteTheme(mode),
+    palette: palette,
     typography: (palette) => getTypographyTheme(palette),
-    components: getComponentsTheme(),
+    components: getComponentsTheme(palette),
   };
 };
 

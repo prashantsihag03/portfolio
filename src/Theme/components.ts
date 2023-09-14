@@ -1,7 +1,10 @@
 import { Components } from "@mui/material";
+import { PaletteOptions } from "@mui/material";
 import { Theme } from "@mui/system";
 
-export const getComponentsTheme = (): Components<Omit<Theme, "components">> => {
+export const getComponentsTheme = (
+  palette: PaletteOptions
+): Components<Omit<Theme, "components">> => {
   return {
     MuiButton: {
       variants: [
@@ -32,6 +35,16 @@ export const getComponentsTheme = (): Components<Omit<Theme, "components">> => {
           },
         },
       },
+    },
+    MuiChip: {
+      variants: [
+        {
+          props: { variant: "filled" },
+          style: {
+            backgroundColor: palette.text?.secondary,
+          },
+        },
+      ],
     },
   };
 };
