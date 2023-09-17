@@ -4,9 +4,9 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Fade,
   Link,
   Typography,
-  Zoom,
 } from "@mui/material";
 import { BoxStyles, cardMediaStyles, cardStyles } from "./styles";
 import { BlogProps } from "./types";
@@ -17,10 +17,9 @@ const BlogItem: React.FC<BlogProps> = ({
   title,
   content,
   link,
-  visible,
 }: BlogProps) => {
   return (
-    <Zoom in={visible} appear easing={"ease-in-out"}>
+    <Fade in={true} appear timeout={300}>
       <Box sx={BoxStyles}>
         <Link
           href={link}
@@ -46,7 +45,7 @@ const BlogItem: React.FC<BlogProps> = ({
           </Card>
         </Link>
       </Box>
-    </Zoom>
+    </Fade>
   );
 };
 

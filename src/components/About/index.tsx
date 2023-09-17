@@ -1,7 +1,7 @@
 import * as React from "react";
 import SectionHeading from "../SectionHeading";
 import { PersonOutlined } from "@mui/icons-material";
-import { Box, Chip, Stack, SxProps, Typography } from "@mui/material";
+import { Box, Chip, Fade, Stack, SxProps, Typography } from "@mui/material";
 import { Theme } from "@mui/system";
 import { AboutData, SummarisedAboutData } from "../../Data/About";
 
@@ -20,43 +20,48 @@ const About = () => {
   const [showSummarised, setShowSummarised] = React.useState<boolean>(true);
 
   return (
-    <Box component="div" sx={containerStyles} id="about">
-      <SectionHeading heading="A bit about me" iconComponent={PersonOutlined} />
-      <Stack
-        direction="row"
-        width="100%"
-        spacing={1}
-        sx={{ marginBottom: "10px", padding: "0 0.5em" }}
-      >
-        <Chip
-          variant={showSummarised ? "filled" : "outlined"}
-          label="Summarised"
-          size="small"
-          color="primary"
-          onClick={() => {
-            setShowSummarised(true);
-            setData(SummarisedAboutData);
-          }}
+    <Fade in={true} appear timeout={300}>
+      <Box component="div" sx={containerStyles} id="about">
+        <SectionHeading
+          heading="A bit about me"
+          iconComponent={PersonOutlined}
         />
-        <Chip
-          variant={showSummarised ? "outlined" : "filled"}
-          label="Elaborated"
-          size="small"
-          color="primary"
-          onClick={() => {
-            setShowSummarised(false);
-            setData(AboutData);
-          }}
-        />
-      </Stack>
-      {data.map((paragraph, index) => (
-        <Typography key={index} variant="body1" component="p">
-          {paragraph}
-          <br />
-          <br />
-        </Typography>
-      ))}
-    </Box>
+        <Stack
+          direction="row"
+          width="100%"
+          spacing={1}
+          sx={{ marginBottom: "10px", padding: "0 0.5em" }}
+        >
+          <Chip
+            variant={showSummarised ? "filled" : "outlined"}
+            label="Summarised"
+            size="small"
+            color="primary"
+            onClick={() => {
+              setShowSummarised(true);
+              setData(SummarisedAboutData);
+            }}
+          />
+          <Chip
+            variant={showSummarised ? "outlined" : "filled"}
+            label="Elaborated"
+            size="small"
+            color="primary"
+            onClick={() => {
+              setShowSummarised(false);
+              setData(AboutData);
+            }}
+          />
+        </Stack>
+        {data.map((paragraph, index) => (
+          <Typography key={index} variant="body1" component="p">
+            {paragraph}
+            <br />
+            <br />
+          </Typography>
+        ))}
+      </Box>
+    </Fade>
   );
 };
 

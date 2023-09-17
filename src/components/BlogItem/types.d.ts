@@ -4,7 +4,6 @@ export interface BlogProps {
   title: string;
   content: string;
   link: string;
-  delay: number;
-  visible: boolean;
+  delay?: number;
+  visible?: boolean;
 }
-  

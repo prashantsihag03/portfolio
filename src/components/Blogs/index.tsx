@@ -15,13 +15,11 @@ const Blogs: React.FC = () => {
         {BlogItems.map((blog, index) => (
           <BlogItem
             key={index}
-            visible={true}
             alt="blog"
             title={blog.heading}
             content={blog.desc}
             media={blog.img}
             link={blog.link}
-            delay={index * 50}
           />
         ))}
       </Box>
