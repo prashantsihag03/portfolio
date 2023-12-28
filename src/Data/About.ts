@@ -11,7 +11,10 @@ export const SummarisedAboutData: AboutDataItem = [
   As a dynamic full stack developer with almost three years of experience, I specialize in \
   building robust solutions for React and Java based web applications. My expertise encompasses a \
   wide range of technologies, including but not limited to Play Framework, Spring Boot, Java 8, React, \
-  TypeScript, Redux, Postgresql, AWS, Jenkins, and Gitlab CI. With demonstrated track record of \
+  TypeScript, Redux, Postgresql, AWS, Jenkins, and Gitlab CI. \
+  ",
+  "\
+  With demonstrated track record of \
   delivering projects on time, I have worked on complex projects consisting of microfrontends \
   and microservices, delivering new features, resolving bugs, and ensuring optimal performance \
   along with rapidly adapting to new technologies, and fostering effective team collaboration. \
@@ -64,7 +67,10 @@ export const AboutData: AboutDataItem = [
   As a dynamic full stack developer with almost three years of experience, I specialize in \
   building robust solutions for React and Java based web applications. My expertise encompasses a \
   wide range of technologies, including but not limited to Play Framework, Spring Boot, Java 8, React, \
-  TypeScript, Redux, Postgresql, AWS, Jenkins, and Gitlab CI. With demonstrated track record of \
+  TypeScript, Redux, Postgresql, AWS, Jenkins, and Gitlab CI. \
+  ",
+  "\
+  With demonstrated track record of \
   delivering projects on time, I have worked on complex projects consisting of microfrontends \
   and microservices, delivering new features, resolving bugs, and ensuring optimal performance \
   along with rapidly adapting to new technologies, and fostering effective team collaboration. \

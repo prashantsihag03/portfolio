@@ -1,27 +1,8 @@
 import * as React from "react";
 import SectionHeading from "../SectionHeading";
 import { PersonOutlined } from "@mui/icons-material";
-import {
-  Box,
-  Chip,
-  Fade,
-  Link,
-  Stack,
-  SxProps,
-  Typography,
-} from "@mui/material";
-import { Theme } from "@mui/system";
+import { Box, Button, Fade, Link, Stack, Typography } from "@mui/material";
 import { AboutData, SummarisedAboutData } from "../../Data/About";
-
-const containerStyles: SxProps<Theme> = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  margin: "auto",
-  transition: "all 0.5s ease-in-out",
-};
 
 const About = () => {
   const [data, setData] = React.useState<string[]>(SummarisedAboutData);
@@ -29,38 +10,20 @@ const About = () => {
 
   return (
     <Fade in={true} appear timeout={300}>
-      <Box component="div" sx={containerStyles} id="about">
+      <Stack
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        margin="auto"
+        sx={{ transition: "all 0.5s ease-in-out" }}
+        component="div"
+        id="about"
+      >
         <SectionHeading
           heading="A bit about me"
           iconComponent={PersonOutlined}
         />
-        <Stack
-          direction="row"
-          width="100%"
-          spacing={1}
-          sx={{ marginBottom: "10px", padding: "0 0.5em" }}
-        >
-          <Chip
-            variant={showSummarised ? "filled" : "outlined"}
-            label="Summarised"
-            size="small"
-            color="primary"
-            onClick={() => {
-              setShowSummarised(true);
-              setData(SummarisedAboutData);
-            }}
-          />
-          <Chip
-            variant={showSummarised ? "outlined" : "filled"}
-            label="Elaborated"
-            size="small"
-            color="primary"
-            onClick={() => {
-              setShowSummarised(false);
-              setData(AboutData);
-            }}
-          />
-        </Stack>
         {data.map((paragraph, index) => (
           <Typography key={index} variant="body1" component="p">
             {paragraph}
@@ -68,7 +31,29 @@ const About = () => {
             <br />
           </Typography>
         ))}
+        <Box width="100%">
+          <Button
+            variant="text"
+            sx={{
+              textTransform: "none",
+              textDecoration: "underline",
+              color: "text.secondary",
+            }}
+            onClick={() => {
+              if (showSummarised) {
+                setShowSummarised(false);
+                setData(AboutData);
+                return;
+              }
+              setShowSummarised(true);
+              setData(SummarisedAboutData);
+            }}
+          >
+            {showSummarised ? "read more" : "read less"}
+          </Button>
+        </Box>
         <Typography variant="body1" component="p">
+          <br />
           If you are a fellow software developer, a recruiter, or anyone who is
           curious about technology please feel free to reach out to me on{" "}
           <Link
@@ -79,7 +64,7 @@ const About = () => {
           </Link>
           .
         </Typography>
-      </Box>
+      </Stack>
     </Fade>
   );
 };
