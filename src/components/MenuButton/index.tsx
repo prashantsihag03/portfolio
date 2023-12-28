@@ -17,7 +17,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
       variant="outlined"
       onClick={onClick}
       disableElevation
-      color="primary"
+      color="secondary"
       size="large"
       href={link}
     >

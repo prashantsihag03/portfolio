@@ -30,6 +30,7 @@ export const getTypographyTheme = (palette: Palette): TypographyOptions => {
     },
     subtitle1: {
       fontSize: "18px",
+      color: palette.secondary.main,
       ["@media only screen and (max-width: 900px)"]: {
         fontSize: "16px",
       },

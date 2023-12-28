@@ -1,7 +1,15 @@
 import * as React from "react";
 import SectionHeading from "../SectionHeading";
 import { PersonOutlined } from "@mui/icons-material";
-import { Box, Chip, Fade, Stack, SxProps, Typography } from "@mui/material";
+import {
+  Box,
+  Chip,
+  Fade,
+  Link,
+  Stack,
+  SxProps,
+  Typography,
+} from "@mui/material";
 import { Theme } from "@mui/system";
 import { AboutData, SummarisedAboutData } from "../../Data/About";
 
@@ -60,6 +68,17 @@ const About = () => {
             <br />
           </Typography>
         ))}
+        <Typography variant="body1" component="p">
+          If you are a fellow software developer, a recruiter, or anyone who is
+          curious about technology please feel free to reach out to me on{" "}
+          <Link
+            href="https://www.linkedin.com/in/prashantsihag"
+            sx={{ textDecoration: "none", color: "secondary.main" }}
+          >
+            LinkedIn
+          </Link>
+          .
+        </Typography>
       </Box>
     </Fade>
   );

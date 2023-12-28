@@ -9,7 +9,7 @@ module.exports = {
   entry: "./src/index.tsx",
   watchOptions: {
     ignored: /node_modules/,
-    aggregateTimeout: 100,
+    aggregateTimeout: 20,
   },
   output: {
     path: __dirname + "/dist",

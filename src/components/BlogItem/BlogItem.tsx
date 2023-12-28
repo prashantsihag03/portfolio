@@ -36,7 +36,12 @@ const BlogItem: React.FC<BlogProps> = ({
               image={media}
               alt={alt}
             />
-            <CardContent style={{ background: "transparent", zIndex: 2 }}>
+            <CardContent
+              style={{
+                background: "transparent",
+                zIndex: 2,
+              }}
+            >
               <Typography gutterBottom variant="h3" component="h3">
                 {title}
               </Typography>

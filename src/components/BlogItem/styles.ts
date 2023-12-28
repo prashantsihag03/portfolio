@@ -21,11 +21,11 @@ export const cardStyles: SxProps<Theme> = {
   justifyContent: "center",
   width: "100%",
   height: "100%",
-  backgroundColor: "background.default",
   padding: "2em 1em",
   borderWidth: "1px",
   borderStyle: "solid",
   borderColor: "transparent",
+  backgroundColor: "rgba(74, 255, 221, 0.13)",
   ["@media only screen and (max-width: 1350px)"]: {
     maxWidth: "100%",
   },
