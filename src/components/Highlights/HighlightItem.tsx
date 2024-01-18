@@ -94,7 +94,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
               objectFit: "contain",
               borderRadius: "0.25rem",
             }}
-            src="./images/Demo-GuidedTour-LightMode.mov"
+            src="./images/Demo-GuidedTour-LightMode.mp4"
           />
         </Box>
         <Stack width={"100%"} direction={"row"}>
