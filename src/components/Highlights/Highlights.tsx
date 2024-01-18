@@ -16,7 +16,7 @@ const Highlights: React.FC = () => {
         margin={"auto"}
         marginTop={"2rem"}
       >
-        <HighlightItem gutterSize="1rem" />
+        <HighlightItem gutterSize="1rem" title="Dialogue Web App" />
       </Stack>
     </>
   );

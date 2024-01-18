@@ -3,14 +3,16 @@ import React from "react";
 import MenuButton from "../MenuButton";
 
 interface HighlightItemProps {
+  title: string;
   gutterSize: string;
   mediaSize?: string;
 }
 
 const HighlightItem: React.FC<HighlightItemProps> = ({
   gutterSize,
+  title,
 }: HighlightItemProps) => {
-  const isMobile = useMediaQuery("(max-width: 980px)");
+  const isMobile = useMediaQuery("(max-width: 1100px)");
 
   return (
     <Stack direction={"row"} width={"100%"} justifyContent={"center"}>
@@ -19,7 +21,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
           variant="body1"
           sx={{ width: "100%", padding: "1rem", color: "secondary.main" }}
         >
-          {isMobile ? "" : "Dialogue Demo"}
+          {isMobile ? "" : title}
         </Typography>
         <Box
           width="100%"
@@ -131,7 +133,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
                     color: "primary.main",
                   }}
                 >
-                  Dialogue Web App
+                  {title}
                 </Typography>
                 <Divider light variant="fullWidth" />
                 <Typography
