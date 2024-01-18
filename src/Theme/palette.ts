@@ -20,7 +20,8 @@ export const getPaletteTheme = (mode: DisplayMode): PaletteOptions => {
     },
     background: {
       default: mode === "light" ? "#f9f9f9" : "#000000",
-      paper: mode === "light" ? "#f9f9f9" : "#4AFFDD",
+      paper: mode === "light" ? "#f9f9f9" : "#4affdd21",
+      // paper: mode === "light" ? "#f9f9f9" : "#4AFFDD",
     },
     action: {
       active: "#FFF",

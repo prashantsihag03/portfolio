@@ -4,6 +4,7 @@ import React from "react";
 import Blogs from "../Blogs";
 import QuickBioInfo from "../QuickBioInfo";
 import About from "../About";
+import Highlights from "../Highlights";
 
 const mainStyles: SxProps<Theme> = {
   marginLeft: "10%",
@@ -23,6 +24,8 @@ const Main = () => {
     <Box sx={{ maxWidth: "1499px", margin: "auto" }}>
       <Box component="main" sx={mainStyles}>
         <QuickBioInfo />
+        <Divider light variant="middle" sx={sectionDivider} />
+        <Highlights />
         <Divider light variant="middle" sx={sectionDivider} />
         <About />
         <Divider light variant="middle" sx={sectionDivider} />

@@ -30,16 +30,21 @@ interface SectionHeadingProps {
   iconComponent: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
     muiName: string;
   };
+  iconColor?: string;
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
   heading,
   iconComponent,
+  iconColor,
 }: SectionHeadingProps) => {
   return (
     <Box sx={containerStyles}>
       <SvgIcon
-        sx={{ color: "text.primary", marginRight: "3px" }}
+        sx={{
+          color: iconColor ? iconColor : "text.primary",
+          marginRight: "3px",
+        }}
         component={iconComponent}
         fontSize="medium"
         inheritViewBox
