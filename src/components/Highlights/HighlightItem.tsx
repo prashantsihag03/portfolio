@@ -55,8 +55,6 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
                     paddingRight: "2rem",
                     color: "primary.main",
                     marginBottom: "1rem",
-                    maxHeight: "50%",
-                    overflow: "hidden",
                   }}
                 >
                   <Typography component={"span"} variant="subtitle1">
@@ -101,7 +99,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
         </Box>
         <Stack width={"100%"} direction={"row"}>
           <Box
-            width={isMobile ? "90%" : "50%"}
+            width={isMobile ? "90%" : "60%"}
             sx={{
               paddingBottom: gutterSize,
               paddingRight: gutterSize,
@@ -183,7 +181,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
           </Box>
           <Typography
             variant="body1"
-            width={isMobile ? "10%" : "50%"}
+            width={isMobile ? "10%" : "40%"}
             sx={{ padding: "1rem", textAlign: "right" }}
           ></Typography>
         </Stack>
