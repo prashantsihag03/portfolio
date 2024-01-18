@@ -88,13 +88,12 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
             controls={true}
             muted={true}
             autoPlay={true}
-            loop={true}
             style={{
               width: "100%",
               objectFit: "contain",
               borderRadius: "0.25rem",
             }}
-            src="./images/Demo-GuidedTour-LightMode.mp4"
+            src="./images/Demo-GuidedTour-LightMode-HD.mp4"
           />
         </Box>
         <Stack width={"100%"} direction={"row"}>
