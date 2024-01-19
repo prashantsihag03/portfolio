@@ -1,12 +1,21 @@
 import * as React from "react";
 import SectionHeading from "../SectionHeading";
 import { PersonOutlined } from "@mui/icons-material";
-import { Box, Button, Fade, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Fade,
+  Link,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { AboutData, SummarisedAboutData } from "../../Data/About";
 
 const About = () => {
   const [data, setData] = React.useState<string[]>(SummarisedAboutData);
   const [showSummarised, setShowSummarised] = React.useState<boolean>(true);
+  const isLightMode = useMediaQuery("(prefers-color-scheme: light)");
 
   return (
     <Fade in={true} appear timeout={300}>
@@ -58,7 +67,11 @@ const About = () => {
           curious about technology please feel free to reach out to me on{" "}
           <Link
             href="https://www.linkedin.com/in/prashantsihag"
-            sx={{ textDecoration: "none", color: "secondary.main" }}
+            sx={{
+              textDecoration: "none",
+              color: isLightMode ? "white" : "secondary.main",
+              backgroundColor: isLightMode ? "secondary.main" : "none",
+            }}
           >
             LinkedIn
           </Link>

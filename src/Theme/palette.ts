@@ -10,8 +10,8 @@ export const getPaletteTheme = (mode: DisplayMode): PaletteOptions => {
       dark: "#f9f9f9",
     },
     secondary: {
-      main: mode === "light" ? "#4AFFDD" : "#4AFFDD",
-      light: "#4AFFDD",
+      main: mode === "light" ? "#02B08F" : "#4AFFDD",
+      light: "#02B08F",
       dark: "#4AFFDD",
     },
     text: {
@@ -20,8 +20,7 @@ export const getPaletteTheme = (mode: DisplayMode): PaletteOptions => {
     },
     background: {
       default: mode === "light" ? "#f9f9f9" : "#000000",
-      paper: mode === "light" ? "#f9f9f9" : "#4affdd21",
-      // paper: mode === "light" ? "#f9f9f9" : "#4AFFDD",
+      paper: mode === "light" ? "#4affdd59" : "#4affdd21",
     },
     action: {
       active: "#FFF",

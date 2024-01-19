@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Fade, Typography } from "@mui/material";
+import { Box, Fade, Typography, useMediaQuery } from "@mui/material";
 import { containerStyles, subContainerStyles } from "./styles";
 import Socials from "../Socials";
 import QuickIconData from "../../Data/QuickIcons";
@@ -8,6 +8,8 @@ import QuickIconData from "../../Data/QuickIcons";
  * Component that provides Quick Biographical Information including some quick call to actions for users.
  */
 const QuickBioInfo: React.FC = () => {
+  const isLightMode = useMediaQuery("(prefers-color-scheme: light)");
+
   return (
     <Fade in={true} appear timeout={300}>
       <Box sx={containerStyles} className="quick-bio-info" id="intro">
@@ -17,7 +19,14 @@ const QuickBioInfo: React.FC = () => {
               Prashant Sihag
             </Typography>
             <br />
-            <Typography variant="subtitle1" component={"span"}>
+            <Typography
+              variant="subtitle1"
+              component={"span"}
+              sx={{
+                color: isLightMode ? "white" : "secondary.main",
+                backgroundColor: isLightMode ? "secondary.main" : "none",
+              }}
+            >
               Software engineer at Alex Solutions.
             </Typography>
             <br />

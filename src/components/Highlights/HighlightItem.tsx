@@ -13,6 +13,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
   title,
 }: HighlightItemProps) => {
   const isMobile = useMediaQuery("(max-width: 1100px)");
+  const isLightMode = useMediaQuery("(prefers-color-scheme: light)");
 
   return (
     <Stack direction={"row"} width={"100%"} justifyContent={"center"}>
@@ -28,6 +29,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
           height={"100%"}
           sx={{
             border: "1px solid whitesmoke",
+            borderColor: "primary.main",
             borderRadius: "0.25rem",
             borderTopRightRadius: "0",
             borderBottomRightRadius: "0",
@@ -57,11 +59,25 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
                     marginBottom: "1rem",
                   }}
                 >
-                  <Typography component={"span"} variant="subtitle1">
+                  <Typography
+                    component={"span"}
+                    variant="subtitle1"
+                    sx={{
+                      color: isLightMode ? "white" : "secondary.main",
+                      backgroundColor: isLightMode ? "secondary.main" : "none",
+                    }}
+                  >
                     Immersive demonstration
                   </Typography>{" "}
                   of an{" "}
-                  <Typography component={"span"} variant="subtitle1">
+                  <Typography
+                    component={"span"}
+                    variant="subtitle1"
+                    sx={{
+                      color: isLightMode ? "white" : "secondary.main",
+                      backgroundColor: isLightMode ? "secondary.main" : "none",
+                    }}
+                  >
                     interactive guided tour
                   </Typography>{" "}
                   showcasing the seamless functionalities of Dialogue web app.
@@ -82,8 +98,12 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
           </Stack>
         </Box>
       </Stack>
-      <Stack width={"70%"} height={"100%"} direction={"column"}>
-        <Box width={"100%"}>
+      <Stack
+        width={isMobile ? "90%" : "70%"}
+        height={"100%"}
+        direction={"column"}
+      >
+        <Stack width={"100%"}>
           <video
             controls={true}
             muted={true}
@@ -95,7 +115,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
             }}
             src="./images/Demo-GuidedTour-LightMode.mp4"
           />
-        </Box>
+        </Stack>
         <Stack width={"100%"} direction={"row"}>
           <Box
             width={isMobile ? "90%" : "60%"}
@@ -103,6 +123,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
               paddingBottom: gutterSize,
               paddingRight: gutterSize,
               border: "1px solid whitesmoke",
+              borderColor: "primary.main",
               borderRadius: "0.25rem",
               borderLeft: "none",
               borderTop: "none",
@@ -143,11 +164,25 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
                     color: "primary.main",
                   }}
                 >
-                  <Typography component={"span"} variant="subtitle1">
+                  <Typography
+                    component={"span"}
+                    variant="subtitle1"
+                    sx={{
+                      color: isLightMode ? "white" : "secondary.main",
+                      backgroundColor: isLightMode ? "secondary.main" : "none",
+                    }}
+                  >
                     Immersive demonstration
                   </Typography>{" "}
                   of an{" "}
-                  <Typography component={"span"} variant="subtitle1">
+                  <Typography
+                    component={"span"}
+                    variant="subtitle1"
+                    sx={{
+                      color: isLightMode ? "white" : "secondary.main",
+                      backgroundColor: isLightMode ? "secondary.main" : "none",
+                    }}
+                  >
                     interactive guided tour
                   </Typography>{" "}
                   showcasing the seamless functionalities of Dialogue web app.
