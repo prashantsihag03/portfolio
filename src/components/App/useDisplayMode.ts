@@ -24,7 +24,7 @@ const useDisplayMode = () => {
   React.useEffect(() => {
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", displayMode === "dark" ? "#000000" : "#fff");
+      ?.setAttribute("content", displayMode === "dark" ? "#000000" : "#f9f9f9");
   }, [displayMode]);
 
   const theme = React.useMemo(
