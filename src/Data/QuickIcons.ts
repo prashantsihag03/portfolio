@@ -2,6 +2,7 @@ import IconProp from "../components/Icon/type";
 import mediumIcon from "../assets/icons/medium.svg";
 import gitHubIcon from "../assets/icons/github.svg";
 import linkedInIcon from "../assets/icons/linkedIn.svg";
+import codepenIcon from "../assets/icons/codepen.svg";
 
 const QuickIconData: IconProp[] = [
   {
@@ -21,6 +22,12 @@ const QuickIconData: IconProp[] = [
     href: "https://medium.com/@prashant-sihag",
     src: mediumIcon,
     alt: "Medium Icon",
+  },
+  {
+    title: "My Codepen Profile",
+    href: "https://codepen.io/prashantsihag",
+    src: codepenIcon,
+    alt: "Codepen Icon",
   },
 ];
 
