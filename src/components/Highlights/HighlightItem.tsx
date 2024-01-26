@@ -1,6 +1,7 @@
 import { Box, Divider, Stack, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import MenuButton from "../MenuButton";
+import VideoPlayer from "../VideoPlayer";
 
 interface HighlightItemProps {
   title: string;
@@ -104,16 +105,14 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
         direction={"column"}
       >
         <Stack width={"100%"}>
-          <video
-            controls={true}
-            muted={true}
-            autoPlay={true}
-            style={{
-              width: "100%",
-              objectFit: "contain",
-              borderRadius: "0.25rem",
-            }}
-            src="./images/Demo-GuidedTour-LightMode.mp4"
+          <VideoPlayer
+            buttonSize={isMobile ? "5em" : "8em"}
+            thumbnailUrl={
+              isLightMode
+                ? "./images/dialogue_thumbnail_light.jpg"
+                : "./images/dialogue_thumbnail_dark.jpg"
+            }
+            videoUrl="./images/Demo-GuidedTour-LightMode.mp4"
           />
         </Stack>
         <Stack width={"100%"} direction={"row"}>
