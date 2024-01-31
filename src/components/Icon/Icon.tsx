@@ -7,13 +7,19 @@ const listStyle: SxProps<Theme> = {
   listStyle: "none",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "end",
+  justifyContent: "center",
   alignItems: "center",
-  width: "3em",
-  height: "3em",
+  width: "1.2em",
+  height: "1.2em",
+  marginRight: "1.5em",
+  transition: "all 0.15s linear",
+  color: "primary.main",
+  ["&:hover"]: {
+    color: "secondary.main",
+  },
   ["@media only screen and (max-width: 900px)"]: {
-    width: "3em",
-    height: "3em",
+    width: "1.2em",
+    height: "1.2em",
   },
 };
 
@@ -24,7 +30,13 @@ const imgStyle: SxProps<Theme> = {
   transition: "all 0.5s linear",
 };
 
-const Icon: React.FC<IconProp> = ({ href, title, src, alt }: IconProp) => {
+const Icon: React.FC<IconProp> = ({
+  href,
+  title,
+  src,
+  alt,
+  children,
+}: IconProp) => {
   return (
     <Link
       href={href}
@@ -33,7 +45,10 @@ const Icon: React.FC<IconProp> = ({ href, title, src, alt }: IconProp) => {
       rel="noopener noreferrer nofollow"
     >
       <Box component={"li"} sx={listStyle}>
-        <Box component={"img"} sx={imgStyle} src={src} alt={alt} />
+        {src ? (
+          <Box component={"img"} sx={imgStyle} src={src} alt={alt} />
+        ) : null}
+        {children}
       </Box>
     </Link>
   );
