@@ -17,6 +17,7 @@ const Projects: React.FC = () => {
         width={"100%"}
         minHeight={isMobile ? "100vh" : "40vh"}
         position={"relative"}
+        borderRadius={1}
         sx={{
           backgroundColor: "#0093E9",
           backgroundImage: "linear-gradient(320deg, #0093E9 0%, #80D0C7 100%)",
@@ -58,7 +59,14 @@ const Projects: React.FC = () => {
                 objectFit: "contain",
               }}
             />
-            <Typography variant="subtitle1" sx={{ color: "text.secondary" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                color: "primary.light",
+                fontFamily:
+                  '"Roboto Slab Regular", "Helvetica", -apple-system, system-ui, serif',
+              }}
+            >
               Highly sophisticated web app connecting users with each other over
               multiple channels such as text, voice, and video and provide media
               sharing platform while giving them full control of their data.

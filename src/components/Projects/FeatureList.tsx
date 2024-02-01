@@ -5,7 +5,14 @@ import FeatureListItem from "./FeatureListItem";
 const FeatureList: React.FC = () => {
   return (
     <>
-      <Typography variant="subtitle1" sx={{ color: "text.secondary" }}>
+      <Typography
+        variant="subtitle1"
+        sx={{
+          color: "primary.light",
+          fontFamily:
+            '"Roboto Slab Regular", "Helvetica", -apple-system, system-ui, serif',
+        }}
+      >
         Features
       </Typography>
       <Divider sx={{ borderColor: "#2B6BFF" }} />

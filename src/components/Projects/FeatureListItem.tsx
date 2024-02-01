@@ -19,6 +19,9 @@ const FeatureListItem: React.FC<FeatureListItemProp> = ({
       <Typography
         variant="subtitle2"
         sx={{
+          color: "primary.light",
+          fontFamily:
+            '"Roboto Slab Regular", "Helvetica", -apple-system, system-ui, serif',
           //   cursor: "pointer",
           transition: "all 0.25s ease-in-out",
           "&:hover": {
