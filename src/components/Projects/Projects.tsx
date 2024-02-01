@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
           justifyContent={"space-between"}
           alignItems={"center"}
           width={isMobile ? "100%" : "50%"}
-          padding={"2rem"}
+          padding={isMobile ? "0.5rem" : "2rem"}
           height={"100%"}
           sx={{ backgroundColor: "#ffffff1c" }}
         >
@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
             minHeight={"30%"}
             width={"100%"}
             padding={"1rem"}
-            marginBottom={"5rem"}
+            marginBottom={isMobile ? "2rem" : "5rem"}
           >
             <Box
               component="img"
