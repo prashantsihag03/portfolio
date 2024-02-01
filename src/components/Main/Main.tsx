@@ -5,6 +5,7 @@ import Blogs from "../Blogs";
 import QuickBioInfo from "../QuickBioInfo";
 import About from "../About";
 import Highlights from "../Highlights";
+import Projects from "../Projects/Projects";
 
 const mainStyles: SxProps<Theme> = {
   marginLeft: "10%",
@@ -28,6 +29,8 @@ const Main = () => {
         <Highlights />
         <Divider light variant="middle" sx={sectionDivider} />
         <About />
+        <Divider light variant="middle" sx={sectionDivider} />
+        <Projects />
         <Divider light variant="middle" sx={sectionDivider} />
         <Blogs />
       </Box>
