@@ -6,4 +6,9 @@ export default interface IconProp {
   src?: string;
   alt: string;
   children?: React.ReactNode;
+  color?: string;
+  hoverColor?: string;
 }
+
+export interface SpecialIconProps
+  extends Omit<IconProp, "title" | "children" | "src" | "alt"> {}

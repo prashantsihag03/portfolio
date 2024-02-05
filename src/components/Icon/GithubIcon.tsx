@@ -1,9 +1,21 @@
 import * as React from "react";
 import Icon from "./Icon";
+import { SpecialIconProps } from "./type";
 
-const GithubIcon: React.FC<{ href: string }> = ({ href }: { href: string }) => {
+const GithubIcon: React.FC<SpecialIconProps> = ({
+  href,
+  color,
+  hoverColor,
+}: SpecialIconProps) => {
   return (
-    <Icon key={"GithubIcon"} href={href} title={"Github"} alt={"Github Icon"}>
+    <Icon
+      key={"GithubIcon"}
+      href={href}
+      title={"Github"}
+      alt={"Github Icon"}
+      color={color}
+      hoverColor={hoverColor}
+    >
       <svg
         stroke="currentColor"
         fill="none"

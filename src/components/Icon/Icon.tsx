@@ -13,10 +13,6 @@ const listStyle: SxProps<Theme> = {
   height: "1.2em",
   marginRight: "1.5em",
   transition: "all 0.15s linear",
-  color: "primary.main",
-  ["&:hover"]: {
-    color: "secondary.main",
-  },
   ["@media only screen and (max-width: 900px)"]: {
     width: "1.2em",
     height: "1.2em",
@@ -36,6 +32,8 @@ const Icon: React.FC<IconProp> = ({
   src,
   alt,
   children,
+  color,
+  hoverColor,
 }: IconProp) => {
   return (
     <Link
@@ -44,7 +42,16 @@ const Icon: React.FC<IconProp> = ({
       title={title}
       rel="noopener noreferrer nofollow"
     >
-      <Box component={"li"} sx={listStyle}>
+      <Box
+        component={"li"}
+        sx={{
+          ...listStyle,
+          color: color ? color : "primary.main",
+          ["&:hover"]: {
+            color: hoverColor ? hoverColor : "secondary.main",
+          },
+        }}
+      >
         {src ? (
           <Box component={"img"} sx={imgStyle} src={src} alt={alt} />
         ) : null}

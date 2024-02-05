@@ -1,26 +1,30 @@
-import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import SectionHeading from "../SectionHeading";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import FeatureList from "./FeatureList";
+import PROJECT_DIALOGUE from "../../Data/Projects";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const Projects: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 1100px)");
+  const isLightMode = useMediaQuery("(prefers-color-scheme: light)");
 
   return (
     <>
       <SectionHeading heading={"Projects"} iconComponent={ConstructionIcon} />
       <Stack
         direction={isMobile ? "column" : "row"}
-        justifyContent={"center"}
+        justifyContent={isMobile ? "space-between" : "center"}
         alignItems={"center"}
         width={"100%"}
         minHeight={isMobile ? "100vh" : "40vh"}
         position={"relative"}
         borderRadius={1}
         sx={{
-          backgroundColor: "#0093E9",
-          backgroundImage: "linear-gradient(320deg, #0093E9 0%, #80D0C7 100%)",
+          backgroundColor: isLightMode
+            ? PROJECT_DIALOGUE.themeColor
+            : PROJECT_DIALOGUE.themeColorDark,
         }}
       >
         {isMobile ? (
@@ -43,7 +47,7 @@ const Projects: React.FC = () => {
           width={isMobile ? "100%" : "50%"}
           padding={isMobile ? "0.5rem" : "2rem"}
           height={"100%"}
-          sx={{ backgroundColor: "#ffffff1c" }}
+          sx={{ backgroundColor: isLightMode ? "#becef4" : "#192031" }}
         >
           <Box
             minHeight={"30%"}
@@ -62,22 +66,66 @@ const Projects: React.FC = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                color: "primary.light",
+                color: "primary.main",
                 fontFamily:
                   '"Roboto Slab Regular", "Helvetica", -apple-system, system-ui, serif',
               }}
             >
-              Highly sophisticated web app connecting users with each other over
-              multiple channels such as text, voice, and video and provide media
-              sharing platform while giving them full control of their data.
+              {PROJECT_DIALOGUE.description}
             </Typography>
+            <Stack
+              direction={"row"}
+              width={"100%"}
+              paddingTop={"1rem"}
+              justifyContent={"left"}
+              alignItems={"center"}
+            >
+              <Button
+                variant="text"
+                href={PROJECT_DIALOGUE.github}
+                sx={{
+                  marginRight: "1rem",
+                  color: isLightMode
+                    ? PROJECT_DIALOGUE.themeColor
+                    : PROJECT_DIALOGUE.themeColorDark,
+                  fontWeight: "bold",
+                  letterSpacing: "1.2pt",
+                  padding: "0.25rem 0.5rem",
+                }}
+              >
+                <LaunchIcon fontSize="small" />
+                Github
+              </Button>
+              <Button
+                variant="text"
+                href={PROJECT_DIALOGUE.href}
+                sx={{
+                  color: isLightMode
+                    ? PROJECT_DIALOGUE.themeColor
+                    : PROJECT_DIALOGUE.themeColorDark,
+                  fontWeight: "bold",
+                  letterSpacing: "1.2pt",
+                  padding: "0.25rem 0.5rem",
+                }}
+              >
+                <LaunchIcon fontSize="small" />
+                Website
+              </Button>
+            </Stack>
           </Box>
           <Box maxHeight={"70%"} width={"100%"} padding={"1rem"}>
-            <FeatureList />
+            <FeatureList
+              features={PROJECT_DIALOGUE.features}
+              color={
+                isLightMode
+                  ? PROJECT_DIALOGUE.themeColor
+                  : PROJECT_DIALOGUE.themeColorDark
+              }
+            />
           </Box>
         </Stack>
         {!isMobile ? (
-          <Stack width={"50%"}>
+          <Box width={"50%"}>
             <Box
               component="img"
               src="./images/dialogue_chat_light.png"
@@ -87,7 +135,7 @@ const Projects: React.FC = () => {
                 borderRadius: "0.25rem",
               }}
             />
-          </Stack>
+          </Box>
         ) : null}
       </Stack>
     </>
