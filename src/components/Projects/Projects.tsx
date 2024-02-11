@@ -47,7 +47,11 @@ const Projects: React.FC = () => {
           width={isMobile ? "100%" : "50%"}
           padding={isMobile ? "0.5rem" : "2rem"}
           height={"100%"}
-          sx={{ backgroundColor: isLightMode ? "#becef4" : "#192031" }}
+          sx={{
+            backgroundColor: isLightMode
+              ? PROJECT_DIALOGUE.bgColor
+              : PROJECT_DIALOGUE.bgColorDark,
+          }}
         >
           <Box
             minHeight={"30%"}
@@ -85,9 +89,7 @@ const Projects: React.FC = () => {
                 href={PROJECT_DIALOGUE.github}
                 sx={{
                   marginRight: "1rem",
-                  color: isLightMode
-                    ? PROJECT_DIALOGUE.themeColor
-                    : PROJECT_DIALOGUE.themeColorDark,
+                  color: PROJECT_DIALOGUE.themeColor,
                   fontWeight: "bold",
                   letterSpacing: "1.2pt",
                   padding: "0.25rem 0.5rem",
@@ -100,9 +102,7 @@ const Projects: React.FC = () => {
                 variant="text"
                 href={PROJECT_DIALOGUE.href}
                 sx={{
-                  color: isLightMode
-                    ? PROJECT_DIALOGUE.themeColor
-                    : PROJECT_DIALOGUE.themeColorDark,
+                  color: PROJECT_DIALOGUE.themeColor,
                   fontWeight: "bold",
                   letterSpacing: "1.2pt",
                   padding: "0.25rem 0.5rem",
@@ -116,11 +116,7 @@ const Projects: React.FC = () => {
           <Box maxHeight={"70%"} width={"100%"} padding={"1rem"}>
             <FeatureList
               features={PROJECT_DIALOGUE.features}
-              color={
-                isLightMode
-                  ? PROJECT_DIALOGUE.themeColor
-                  : PROJECT_DIALOGUE.themeColorDark
-              }
+              color={PROJECT_DIALOGUE.themeColor}
             />
           </Box>
         </Stack>

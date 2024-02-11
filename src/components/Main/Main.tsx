@@ -1,4 +1,4 @@
-import { Box, Divider, SxProps } from "@mui/material";
+import { Box, Divider, SxProps, useMediaQuery } from "@mui/material";
 import { Theme } from "@mui/system";
 import React from "react";
 import Blogs from "../Blogs";
@@ -6,6 +6,7 @@ import QuickBioInfo from "../QuickBioInfo";
 import About from "../About";
 import Highlights from "../Highlights";
 import Projects from "../Projects/Projects";
+import HighlightsV2 from "../Highlights/HighlightsV2";
 
 const mainStyles: SxProps<Theme> = {
   marginLeft: "10%",
@@ -21,12 +22,14 @@ const sectionDivider: SxProps<Theme> = {
 };
 
 const Main = () => {
+  const isMobile = useMediaQuery("(max-width: 1100px)");
+
   return (
     <Box sx={{ maxWidth: "1499px", margin: "auto" }}>
       <Box component="main" sx={mainStyles}>
         <QuickBioInfo />
         <Divider light variant="middle" sx={sectionDivider} />
-        <Highlights />
+        {isMobile ? <Highlights /> : <HighlightsV2 />}
         <Divider light variant="middle" sx={sectionDivider} />
         <About />
         <Divider light variant="middle" sx={sectionDivider} />

@@ -1,5 +1,5 @@
 import {
-  Box,
+  Stack,
   SvgIcon,
   SvgIconTypeMap,
   SxProps,
@@ -9,17 +9,6 @@ import {
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import * as React from "react";
 
-const containerStyles: SxProps<Theme> = {
-  display: "flex",
-  width: "100%",
-  flexDirection: "row",
-  color: "primary.main",
-  justifyContent: "flex-start",
-  alignItems: "center",
-  border: "none",
-  marginBottom: "10px",
-};
-
 const headingStyles: SxProps<Theme> = {
   textAlign: "left",
   width: "100%",
@@ -27,32 +16,50 @@ const headingStyles: SxProps<Theme> = {
 
 interface SectionHeadingProps {
   heading: string;
-  iconComponent: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+  iconComponent?: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
     muiName: string;
   };
   iconColor?: string;
+  iconSize?: "small" | "medium" | "large";
+  size?: string;
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
   heading,
   iconComponent,
   iconColor,
+  iconSize,
+  size,
 }: SectionHeadingProps) => {
   return (
-    <Box sx={containerStyles}>
-      <SvgIcon
-        sx={{
-          color: iconColor ? iconColor : "text.primary",
-          marginRight: "3px",
-        }}
-        component={iconComponent}
-        fontSize="medium"
-        inheritViewBox
-      />
-      <Typography variant="h2" component="h2" sx={headingStyles}>
+    <Stack
+      direction={"row"}
+      width={"100%"}
+      marginBottom={"10px"}
+      color={"primary"}
+      justifyContent={"flex-start"}
+      alignItems={"center"}
+      border={"none"}
+    >
+      {iconComponent ? (
+        <SvgIcon
+          sx={{
+            color: iconColor ? iconColor : "text.primary",
+            marginRight: "3px",
+          }}
+          component={iconComponent}
+          fontSize={iconSize ? iconSize : "medium"}
+          inheritViewBox
+        />
+      ) : undefined}
+      <Typography
+        variant="h2"
+        component="h2"
+        sx={{ ...headingStyles, fontSize: size ? size : undefined }}
+      >
         {heading}
       </Typography>
-    </Box>
+    </Stack>
   );
 };
 
