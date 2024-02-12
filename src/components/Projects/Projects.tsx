@@ -1,14 +1,59 @@
 import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "../SectionHeading";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import FeatureList from "./FeatureList";
 import PROJECT_DIALOGUE from "../../Data/Projects";
 import LaunchIcon from "@mui/icons-material/Launch";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Projects: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 1100px)");
   const isLightMode = useMediaQuery("(prefers-color-scheme: light)");
+  const [activeFeature, setActiveFeature] = useState<string>("overview");
+  const [featureImgLink, setFeatureImgLink] = useState<string>(
+    isLightMode
+      ? PROJECT_DIALOGUE.imgMap["overview"].light
+      : PROJECT_DIALOGUE.imgMap["overview"].dark
+  );
+
+  const getImgIndicator = () => {
+    const keys = Object.keys(PROJECT_DIALOGUE.imgMap);
+    const currentImgIndex = keys.findIndex((key) => key === activeFeature);
+    if (!currentImgIndex) return `1/${keys.length}`;
+    return `${currentImgIndex + 1}/${keys.length}`;
+  };
+
+  const showImg = (prev?: boolean) => {
+    const keys = Object.keys(PROJECT_DIALOGUE.imgMap);
+    const currentImgIndex = keys.findIndex((key) => key === activeFeature);
+    if (currentImgIndex === -1) {
+      setActiveFeature("overview");
+      setFeatureImgLink(
+        isLightMode
+          ? PROJECT_DIALOGUE.imgMap["overview"].light
+          : PROJECT_DIALOGUE.imgMap["overview"].dark
+      );
+      return;
+    }
+
+    let newIndex = currentImgIndex + 1;
+    if (currentImgIndex === 0 && prev === true) {
+      newIndex = keys.length - 1;
+    } else if (currentImgIndex === keys.length - 1 && prev === false) {
+      newIndex = 0;
+    } else if (prev === true) {
+      newIndex = currentImgIndex - 1;
+    }
+
+    setActiveFeature(keys[newIndex]);
+    setFeatureImgLink(
+      isLightMode
+        ? PROJECT_DIALOGUE.imgMap[keys[newIndex]].light
+        : PROJECT_DIALOGUE.imgMap[keys[newIndex]].dark
+    );
+  };
 
   return (
     <>
@@ -31,13 +76,55 @@ const Projects: React.FC = () => {
           <Stack width={"100%"}>
             <Box
               component="img"
-              src="./images/dialogue_chat_light.png"
+              src={featureImgLink}
               sx={{
                 width: "100%",
                 objectFit: "contain",
                 borderRadius: "0.25rem",
               }}
             />
+            <Stack
+              direction={"row"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              width={"100%"}
+              bottom={"0"}
+              right={"0"}
+              marginTop={"3rem"}
+            >
+              <ArrowBackIosIcon
+                onClick={() => {
+                  showImg(true);
+                }}
+                sx={{
+                  color: "primary.main",
+                  margin: "1rem",
+                  "&:hover": {
+                    backgroundColor: "active.hover",
+                  },
+                }}
+              />
+              <Typography
+                variant="subtitle1"
+                component="span"
+                margin="1rem"
+                color={"primary"}
+              >
+                {getImgIndicator()}
+              </Typography>
+              <ArrowForwardIosIcon
+                onClick={() => {
+                  showImg(false);
+                }}
+                sx={{
+                  color: "primary.main",
+                  margin: "1rem",
+                  "&:hover": {
+                    backgroundColor: "active.hover",
+                  },
+                }}
+              />
+            </Stack>
           </Stack>
         ) : null}
         <Stack
@@ -61,7 +148,7 @@ const Projects: React.FC = () => {
           >
             <Box
               component="img"
-              src="./images/allThemedDialogueLogo.svg"
+              src={PROJECT_DIALOGUE.logoUrl}
               sx={{
                 width: "7rem",
                 objectFit: "contain",
@@ -117,6 +204,21 @@ const Projects: React.FC = () => {
             <FeatureList
               features={PROJECT_DIALOGUE.features}
               color={PROJECT_DIALOGUE.themeColor}
+              onFeatureClick={(featureName: string) => {
+                console.log("Showing img for feature:", featureName);
+                if (
+                  Object.keys(PROJECT_DIALOGUE.imgMap).includes(featureName)
+                ) {
+                  setFeatureImgLink(
+                    isLightMode
+                      ? PROJECT_DIALOGUE.imgMap[featureName].light
+                      : PROJECT_DIALOGUE.imgMap[featureName].dark
+                  );
+                  setActiveFeature(featureName);
+                } else {
+                  console.log("Img not found for feature:", featureName);
+                }
+              }}
             />
           </Box>
         </Stack>
@@ -124,13 +226,56 @@ const Projects: React.FC = () => {
           <Box width={"50%"}>
             <Box
               component="img"
-              src="./images/dialogue_chat_light.png"
+              src={featureImgLink}
               sx={{
                 width: "100%",
                 objectFit: "contain",
                 borderRadius: "0.25rem",
               }}
             />
+            <Stack
+              direction={"row"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              width={"100%"}
+              bottom={"0"}
+              right={"0"}
+              marginTop={"3rem"}
+            >
+              <ArrowBackIosIcon
+                onClick={() => {
+                  showImg(true);
+                }}
+                sx={{
+                  color: "primary.main",
+                  margin: "1rem",
+                  "&:hover": {
+                    backgroundColor: "active.hover",
+                  },
+                }}
+              />
+              <Typography
+                variant="subtitle1"
+                component="span"
+                margin="1rem"
+                color={"primary"}
+              >
+                {getImgIndicator()}
+              </Typography>
+              <ArrowForwardIosIcon
+                onClick={() => {
+                  showImg(false);
+                }}
+                sx={{
+                  color: "primary.main",
+                  margin: "1rem",
+                  "&:hover": {
+                    cursor: "pointer",
+                    backgroundColor: "active.hover",
+                  },
+                }}
+              />
+            </Stack>
           </Box>
         ) : null}
       </Stack>

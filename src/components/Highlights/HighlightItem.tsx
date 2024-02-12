@@ -2,6 +2,7 @@ import { Box, Divider, Stack, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import MenuButton from "../MenuButton";
 import VideoPlayer from "../VideoPlayer";
+import PROJECT_DIALOGUE from "../../Data/Projects";
 
 interface HighlightItemProps {
   title: string;
@@ -89,10 +90,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
                     paddingLeft: "1rem",
                   }}
                 >
-                  <MenuButton
-                    value="Github"
-                    link="https://github.com/prashantsihag03/dialogueV2"
-                  />
+                  <MenuButton value="Github" link={PROJECT_DIALOGUE.github} />
                 </Box>
               </>
             ) : null}
@@ -109,10 +107,10 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
             buttonSize={isMobile ? "5em" : "8em"}
             thumbnailUrl={
               isLightMode
-                ? "./images/dialogue_thumbnail_light.jpg"
-                : "./images/dialogue_thumbnail_dark.jpg"
+                ? PROJECT_DIALOGUE.demo.thumbnail!.light
+                : PROJECT_DIALOGUE.demo.thumbnail!.dark
             }
-            videoUrl="./images/Demo-GuidedTour-LightMode.mp4"
+            videoUrl={PROJECT_DIALOGUE.demo.url}
           />
         </Stack>
         <Stack width={"100%"} direction={"row"}>
@@ -193,10 +191,7 @@ const HighlightItem: React.FC<HighlightItemProps> = ({
                     marginBottom: "0.75rem",
                   }}
                 >
-                  <MenuButton
-                    value="Github"
-                    link="https://github.com/prashantsihag03/dialogueV2"
-                  />
+                  <MenuButton value="Github" link={PROJECT_DIALOGUE.github} />
                 </Box>
               </Stack>
             ) : (

@@ -4,6 +4,7 @@ import SectionHeading from "../SectionHeading";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import VideoPlayer from "../VideoPlayer";
 import MenuButton from "../MenuButton";
+import PROJECT_DIALOGUE from "../../Data/Projects";
 
 const HighlightsV2: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 1100px)");
@@ -18,7 +19,7 @@ const HighlightsV2: React.FC = () => {
         alignItems={"center"}
         width="100%"
         minHeight="40vh"
-        sx={{ backgroundColor: "#202020" }}
+        sx={{ backgroundColor: isLightMode ? "#e8e8e8" : "#202020" }}
         padding={"3rem"}
         borderRadius={1}
       >
@@ -42,14 +43,14 @@ const HighlightsV2: React.FC = () => {
             <Chip
               color="primary"
               label="Personal Project"
-              variant="filled"
+              variant="outlined"
               size="small"
               sx={{ marginRight: "1rem" }}
             />
             <Chip
               color="primary"
               label="Demo Video"
-              variant="filled"
+              variant="outlined"
               size="small"
             />
           </Stack>
@@ -108,10 +109,10 @@ const HighlightsV2: React.FC = () => {
               buttonSize={isMobile ? "3em" : "5em"}
               thumbnailUrl={
                 isLightMode
-                  ? "./images/dialogue_thumbnail_light.jpg"
-                  : "./images/dialogue_thumbnail_dark.jpg"
+                  ? PROJECT_DIALOGUE.demo.thumbnail!.light
+                  : PROJECT_DIALOGUE.demo.thumbnail!.dark
               }
-              videoUrl="./images/Demo-GuidedTour-LightMode.mp4"
+              videoUrl={PROJECT_DIALOGUE.demo.url}
             />
           </Stack>
         </Stack>
