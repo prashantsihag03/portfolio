@@ -1,17 +1,20 @@
-import * as React from "react";
-import Icon from "./Icon";
+import * as React from 'react'
+import Icon from './Icon'
+import { SpecialIconProps } from './type'
 
-const LinkedInIcon: React.FC<{ href: string }> = ({
+const LinkedInIcon: React.FC<SpecialIconProps> = ({
   href,
-}: {
-  href: string;
-}) => {
+  size,
+  color,
+}: SpecialIconProps) => {
   return (
     <Icon
-      key={"linkedinIcon"}
+      key={'linkedinIcon'}
       href={href}
-      title={"Linkedin"}
-      alt={"Linkedin Icon"}
+      title={'Linkedin'}
+      alt={'Linkedin Icon'}
+      size={size}
+      color={color}
     >
       <svg
         fill="currentColor"
@@ -28,7 +31,7 @@ const LinkedInIcon: React.FC<{ href: string }> = ({
         <circle cx="4" cy="4" r="2"></circle>
       </svg>
     </Icon>
-  );
-};
+  )
+}
 
-export default LinkedInIcon;
+export default LinkedInIcon

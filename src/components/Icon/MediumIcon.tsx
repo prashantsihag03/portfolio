@@ -1,9 +1,21 @@
-import * as React from "react";
-import Icon from "./Icon";
+import * as React from 'react'
+import Icon from './Icon'
+import { SpecialIconProps } from './type'
 
-const MediumIcon: React.FC<{ href: string }> = ({ href }: { href: string }) => {
+const MediumIcon: React.FC<SpecialIconProps> = ({
+  href,
+  size,
+  color,
+}: SpecialIconProps) => {
   return (
-    <Icon key={"MediumIcon"} href={href} title={"Medium"} alt={"Medium Icon"}>
+    <Icon
+      key={'MediumIcon'}
+      href={href}
+      title={'Medium'}
+      alt={'Medium Icon'}
+      size={size}
+      color={color}
+    >
       <svg
         height="100%"
         width="100%"
@@ -19,7 +31,7 @@ const MediumIcon: React.FC<{ href: string }> = ({ href }: { href: string }) => {
         />
       </svg>
     </Icon>
-  );
-};
+  )
+}
 
-export default MediumIcon;
+export default MediumIcon

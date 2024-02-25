@@ -1,17 +1,20 @@
-import * as React from "react";
-import Icon from "./Icon";
+import * as React from 'react'
+import Icon from './Icon'
+import { SpecialIconProps } from './type'
 
-const CodepenIcon: React.FC<{ href: string }> = ({
+const CodepenIcon: React.FC<SpecialIconProps> = ({
   href,
-}: {
-  href: string;
-}) => {
+  size,
+  color,
+}: SpecialIconProps) => {
   return (
     <Icon
-      key={"CodepenIcon"}
+      key={'CodepenIcon'}
       href={href}
-      title={"Codepen"}
-      alt={"Codepen Icon"}
+      title={'Codepen'}
+      alt={'Codepen Icon'}
+      size={size}
+      color={color}
     >
       <svg
         height="100%"
@@ -29,7 +32,7 @@ const CodepenIcon: React.FC<{ href: string }> = ({
         />
       </svg>
     </Icon>
-  );
-};
+  )
+}
 
-export default CodepenIcon;
+export default CodepenIcon

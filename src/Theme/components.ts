@@ -1,22 +1,72 @@
-import { Components } from "@mui/material";
-import { PaletteOptions } from "@mui/material";
-import { Theme } from "@mui/system";
+import { Components } from '@mui/material'
+import { Theme } from '@mui/system'
+import { action, icon, secondary } from './colors'
+import { DisplayMode } from './types'
 
 export const getComponentsTheme = (
-  palette: PaletteOptions
-): Components<Omit<Theme, "components">> => {
+  mode: DisplayMode
+): Components<Omit<Theme, 'components'>> => {
   return {
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: mode === 'light' ? icon.light : icon.dark,
+          backgroundColor: 'transparent',
+          fontSize: '2rem',
+          borderRadius: '50%',
+          padding: '0.3rem',
+          '&:hover': {
+            color: mode === 'light' ? secondary.light : secondary.dark,
+            cursor: 'pointer',
+            backgroundColor:
+              mode === 'light' ? action.hover.light : action.hover.dark,
+          },
+        },
+      },
+      defaultProps: {
+        fontSize: 'medium',
+      },
+    },
     MuiButton: {
       variants: [
         {
-          props: { variant: "outlined" },
+          props: { variant: 'outlined' },
           style: {
-            textTransform: "none",
-            padding: "0.6rem 0.8rem",
-            fontSize: "15px",
-            ["@media only screen and (max-width: 900px)"]: {
-              fontSize: "13px",
-              padding: "0.3rem 0.5rem",
+            textTransform: 'none',
+            padding: '0.2em 1em',
+            fontSize: '1rem',
+            ['@media only screen and (max-width: 600px)']: {
+              fontSize: '0.9rem',
+            },
+          },
+        },
+        {
+          props: { variant: 'contained' },
+          style: {
+            textTransform: 'none',
+            padding: '0.2em 1em',
+            fontSize: '1rem',
+            ['@media only screen and (max-width: 600px)']: {
+              fontSize: '0.9rem',
+            },
+          },
+        },
+        {
+          props: { variant: 'text' },
+          style: {
+            textTransform: 'none',
+            padding: '0.4rem 1rem',
+            background: 'none',
+            fontSize: '1rem',
+            '&:hover': {
+              background: 'none',
+            },
+            '&:active': {
+              background: 'none',
+            },
+            ['@media only screen and (max-width: 600px)']: {
+              fontSize: '0.9rem',
+              padding: '0.6rem 0.8rem',
             },
           },
         },
@@ -24,27 +74,8 @@ export const getComponentsTheme = (
     },
     MuiLink: {
       styleOverrides: {
-        root: { textDecoration: "none" },
+        root: { textDecoration: 'none' },
       },
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          "&:hover": {
-            cursor: "pointer",
-          },
-        },
-      },
-    },
-    MuiChip: {
-      variants: [
-        {
-          props: { variant: "filled" },
-          style: {
-            backgroundColor: palette.text?.secondary,
-          },
-        },
-      ],
-    },
-  };
-};
+  }
+}

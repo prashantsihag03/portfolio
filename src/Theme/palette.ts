@@ -1,30 +1,96 @@
-import { PaletteOptions } from "@mui/material";
-import { DisplayMode } from "../types";
+import { PaletteOptions } from '@mui/material'
+import {
+  action,
+  highlight,
+  background,
+  error,
+  primary,
+  secondary,
+  success,
+  text,
+  warning,
+} from './colors'
+import { DisplayMode } from './types'
+
+declare module '@mui/material/styles' {
+  interface Palette {
+    focus: {
+      main: string
+      light: string
+      dark: string
+    }
+    highlight: {
+      main: string
+      light: string
+      dark: string
+    }
+  }
+  interface PaletteOptions {
+    focus: {
+      main: string
+      light: string
+      dark: string
+    }
+    highlight: {
+      main: string
+      light: string
+      dark: string
+    }
+  }
+}
 
 export const getPaletteTheme = (mode: DisplayMode): PaletteOptions => {
   return {
     mode: mode,
     primary: {
-      main: mode === "light" ? "#101010" : "#f9f9f9",
-      light: "#101010",
-      dark: "#f9f9f9",
+      main: mode === 'light' ? primary.light : primary.dark,
+      light: primary.light,
+      dark: primary.dark,
     },
     secondary: {
-      main: mode === "light" ? "#02B08F" : "#4AFFDD",
-      light: "#02B08F",
-      dark: "#4AFFDD",
+      main: mode === 'light' ? secondary.light : secondary.dark,
+      light: secondary.light,
+      dark: secondary.dark,
     },
+    error: {
+      main: mode === 'light' ? error.light : error.dark,
+      light: error.light,
+      dark: error.dark,
+    },
+    warning: {
+      main: mode === 'light' ? warning.light : warning.dark,
+      light: warning.light,
+      dark: warning.dark,
+    },
+    success: {
+      main: mode === 'light' ? success.light : success.dark,
+      light: success.light,
+      dark: success.dark,
+    },
+    // sync text color values with home.html's styles
     text: {
-      primary: mode === "light" ? "#000000" : "#FFF",
-      secondary: mode === "light" ? "#1a1a1acc" : "#c5c5c5",
+      primary: mode === 'light' ? text.primary.light : text.primary.dark,
+      secondary: mode === 'light' ? text.secondary.light : text.secondary.dark,
     },
+    // Background colors must be reflected in home.html styles
     background: {
-      default: mode === "light" ? "#f9f9f9" : "#000000",
-      paper: mode === "light" ? "#4affdd59" : "#4affdd21",
+      default:
+        mode === 'light' ? background.default.light : background.default.dark,
+      paper: mode === 'light' ? background.paper.light : background.paper.dark,
     },
     action: {
-      active: "#FFF",
-      hover: "rgba(128, 128, 128, 0.2)",
+      active: action.active,
+      hover: mode === 'light' ? action.hover.light : action.hover.dark,
     },
-  };
-};
+    focus: {
+      main: mode === 'light' ? primary.light : primary.dark,
+      light: primary.light,
+      dark: primary.dark,
+    },
+    highlight: {
+      main: mode === 'light' ? highlight.light : highlight.dark,
+      light: highlight.light,
+      dark: highlight.dark,
+    },
+  }
+}
