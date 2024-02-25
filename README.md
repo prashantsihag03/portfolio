@@ -1,9 +1,6 @@
 # Portfolio website for Prashant Sihag
 
-## Version 2.0.0
-
-_Diff from previous version_:
-This version migrates the portfolio website from vanilla Javascript to React.
+## Version 1.0.0
 
 _Development Setup_
 
