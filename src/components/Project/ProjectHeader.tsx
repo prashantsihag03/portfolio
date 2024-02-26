@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, useMediaQuery } from '@mui/material'
+import { Stack, Typography, useMediaQuery } from '@mui/material'
 import PROJECT_DIALOGUE from '../../Data/Projects'
 import GithubIcon from '../Icon/GithubIcon'
 import Icon from '../Icon'
