@@ -5,7 +5,7 @@ import scientificMethodImg from '../assets/images/scientifcMethodForDataAnalysis
 
 interface BlogItem {
   link: string
-  img: any
+  img: unknown
   heading: string
   desc: string
 }

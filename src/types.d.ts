@@ -1,1 +1,1 @@
-export type DisplayMode = "light" | "dark";
+export type DisplayMode = 'light' | 'dark'

@@ -24,6 +24,7 @@ const useCreateTheme = () => {
 
   const theme = React.useMemo(
     () => createTheme(getDesignTokens(displayMode, isMobile)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [displayMode]
   )
 

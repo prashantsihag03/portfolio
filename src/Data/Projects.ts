@@ -43,15 +43,14 @@ const PROJECT_DIALOGUE: ProjectData = {
     ' Highly sophisticated web app connecting users with each other over multiple channels such as text, voice, and video and provide media sharing platform while giving them full control of their data.',
   features: [
     'Video/Audio Calls',
-    'Text messages',
-    'Interactive Guided Tour for Onboarding',
-    'Media Sharing',
-    'Granular Control of app behaviour',
+    'Media Sharing with persistent storage in S3',
+    'Granular Control of platform behaviour',
+    'Interactive Guided Tour for efficiently onboarding new users',
   ],
   imgMap: {
     overview: {
-      light: './images/dialogue_chat_light.png',
-      dark: './images/dialogue_chat_light.png',
+      light: './images/dialogue/chat_overview.png',
+      dark: './images/dialogue/chat_overview.png',
     },
     'Interactive Guided Tour for Onboarding': {
       light: './images/dialogue/tour_light.png',
