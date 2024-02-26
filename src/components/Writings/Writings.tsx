@@ -12,6 +12,7 @@ import BlogItems from '../../Data/BlogItems'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 import { InViewSectionProps } from '../commons/types'
+import Socials from '../../Data/Socials'
 
 const Writings: React.FC<InViewSectionProps> = ({
   inViewCallBack,
@@ -79,7 +80,11 @@ const Writings: React.FC<InViewSectionProps> = ({
             </Link>
           )
         })}
-        <Button variant="outlined" sx={{ marginTop: '2rem' }}>
+        <Button
+          variant="outlined"
+          href={Socials.medium.href}
+          sx={{ marginTop: '2rem' }}
+        >
           More on Medium
         </Button>
       </List>
