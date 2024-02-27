@@ -6,6 +6,7 @@ interface ProjectImgMap {
 export interface ProjectData {
   href: string
   logoUrl: string
+  skills: Array<string>
   github: string
   themeColor: string
   themeColorDark: string
@@ -27,6 +28,16 @@ const PROJECT_DIALOGUE: ProjectData = {
   href: 'https://dialogue-083ade5b445a.herokuapp.com',
   logoUrl: './images/allThemedDialogueLogo.svg',
   github: 'https://github.com/prashantsihag03/dialogueV2',
+  skills: [
+    'React',
+    'Typescript',
+    'WebRTC',
+    'WebSocket',
+    'Redux',
+    'AWS',
+    'Dynamodb',
+    'S3',
+  ],
   demo: {
     media: 'video',
     url: './images/Demo-GuidedTour-LightMode.mp4',

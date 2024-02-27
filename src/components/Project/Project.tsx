@@ -11,6 +11,7 @@ import ProjectHeader from './ProjectHeader'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 import { InViewSectionProps } from '../commons/types'
+import Skills from './Skills'
 
 const Project: React.FC<InViewSectionProps> = ({
   inViewCallBack,
@@ -31,10 +32,10 @@ const Project: React.FC<InViewSectionProps> = ({
       direction={'column'}
       flex={1}
       width={'100%'}
-      minHeight={'70vh'}
+      minHeight={'85vh'}
       sx={{
         backgroundColor: 'rgba(12, 106, 245, 0.13)',
-        height: !isMobile ? '70vh' : undefined,
+        height: !isMobile ? '85vh' : undefined,
         minHeight: isMobile ? '100%' : undefined,
       }}
       borderRadius={'0rem'}
@@ -46,6 +47,7 @@ const Project: React.FC<InViewSectionProps> = ({
           Highly sophisticated web app connecting users with each other over
           multiple channels such as text, voice, and video and provide media
           sharing platform.
+          <Skills />
         </Typography>
       ) : null}
       <Stack
@@ -61,24 +63,27 @@ const Project: React.FC<InViewSectionProps> = ({
           paddingLeft={'3rem'}
         >
           {!isMobile ? (
-            <Typography
-              variant="body1"
-              paddingBottom={'3rem'}
-              paddingTop={'1rem'}
-            >
-              Highly sophisticated web app connecting users with each other over
-              multiple channels such as text, voice, and video and provide media
-              sharing platform.
-            </Typography>
+            <>
+              <Typography
+                variant="body1"
+                paddingBottom={'3rem'}
+                paddingTop={'1rem'}
+              >
+                Highly sophisticated web app connecting users with each other
+                over multiple channels such as text, voice, and video and
+                provide media sharing platform.
+                <Skills />
+              </Typography>
+            </>
           ) : null}
           <List
             subheader={
-              <Typography variant="body2">Features I am proud of:</Typography>
+              <Typography variant="body2">Noteworthy Features:</Typography>
             }
-            sx={{ color: 'text.primary', paddingBottom: '3rem' }}
+            sx={{ color: 'text.primary', paddingBottom: '1rem' }}
           >
             {PROJECT_DIALOGUE.features.map((feature) => (
-              <ListItem key={feature} sx={{ color: 'text.secondary' }}>
+              <ListItem dense key={feature} sx={{ color: 'text.secondary' }}>
                 <Typography variant="body1">- {feature}</Typography>
               </ListItem>
             ))}
@@ -87,7 +92,7 @@ const Project: React.FC<InViewSectionProps> = ({
         <Stack
           direction={'column'}
           justifyContent={'space-between'}
-          flex={2}
+          flex={1}
           paddingTop={'1rem'}
           height={'100%'}
         >
@@ -96,7 +101,7 @@ const Project: React.FC<InViewSectionProps> = ({
             src={PROJECT_DIALOGUE.imgMap.overview.light}
             width={'100%'}
             height={'100%'}
-            sx={{ objectFit: 'cover' }}
+            sx={{ objectFit: 'contain' }}
           />
         </Stack>
       </Stack>
