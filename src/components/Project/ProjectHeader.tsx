@@ -12,8 +12,8 @@ const ProjectHeader: React.FC = () => {
       direction={isMobile ? 'column' : 'row'}
       justifyContent={'space-between'}
       alignItems={isMobile ? 'flex-start' : 'flex-end'}
-      paddingLeft={'3rem'}
-      paddingRight={'3rem'}
+      paddingLeft={isMobile ? '1.5rem' : '3rem'}
+      paddingRight={isMobile ? '1.5rem' : '3rem'}
     >
       <Typography component={'h3'} variant="h3" fontSize={'2rem'}>
         <Typography variant="subtitle1" color="secondary" borderRadius={1}>

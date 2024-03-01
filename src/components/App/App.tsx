@@ -1,4 +1,11 @@
-import { Box, Stack, SxProps, ThemeProvider, debounce } from '@mui/material'
+import {
+  Box,
+  Stack,
+  SxProps,
+  ThemeProvider,
+  debounce,
+  useMediaQuery,
+} from '@mui/material'
 import * as React from 'react'
 import { Theme } from '@mui/system'
 import useCreateTheme from '../../hooks/useCreateTheme'
@@ -18,6 +25,7 @@ const contentStyles: SxProps<Theme> = {
 const App: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { theme, displayMode, toggleDisplayMode } = useCreateTheme()
+  const isMobile = useMediaQuery('(max-width:1000px)')
   const [activeNav, setActiveNav] = React.useState<NavOptions>('intro')
 
   const updateNavValue = debounce((value: NavOptions) => {
@@ -43,8 +51,8 @@ const App: React.FC = () => {
           height={'90vh'}
           position="relative"
           width={'100%'}
-          paddingLeft="2.5rem"
-          paddingRight="2.5rem"
+          paddingLeft={isMobile ? '1.5rem' : '2.5rem'}
+          paddingRight={isMobile ? '1.5rem' : '2.5rem'}
           paddingTop={'1rem'}
           paddingBottom={'1rem'}
           sx={{

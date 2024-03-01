@@ -8,7 +8,7 @@ const Skills: React.FC = () => {
       direction="row"
       width="100%"
       flexWrap={'wrap'}
-      sx={{ padding: '1rem' }}
+      sx={{ paddingTop: '1rem' }}
     >
       {PROJECT_DIALOGUE.skills.map((skill) => {
         return (
