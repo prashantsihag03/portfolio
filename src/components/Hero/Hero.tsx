@@ -28,7 +28,7 @@ const Hero: React.FC<InViewSectionProps> = ({
       width={'100%'}
       flexWrap={'wrap'}
       margin={'auto'}
-      height={isMobile ? '90vh' : '85vh'}
+      height={isMobile ? '80vh' : '85vh'}
       sx={{ backgroundColor: 'Background.default' }}
     >
       <KeyboardDoubleArrowDownIcon
@@ -62,7 +62,7 @@ const Hero: React.FC<InViewSectionProps> = ({
           <Typography
             variant="h1"
             component={'span'}
-            fontSize={isMobile ? '6rem' : '12rem'}
+            fontSize={isMobile ? '6.5rem' : '12rem'}
             textAlign={isMobile ? 'center' : undefined}
           >
             Sihag

@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
       >
         built by yours truly with love using React
       </Typography>
-      <Link
+      {/* <Link
         borderBottom={'1px solid white'}
         borderColor={'text.secondary'}
         sx={{ '&:hover': { cursor: 'pointer', borderColor: 'white' } }}
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         <Typography variant="subtitle1" textAlign={'center'}>
           Version 1
         </Typography>
-      </Link>
+      </Link> */}
     </Stack>
   )
 }

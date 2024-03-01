@@ -55,6 +55,7 @@ const App: React.FC = () => {
           paddingRight={isMobile ? '1.5rem' : '2.5rem'}
           paddingTop={'1rem'}
           paddingBottom={'1rem'}
+          marginBottom={'2rem'}
           sx={{
             scrollBehavior: 'smooth',
           }}

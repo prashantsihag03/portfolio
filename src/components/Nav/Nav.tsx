@@ -156,6 +156,7 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
             }}
             sx={{
               fontSize: '3rem',
+              color: 'text.secondary',
               '&:hover': { backgroundColor: 'transparent', cursor: 'pointer' },
             }}
           />
