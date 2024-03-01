@@ -43,7 +43,7 @@ export const getTypographyTheme = (
     },
     subtitle1: {
       color: palette.text.secondary,
-      fontSize: isMobile ? '0.7rem' : '0.6rem',
+      fontSize: isMobile ? '0.8rem' : '0.8rem',
       letterSpacing: '1.2pt',
     },
     subtitle2: {

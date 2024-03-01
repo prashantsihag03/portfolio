@@ -106,12 +106,20 @@ const About: React.FC<InViewSectionProps> = ({
             and <HighlightText color="primary">Java </HighlightText>
             based web applications. <br />
             <br /> My expertise encompasses a wide range of technologies,
-            including but not limited to{' '}
+            including but not limited to <br />
             <HighlightText color="primary">
-              Play Framework, Spring Boot, Java 8, React, TypeScript, Redux,
-              Postgresql, AWS, Jenkins,
-            </HighlightText>{' '}
-            and <HighlightText color="primary">Gitlab CI</HighlightText>.
+              - Play Framework, Spring Boot, Java 8,
+            </HighlightText>
+            <br />
+            <HighlightText color="primary">
+              - React, TypeScript, Redux,
+            </HighlightText>
+            <br />
+            <HighlightText color="primary">
+              - Postgresql, AWS, Gitlab CI
+            </HighlightText>
+            <br />
+            and many more.
           </Typography>
           <Typography
             variant="body1"

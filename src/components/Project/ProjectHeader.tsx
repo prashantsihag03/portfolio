@@ -30,7 +30,11 @@ const ProjectHeader: React.FC = () => {
         {/* <Button variant="outlined" color="primary">
           <Typography variant="body2">Tour Video</Typography>
         </Button> */}
-        <GithubIcon href={PROJECT_DIALOGUE.github} size="1.5rem" />
+        <GithubIcon
+          href={PROJECT_DIALOGUE.github}
+          size="1.5rem"
+          color="text.primary"
+        />
         <Icon
           size="2.2rem"
           href={PROJECT_DIALOGUE.href}

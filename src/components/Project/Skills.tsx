@@ -14,7 +14,7 @@ const Skills: React.FC = () => {
         return (
           <Chip
             key={skill}
-            sx={{ margin: '0.25rem' }}
+            sx={{ margin: '0.25rem', backgroundColor: 'background.default' }}
             label={
               <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>
                 {skill}

@@ -1,5 +1,5 @@
 export const primary = {
-  light: '#101010',
+  light: '#f9f9f9',
   dark: '#f9f9f9',
 }
 
@@ -29,8 +29,8 @@ export const highlight = {
 }
 
 export const text = {
-  primary: { light: '#101010', dark: '#f9f9f9' },
-  secondary: { light: '#3D3D3D', dark: '#7B7B7B' },
+  primary: { light: '#f9f9f9', dark: '#f9f9f9' },
+  secondary: { light: '#7B7B7B', dark: '#7B7B7B' },
 }
 
 export const background = {
@@ -39,7 +39,7 @@ export const background = {
     dark: '#0B0D0F',
   },
   paper: {
-    light: '#FFF',
+    light: '#181818',
     dark: '#181818',
   },
 }
@@ -53,6 +53,6 @@ export const action = {
 }
 
 export const icon = {
-  light: '#575757',
+  light: '#e1e1e1',
   dark: '#e1e1e1',
 }
