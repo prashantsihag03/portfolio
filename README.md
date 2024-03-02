@@ -1,6 +1,6 @@
-# Portfolio website for Prashant Sihag
+# Portfolio website for Prashant Sihag - Version 1.0.0
 
-## Version 1.0.0
+## Demonstration
 
 _Development Setup_
 
