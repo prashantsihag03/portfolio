@@ -1,6 +1,9 @@
 # Portfolio website for Prashant Sihag
 
-## Version 1.0.0
+## Version 2.0.0
+
+_Diff from previous version_:
+This version creates a fresh new look of my personal portfolio website
 
 _Development Setup_
 

@@ -11,16 +11,8 @@
         <title>Prashant Sihag's Portfolio</title>
         <style>
             @font-face {
-                font-family: 'Roboto Slab Light';
-                src: url('font/RobotoSlab-Light.ttf');
-            }
-            @font-face {
-                font-family: 'Roboto Slab Regular';
-                src: url('font/RobotoSlab-Regular.ttf');
-            }
-            @font-face {
-                font-family: 'Roboto Slab Bold';
-                src: url('font/RobotoSlab-Bold.ttf');
+                font-family: 'Michroma Regular';
+                src: url('font/Michroma-Regular.ttf');
             }
             * {
                 margin: 0;
@@ -28,7 +20,7 @@
                 box-sizing: border-box;
             }
             :root {
-                --background: black;
+                --background: #0B0D0F;
                 --primary: #4AFFDD;
             }
 
@@ -41,9 +33,34 @@
 
             html {
                 scroll-behavior: smooth;
-                font-family: "Roboto Slab", serif;
+                font-family: "Michroma Regular", serif;
+                font-size: 16px;
             }
-            
+
+            @media (max-width:1600px) {
+                html {
+                    font-size: 16px;
+                }
+            }
+
+            @media (max-width:1400px) {
+                html {
+                    font-size: 13px;
+                }
+            }
+
+            @media (max-width:800px) {
+                html {
+                    font-size: 13px;
+                }
+            }
+
+            @media (max-width:600px) {
+                html {
+                    font-size: 13px;
+                }
+            }
+
             input:focus {
                 outline: none;
             }
@@ -74,7 +91,7 @@
 
             #root {
                 background-color: var(--background);
-                width: '100%',
+                width: '100%';
             }
             #loaderContainer {
                 display: relative;

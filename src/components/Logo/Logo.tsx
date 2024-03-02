@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import lightBgLogo from "../../assets/icons/lightBgLogo.svg";
-import darkBgLogo from "../../assets/icons/darkBgLogo.svg";
-import { Link, Slide, SxProps } from "@mui/material";
-import { Theme } from "@mui/system";
+import React, { useEffect, useState } from 'react'
+import lightBgLogo from '../../assets/icons/lightBgLogo.svg'
+import darkBgLogo from '../../assets/icons/darkBgLogo.svg'
+import { Link, Slide, SxProps } from '@mui/material'
+import { Theme } from '@mui/system'
 
 const linkStyles: SxProps<Theme> = {
   position: 'absolute',
@@ -18,7 +18,7 @@ const linkStyles: SxProps<Theme> = {
   alignItems: 'center',
   transition: 'all 0.5s linear',
 
-  "&:hover": {
+  '&:hover': {
     backgroundColor: 'action.hover',
     borderColor: 'secondary.main',
     cursor: 'pointer',
@@ -27,26 +27,31 @@ const linkStyles: SxProps<Theme> = {
 }
 
 interface LogoProps {
-  delayInMs: number,
-  darkMode: boolean,
+  delayInMs: number
+  darkMode: boolean
 }
 
-const Logo: React.FC<LogoProps> = ({delayInMs, darkMode}: LogoProps) => {
-  const [show, setShow] = useState<boolean>(false);
+const Logo: React.FC<LogoProps> = ({ delayInMs, darkMode }: LogoProps) => {
+  const [show, setShow] = useState<boolean>(false)
 
   useEffect(() => {
     setTimeout(() => {
-      setShow(true);
-    }, delayInMs);
-  }, []);
-  
-    return (
-      <Slide in={show} direction="right">
-        <Link sx={linkStyles} href="/">
-          <img style={{width: "100%", backgroundColor: 'primary.dark'}} src={darkMode ? darkBgLogo : lightBgLogo} />
-        </Link>
-      </Slide>
-    );
+      setShow(true)
+    }, delayInMs)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return (
+    <Slide in={show} direction="right">
+      <Link sx={linkStyles} href="/">
+        <img
+          style={{ width: '100%', backgroundColor: 'primary.dark' }}
+          src={darkMode ? darkBgLogo : lightBgLogo}
+          alt="Logo"
+        />
+      </Link>
+    </Slide>
+  )
 }
 
-export default Logo;
+export default Logo
