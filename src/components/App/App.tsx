@@ -16,6 +16,7 @@ import About from '../About/About'
 import Writings from '../Writings/Writings'
 import Footer from '../Footer/Footer'
 import { NavOptions } from '../commons/types'
+import Contact from '../Contact/Contact'
 
 const contentStyles: SxProps<Theme> = {
   boxSizing: 'border-box',
@@ -78,6 +79,11 @@ const App: React.FC = () => {
           <Writings
             inViewCallBack={() => {
               updateNavValue('writings')
+            }}
+          />
+          <Contact
+            inViewCallBack={() => {
+              updateNavValue('contact')
             }}
           />
           <Footer />

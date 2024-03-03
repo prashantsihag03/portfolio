@@ -145,6 +145,33 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
             >
               Writings
             </Typography>
+            <Typography
+              component={'li'}
+              variant="body1"
+              position={'relative'}
+              color={active === 'contact' ? 'secondary' : undefined}
+              sx={{
+                cursor: 'pointer',
+                '&:after': {
+                  cursor: 'pointer',
+                  content: '""',
+                  display: 'block',
+                  borderBottomWidth: '0.25rem',
+                  borderBottomStyle: 'solid',
+                  borderBottomColor: 'secondary.main',
+                  width: 0,
+                  position: 'absolute',
+                  right: 0,
+                  marginTop: '0.25rem',
+                  transition: '0.25s linear',
+                },
+                '&:hover:after': {
+                  width: '100%',
+                },
+              }}
+            >
+              Contact
+            </Typography>
           </>
         ) : null}
       </Stack>

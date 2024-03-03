@@ -2,7 +2,7 @@ import { Stack, Typography, useMediaQuery } from '@mui/material'
 import PROJECT_DIALOGUE from '../../Data/Projects'
 import GithubIcon from '../Icon/GithubIcon'
 import Icon from '../Icon'
-import VisibilityIcon from '@mui/icons-material/Visibility'
+import AdjustIcon from '@mui/icons-material/Adjust'
 
 const ProjectHeader: React.FC = () => {
   const isMobile = useMediaQuery('(max-width:1000px)')
@@ -41,7 +41,7 @@ const ProjectHeader: React.FC = () => {
           title="Live website link"
           alt="Eye icon"
         >
-          <VisibilityIcon sx={{ width: '100%', height: '100%' }} />
+          <AdjustIcon sx={{ width: '100%', height: '100%' }} />
         </Icon>
       </Stack>
     </Stack>
