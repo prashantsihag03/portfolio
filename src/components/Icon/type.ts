@@ -1,3 +1,4 @@
+import { SxProps, Theme } from '@mui/material'
 import React from 'react'
 
 export default interface IconProp {
@@ -9,6 +10,7 @@ export default interface IconProp {
   color?: string
   hoverColor?: string
   size?: string
+  style?: SxProps<Theme>
 }
 
 export type SpecialIconProps = Omit<

@@ -12,7 +12,8 @@ import BlogItems from '../../Data/BlogItems'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 import { InViewSectionProps } from '../commons/types'
-import Socials from '../../Data/Socials'
+import SocialLinks from '../Socials/SocialLinks'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 
 const Writings: React.FC<InViewSectionProps> = ({
   inViewCallBack,
@@ -64,8 +65,12 @@ const Writings: React.FC<InViewSectionProps> = ({
                 disablePadding
               >
                 <Box>
-                  <Typography variant="h3">
-                    {'>'} {blog.heading}
+                  <Typography
+                    variant="h3"
+                    sx={{ display: 'flex', alignItems: 'center' }}
+                  >
+                    <LibraryBooksIcon />
+                    {blog.heading}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -82,7 +87,7 @@ const Writings: React.FC<InViewSectionProps> = ({
         })}
         <Button
           variant="outlined"
-          href={Socials.medium.href}
+          href={SocialLinks.medium.href}
           sx={{ marginTop: '2rem' }}
         >
           More on Medium

@@ -6,6 +6,7 @@ const MediumIcon: React.FC<SpecialIconProps> = ({
   href,
   size,
   color,
+  style,
 }: SpecialIconProps) => {
   return (
     <Icon
@@ -15,6 +16,7 @@ const MediumIcon: React.FC<SpecialIconProps> = ({
       alt={'Medium Icon'}
       size={size}
       color={color}
+      style={style}
     >
       <svg
         height="100%"

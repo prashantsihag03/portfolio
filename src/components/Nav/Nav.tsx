@@ -8,15 +8,11 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material'
-import CodepenIcon from '../Icon/CodepenIcon'
-import LinkedInIcon from '../Icon/LinkedInIcon'
-import Socials from '../../Data/Socials'
-import GithubIcon from '../Icon/GithubIcon'
-import MediumIcon from '../Icon/MediumIcon'
 import React from 'react'
 import { NavOptions } from '../commons/types'
 import CategoryIcon from '@mui/icons-material/Category'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import Socials from '../Socials'
 
 interface NavProps {
   active: NavOptions
@@ -281,34 +277,7 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
           </Drawer>
         </>
       ) : (
-        <Stack
-          direction={'row'}
-          justifyContent={'right'}
-          alignItems={'flex-end'}
-          component={'ol'}
-          flex={1}
-        >
-          <CodepenIcon
-            href={Socials.codepen.href}
-            size={'0.9rem'}
-            color={'text.secondary'}
-          />
-          <LinkedInIcon
-            href={Socials.linkedIn.href}
-            size={'1.3rem'}
-            color={'text.secondary'}
-          />
-          <GithubIcon
-            href={Socials.github.href}
-            size={'1.1rem'}
-            color={'text.secondary'}
-          />
-          <MediumIcon
-            href={Socials.medium.href}
-            size={'1.1rem'}
-            color={'text.secondary'}
-          />
-        </Stack>
+        <Socials />
       )}
     </Stack>
   )

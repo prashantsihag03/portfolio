@@ -6,6 +6,7 @@ const LinkedInIcon: React.FC<SpecialIconProps> = ({
   href,
   size,
   color,
+  style,
 }: SpecialIconProps) => {
   return (
     <Icon
@@ -15,6 +16,7 @@ const LinkedInIcon: React.FC<SpecialIconProps> = ({
       alt={'Linkedin Icon'}
       size={size}
       color={color}
+      style={style}
     >
       <svg
         fill="currentColor"

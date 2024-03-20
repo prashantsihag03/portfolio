@@ -7,6 +7,7 @@ const GithubIcon: React.FC<SpecialIconProps> = ({
   color,
   hoverColor,
   size,
+  style,
 }: SpecialIconProps) => {
   return (
     <Icon
@@ -17,6 +18,7 @@ const GithubIcon: React.FC<SpecialIconProps> = ({
       color={color}
       hoverColor={hoverColor}
       size={size}
+      style={style}
     >
       <svg
         stroke="currentColor"

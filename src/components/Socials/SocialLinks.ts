@@ -1,4 +1,4 @@
-const Socials = {
+const SocialLinks = {
   github: {
     href: 'https://github.com/prashantsihag03',
   },
@@ -13,4 +13,4 @@ const Socials = {
   },
 }
 
-export default Socials
+export default SocialLinks

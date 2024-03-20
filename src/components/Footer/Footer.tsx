@@ -1,4 +1,5 @@
-import { Divider, Link, Stack, Typography } from '@mui/material'
+import { Divider, Stack, Typography } from '@mui/material'
+import Socials from '../Socials'
 
 const Footer: React.FC = () => {
   return (
@@ -10,6 +11,11 @@ const Footer: React.FC = () => {
       paddingTop={'2rem'}
       paddingBottom={'1rem'}
     >
+      <Socials
+        size={1.4}
+        containerStyle={{ padding: '1rem', justifyContent: 'center' }}
+        iconStyle={{ marginRight: '1.5rem' }}
+      />
       <Divider sx={{ width: '50%' }} />
       <Typography
         variant="subtitle1"
@@ -18,15 +24,6 @@ const Footer: React.FC = () => {
       >
         built by yours truly with love using React
       </Typography>
-      {/* <Link
-        borderBottom={'1px solid white'}
-        borderColor={'text.secondary'}
-        sx={{ '&:hover': { cursor: 'pointer', borderColor: 'white' } }}
-      >
-        <Typography variant="subtitle1" textAlign={'center'}>
-          Version 1
-        </Typography>
-      </Link> */}
     </Stack>
   )
 }

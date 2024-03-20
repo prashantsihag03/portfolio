@@ -28,6 +28,7 @@ const Icon: React.FC<IconProp> = ({
   color,
   hoverColor,
   size,
+  style,
 }: IconProp) => {
   return (
     <Link
@@ -51,6 +52,7 @@ const Icon: React.FC<IconProp> = ({
           ['&:hover']: {
             color: hoverColor ? hoverColor : 'secondary.main',
           },
+          ...style,
         }}
       >
         {src ? (

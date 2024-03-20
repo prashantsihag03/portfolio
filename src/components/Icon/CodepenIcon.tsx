@@ -6,6 +6,7 @@ const CodepenIcon: React.FC<SpecialIconProps> = ({
   href,
   size,
   color,
+  style,
 }: SpecialIconProps) => {
   return (
     <Icon
@@ -15,6 +16,7 @@ const CodepenIcon: React.FC<SpecialIconProps> = ({
       alt={'Codepen Icon'}
       size={size}
       color={color}
+      style={style}
     >
       <svg
         height="100%"

@@ -39,7 +39,7 @@ const App: React.FC = () => {
         direction={'column'}
         width={'100%'}
         margin={'auto'}
-        height={'100vh'}
+        height={'100dvh'}
         position={'relative'}
         overflow={'hidden'}
         justifyContent={'flex-start'}

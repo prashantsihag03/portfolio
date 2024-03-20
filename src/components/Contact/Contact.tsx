@@ -2,7 +2,7 @@ import { Link, Stack, Typography } from '@mui/material'
 import { useInView } from 'react-intersection-observer'
 import { InViewSectionProps } from '../commons/types'
 import { useEffect } from 'react'
-import Socials from '../../Data/Socials'
+import SocialLinks from '../Socials/SocialLinks'
 
 const Contact: React.FC<InViewSectionProps> = ({
   inViewCallBack,
@@ -36,7 +36,7 @@ const Contact: React.FC<InViewSectionProps> = ({
       >
         Get in touch
         <br />
-        <Link href={Socials.linkedIn.href}>
+        <Link href={SocialLinks.linkedIn.href}>
           <Typography
             variant="h1"
             component={'span'}
