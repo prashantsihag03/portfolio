@@ -32,22 +32,27 @@ const Project: React.FC<InViewSectionProps> = ({
       direction={'column'}
       flex={1}
       width={'100%'}
-      minHeight={'85vh'}
+      marginBottom={'1rem'}
       sx={{
         backgroundColor: 'rgba(12, 106, 245, 0.13)',
-        height: !isMobile ? '85vh' : undefined,
         minHeight: isMobile ? '100%' : undefined,
       }}
       borderRadius={'0rem'}
       paddingTop={'3rem'}
     >
-      <ProjectHeader />
+      <ProjectHeader
+        title="Dialogue"
+        type="Personal"
+        githubLink={PROJECT_DIALOGUE.github}
+        liveLink={PROJECT_DIALOGUE.href}
+        gutterSize={isMobile ? '1.5rem' : '3rem'}
+      />
       {isMobile ? (
         <Typography variant="body1" padding={'1.5rem'} paddingTop={'1rem'}>
           Highly sophisticated web app connecting users with each other over
           multiple channels such as text, voice, and video and provide media
           sharing platform.
-          <Skills />
+          <Skills values={PROJECT_DIALOGUE.skills} />
         </Typography>
       ) : null}
       <Stack
@@ -58,7 +63,6 @@ const Project: React.FC<InViewSectionProps> = ({
         <Stack
           direction={'column'}
           justifyContent={'space-between'}
-          height={'90%'}
           flex={1}
           paddingLeft={isMobile ? '1.5rem' : '3rem'}
         >
@@ -72,7 +76,7 @@ const Project: React.FC<InViewSectionProps> = ({
                 Highly sophisticated web app connecting users with each other
                 over multiple channels such as text, voice, and video and
                 provide media sharing platform.
-                <Skills />
+                <Skills values={PROJECT_DIALOGUE.skills} />
               </Typography>
             </>
           ) : null}
@@ -80,7 +84,7 @@ const Project: React.FC<InViewSectionProps> = ({
             subheader={
               <Typography variant="body2">Noteworthy Features:</Typography>
             }
-            sx={{ color: 'text.primary', paddingBottom: '1rem' }}
+            sx={{ color: 'text.primary', paddingBottom: '5rem' }}
           >
             {PROJECT_DIALOGUE.features.map((feature) => (
               <ListItem dense key={feature} sx={{ color: 'text.secondary' }}>

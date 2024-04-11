@@ -1,10 +1,24 @@
 import { Stack, Typography, useMediaQuery } from '@mui/material'
-import PROJECT_DIALOGUE from '../../Data/Projects'
 import GithubIcon from '../Icon/GithubIcon'
 import Icon from '../Icon'
 import AdjustIcon from '@mui/icons-material/Adjust'
 
-const ProjectHeader: React.FC = () => {
+export interface ProjectHeaderProps {
+  title: string
+  type: 'Personal'
+  subType?: 'Large Web App' | 'Small Web App'
+  githubLink?: string
+  liveLink?: string
+  gutterSize?: string
+}
+
+const ProjectHeader: React.FC<ProjectHeaderProps> = ({
+  title,
+  type,
+  githubLink,
+  liveLink,
+  gutterSize,
+}: ProjectHeaderProps) => {
   const isMobile = useMediaQuery('(max-width:1000px)')
 
   return (
@@ -12,14 +26,14 @@ const ProjectHeader: React.FC = () => {
       direction={isMobile ? 'column' : 'row'}
       justifyContent={'space-between'}
       alignItems={isMobile ? 'flex-start' : 'flex-end'}
-      paddingLeft={isMobile ? '1.5rem' : '3rem'}
-      paddingRight={isMobile ? '1.5rem' : '3rem'}
+      paddingLeft={gutterSize}
+      paddingRight={gutterSize}
     >
       <Typography component={'h3'} variant="h3" fontSize={'2rem'}>
         <Typography variant="subtitle1" color="secondary" borderRadius={1}>
-          Personal Project
+          {type} Project
         </Typography>
-        Dialogue Web App
+        {title}
       </Typography>
       <Stack
         direction={'row'}
@@ -30,19 +44,19 @@ const ProjectHeader: React.FC = () => {
         {/* <Button variant="outlined" color="primary">
           <Typography variant="body2">Tour Video</Typography>
         </Button> */}
-        <GithubIcon
-          href={PROJECT_DIALOGUE.github}
-          size="1.5rem"
-          color="text.primary"
-        />
-        <Icon
-          size="2.2rem"
-          href={PROJECT_DIALOGUE.href}
-          title="Live website link"
-          alt="Eye icon"
-        >
-          <AdjustIcon sx={{ width: '100%', height: '100%' }} />
-        </Icon>
+        {githubLink ? (
+          <GithubIcon href={githubLink} size="1.5rem" color="text.primary" />
+        ) : null}
+        {liveLink ? (
+          <Icon
+            size="2.2rem"
+            href={liveLink}
+            title="Live website link"
+            alt="Eye icon"
+          >
+            <AdjustIcon sx={{ width: '100%', height: '100%' }} />
+          </Icon>
+        ) : null}
       </Stack>
     </Stack>
   )

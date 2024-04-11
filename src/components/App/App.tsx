@@ -17,6 +17,7 @@ import Writings from '../Writings/Writings'
 import Footer from '../Footer/Footer'
 import { NavOptions } from '../commons/types'
 import Contact from '../Contact/Contact'
+import SmallProject from '../Project/SmallProject'
 
 const contentStyles: SxProps<Theme> = {
   boxSizing: 'border-box',
@@ -71,6 +72,46 @@ const App: React.FC = () => {
               updateNavValue('projects')
             }}
           />
+          <Stack
+            direction={'row'}
+            justifyContent={'center'}
+            width={'100%'}
+            columnGap={2}
+            flexWrap={'wrap'}
+          >
+            <SmallProject
+              title="Github Profiler"
+              description="Built using Next.js, this app takes a Github username and displays their Github profile with additional information and statistics in a visually appealing way."
+              type="Personal"
+              subType="Small Web App"
+              overviewImgSrc="./images/githubProfiler/main.png"
+              githubLink="https://github.com/prashantsihag03/github-profiler"
+              liveLink="prashantsihag-github-profiler.vercel.app/"
+              skills={[
+                'Next.js',
+                'TailwindCSS',
+                'Chart.js',
+                'NextUI',
+                'Octokit.js',
+              ]}
+            />
+            <SmallProject
+              title="Portfolio Website"
+              description="Built using React, Typescript and Material UI, its the very website you are seeing this on."
+              type="Personal"
+              subType="Small Web App"
+              overviewImgSrc="./images/portfolio/main.png"
+              githubLink="https://github.com/prashantsihag03/portfolio"
+              liveLink="https://www.prashantsihag.com/"
+              skills={[
+                'React.js',
+                'Typescript',
+                'Material UI',
+                'Axios',
+                'Intersection Observer API',
+              ]}
+            />
+          </Stack>
           <About
             inViewCallBack={() => {
               updateNavValue('about')

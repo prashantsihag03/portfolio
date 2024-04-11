@@ -1,7 +1,10 @@
 import { Chip, Stack, Typography } from '@mui/material'
-import PROJECT_DIALOGUE from '../../Data/Projects'
 
-const Skills: React.FC = () => {
+const Skills: React.FC<{ values: string[] }> = ({
+  values,
+}: {
+  values: string[]
+}) => {
   return (
     <Stack
       component={'ul'}
@@ -10,7 +13,7 @@ const Skills: React.FC = () => {
       flexWrap={'wrap'}
       sx={{ paddingTop: '1rem' }}
     >
-      {PROJECT_DIALOGUE.skills.map((skill) => {
+      {values.map((skill) => {
         return (
           <Chip
             key={skill}
