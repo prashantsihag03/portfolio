@@ -17,7 +17,7 @@ const Contact: React.FC<InViewSectionProps> = ({
 
   return (
     <Stack
-      id={'projects'}
+      id={'contact'}
       ref={ref}
       direction={'column'}
       justifyContent={'center'}
