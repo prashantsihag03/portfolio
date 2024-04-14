@@ -86,7 +86,7 @@ const App: React.FC = () => {
               subType="Small Web App"
               overviewImgSrc="./images/githubProfiler/main.png"
               githubLink="https://github.com/prashantsihag03/github-profiler"
-              liveLink="prashantsihag-github-profiler.vercel.app/"
+              liveLink="https://prashantsihag-github-profiler.vercel.app/"
               skills={[
                 'Next.js',
                 'TailwindCSS',
