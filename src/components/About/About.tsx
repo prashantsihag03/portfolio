@@ -67,12 +67,8 @@ const About: React.FC<InViewSectionProps> = ({
             These days, I work as a
             <HighlightText> Software developer </HighlightText> at
             <HighlightText> Alex Solutions </HighlightText>where I have had the
-            opportunity to work on{' '}
-            <HighlightText>
-              full spectrum of web application development
-            </HighlightText>{' '}
-            as well as <HighlightText>CI/CD pipeline development</HighlightText>
-            .
+            opportunity to work on full spectrum of web application development
+            as well as CI/CD pipeline development.
           </Typography>
         </Stack>
         <Stack
@@ -90,35 +86,22 @@ const About: React.FC<InViewSectionProps> = ({
             padding={isMobile ? '1rem' : '2rem'}
             margin={'1rem'}
             minWidth={'300px'}
-            sx={{ backgroundColor: 'background.paper' }}
+            sx={{ backgroundColor: 'background.paper', letterSpacing: '2pt' }}
           >
-            As a dynamic{' '}
-            <HighlightText color="primary">full stack developer</HighlightText>{' '}
-            with almost{' '}
-            <HighlightText color="primary">
-              three years of experience
+            As a dynamic full stack developer with almost three years of
+            experience,
+            <HighlightText>
+              I specialize in building robust solutions for React and Java based
+              web applications.
             </HighlightText>
-            , I specialize in{' '}
-            <HighlightText color="primary">
-              building robust solutions
-            </HighlightText>{' '}
-            for <HighlightText color="primary">React </HighlightText>
-            and <HighlightText color="primary">Java </HighlightText>
-            based web applications. <br />
+            <br />
             <br /> My expertise encompasses a wide range of technologies,
             including but not limited to <br />
-            <HighlightText color="primary">
-              - Play Framework, Spring Boot, Java 8,
+            <HighlightText>
+              - Play Framework, Spring Boot, Java 8, <br />
+              - React, TypeScript, Redux, <br />
+              - Postgresql, AWS, Gitlab CI <br />
             </HighlightText>
-            <br />
-            <HighlightText color="primary">
-              - React, TypeScript, Redux,
-            </HighlightText>
-            <br />
-            <HighlightText color="primary">
-              - Postgresql, AWS, Gitlab CI
-            </HighlightText>
-            <br />
             and many more.
           </Typography>
           <Typography
@@ -129,25 +112,11 @@ const About: React.FC<InViewSectionProps> = ({
             minWidth={'300px'}
             sx={{ backgroundColor: 'background.paper' }}
           >
-            With{' '}
-            <HighlightText color="primary">
-              demonstrated track record
-            </HighlightText>{' '}
-            of{' '}
-            <HighlightText color="primary">delivering projects </HighlightText>{' '}
-            on time, I have worked on{' '}
-            <HighlightText color="primary">complex projects </HighlightText>{' '}
-            consisting of{' '}
-            <HighlightText color="primary"> microfrontends </HighlightText> and{' '}
-            <HighlightText color="primary">
-              microservices, delivering new features, resolving bugs, and
-              ensuring optimal performance along with rapidly adapting
-            </HighlightText>{' '}
-            to <HighlightText color="primary">new technologies,</HighlightText>{' '}
-            and fostering{' '}
-            <HighlightText color="primary">
-              effective team collaboration.
-            </HighlightText>
+            With demonstrated track record of delivering projects on time, I
+            have worked on complex projects consisting of microfrontends and
+            microservices, delivering new features, resolving bugs, and ensuring
+            optimal performance along with rapidly adapting to new technologies,
+            and fostering effective team collaboration.
           </Typography>
         </Stack>
       </Stack>

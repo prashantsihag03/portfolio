@@ -1,10 +1,11 @@
 import { Typography } from '@mui/material'
+import { ReactNode } from 'react'
 
-const HighlightText: React.FC<{ children: string; color?: string }> = ({
+const HighlightText: React.FC<{ children: ReactNode; color?: string }> = ({
   children,
   color,
 }: {
-  children: string
+  children: ReactNode
   color?: string
 }) => {
   return (
