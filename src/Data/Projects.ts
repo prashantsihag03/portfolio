@@ -1,6 +1,7 @@
-interface ProjectImgMap {
+export interface ProjectImgMap {
   light: string
   dark: string
+  title?: string
 }
 
 export interface ProjectData {
@@ -19,9 +20,9 @@ export interface ProjectData {
     url: string
     thumbnail?: ProjectImgMap
   }
-  imgMap: {
-    [index: string]: ProjectImgMap
-  }
+  imgMap: ProjectImgMap[]
+  architectureImgMap: ProjectImgMap[]
+  demoVideosUrls: ProjectImgMap[]
 }
 
 const PROJECT_DIALOGUE: ProjectData = {
@@ -58,28 +59,44 @@ const PROJECT_DIALOGUE: ProjectData = {
     'Granular Control of platform behaviour',
     'Interactive Guided Tour for efficiently onboarding new users',
   ],
-  imgMap: {
-    overview: {
+  demoVideosUrls: [],
+  architectureImgMap: [
+    {
+      dark: './images/dialogue/context_diagram.jpg',
+      light: './images/dialogue/context_diagram.jpg',
+    },
+    {
+      dark: './images/dialogue/container_diagram.jpg',
+      light: './images/dialogue/container_diagram.jpg',
+    },
+  ],
+  imgMap: [
+    {
       light: './images/dialogue/chat_overview.png',
       dark: './images/dialogue/chat_overview.png',
+      title: 'overview',
     },
-    'Interactive Guided Tour for Onboarding': {
+    {
       light: './images/dialogue/tour_light.png',
       dark: './images/dialogue/tour_dark.png',
+      title: 'Interactive Guided Tour for Onboarding',
     },
-    'Text messages': {
-      light: './images/dialogue/message_light.png',
-      dark: './images/dialogue/message_dark.png',
-    },
-    'Media Sharing': {
-      light: './images/dialogue/media_light.png',
-      dark: './images/dialogue/media_dark.png',
-    },
-    'Granular Control of app behaviour': {
-      light: './images/dialogue/settings_light.png',
-      dark: './images/dialogue/settings_dark.png',
-    },
-  },
+    // {
+    //   light: './images/dialogue/message_light.png',
+    //   dark: './images/dialogue/message_dark.png',
+    //   title: 'Text messages',
+    // },
+    // {
+    //   light: './images/dialogue/media_light.png',
+    //   dark: './images/dialogue/media_dark.png',
+    //   title: 'Media Sharing',
+    // },
+    // {
+    //   light: './images/dialogue/settings_light.png',
+    //   dark: './images/dialogue/settings_dark.png',
+    //   title: 'Granular Control of app behaviour',
+    // },
+  ],
 }
 
 export default PROJECT_DIALOGUE

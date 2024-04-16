@@ -1,17 +1,11 @@
-import {
-  Box,
-  List,
-  ListItem,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from '@mui/material'
+import { List, ListItem, Stack, Typography, useMediaQuery } from '@mui/material'
 import PROJECT_DIALOGUE from '../../Data/Projects'
 import ProjectHeader from './ProjectHeader'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 import { InViewSectionProps } from '../commons/types'
 import Skills from './Skills'
+import ProjectMediaBox from './ProjectMediaBox'
 
 const Project: React.FC<InViewSectionProps> = ({
   inViewCallBack,
@@ -58,7 +52,7 @@ const Project: React.FC<InViewSectionProps> = ({
       <Stack
         direction={isMobile ? 'column-reverse' : 'row'}
         justifyContent={'space-between'}
-        height={'90%'}
+        height={'100%'}
       >
         <Stack
           direction={'column'}
@@ -84,7 +78,11 @@ const Project: React.FC<InViewSectionProps> = ({
             subheader={
               <Typography variant="body2">Noteworthy Features:</Typography>
             }
-            sx={{ color: 'text.primary', paddingBottom: '5rem' }}
+            sx={{
+              color: 'text.primary',
+              paddingTop: '3rem',
+              paddingBottom: '3rem',
+            }}
           >
             {PROJECT_DIALOGUE.features.map((feature) => (
               <ListItem dense key={feature} sx={{ color: 'text.secondary' }}>
@@ -93,21 +91,11 @@ const Project: React.FC<InViewSectionProps> = ({
             ))}
           </List>
         </Stack>
-        <Stack
-          direction={'column'}
-          justifyContent={'space-between'}
-          flex={1}
-          paddingTop={'1rem'}
-          height={'100%'}
-        >
-          <Box
-            component={'img'}
-            src={PROJECT_DIALOGUE.imgMap.overview.light}
-            width={'100%'}
-            height={'100%'}
-            sx={{ objectFit: 'contain' }}
-          />
-        </Stack>
+        <ProjectMediaBox
+          productImgUrls={PROJECT_DIALOGUE.imgMap}
+          architectureDiagramUrls={PROJECT_DIALOGUE.architectureImgMap}
+          demoVideoUrls={PROJECT_DIALOGUE.demoVideosUrls}
+        />
       </Stack>
     </Stack>
   )
