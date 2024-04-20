@@ -54,7 +54,6 @@ const Hero: React.FC<InViewSectionProps> = ({
         flexWrap={'wrap'}
       >
         <Blob
-          top={'0%'}
           height={isMobile ? '50%' : '100%'}
           width={isMobile ? '100%' : '50%'}
         />

@@ -30,15 +30,12 @@ const ProjectMediaBox: React.FC<ProjectMediaBoxProps> = ({
 
   const getActiveImg = () => {
     if (activeImgIndex + 1 <= productImgUrls.length) {
-      console.log('rendering product img')
       return productImgUrls[activeImgIndex].light
     }
     if (
       activeImgIndex + 1 <=
       productImgUrls.length + architectureDiagramUrls.length
     ) {
-      console.log('rendering arch img', activeImgIndex)
-
       return architectureDiagramUrls[activeImgIndex - productImgUrls.length]
         .light
     }
@@ -48,8 +45,6 @@ const ProjectMediaBox: React.FC<ProjectMediaBoxProps> = ({
         architectureDiagramUrls.length +
         demoVideoUrls.length
     ) {
-      console.log('rendering demo img')
-
       return demoVideoUrls[
         activeImgIndex -
           (productImgUrls.length + architectureDiagramUrls.length)
