@@ -4,6 +4,7 @@ import HighlightText from '../commons/HighlightText'
 import { InViewSectionProps } from '../commons/types'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
+import Blob from '../Blob/Blob'
 
 const Hero: React.FC<InViewSectionProps> = ({
   inViewCallBack,
@@ -52,10 +53,16 @@ const Hero: React.FC<InViewSectionProps> = ({
         paddingRight={isMobile ? 0 : '3rem'}
         flexWrap={'wrap'}
       >
+        <Blob
+          top={'0%'}
+          height={isMobile ? '50%' : '100%'}
+          width={isMobile ? '100%' : '50%'}
+        />
         <Typography
           variant="h1"
           component={'h1'}
           fontSize={isMobile ? '4rem' : '7rem'}
+          zIndex={1}
         >
           Prashant
           <br />
