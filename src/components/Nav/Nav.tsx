@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 import React from 'react'
 import { NavOptions } from '../commons/types'
-import CategoryIcon from '@mui/icons-material/Category'
+import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import Socials from '../Socials'
 
@@ -181,7 +181,7 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
       </Stack>
       {isMobile ? (
         <>
-          <CategoryIcon
+          <MenuOpenIcon
             onClick={() => {
               setOpen(true)
             }}
@@ -259,6 +259,18 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
                   >
                     <Typography variant="body2" fontSize={'1.2rem'}>
                       - Writings
+                    </Typography>
+                  </ListItem>
+                </Link>
+                <Link href="#contact">
+                  <ListItem
+                    onClick={() => {
+                      setOpen(false)
+                    }}
+                    sx={{ paddingTop: '2rem' }}
+                  >
+                    <Typography variant="body2" fontSize={'1.2rem'}>
+                      - Contact
                     </Typography>
                   </ListItem>
                 </Link>
