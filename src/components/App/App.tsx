@@ -112,6 +112,23 @@ const App: React.FC = () => {
               ]}
             />
           </Stack>
+          <Stack
+            direction={'row'}
+            justifyContent={'center'}
+            width={'100%'}
+            columnGap={2}
+            flexWrap={'wrap'}
+          >
+            <SmallProject
+              title="Auto Wallpaper"
+              description="Using Python and MacOS's LaunchCTL, this script brings a freshness to your Mac by creating schedules to randomly update your MacOS wallpaper from a list of images."
+              type="Personal"
+              subType="CLI Tool"
+              githubLink="https://github.com/prashantsihag03/scriptarium/tree/main/auto-wallpaper"
+              skills={['Command Line Tool', 'Python', 'Schedule', 'appscript']}
+            />
+          </Stack>
+
           <About
             inViewCallBack={() => {
               updateNavValue('about')

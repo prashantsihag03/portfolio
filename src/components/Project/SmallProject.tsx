@@ -5,7 +5,7 @@ import Skills from './Skills'
 interface ProjectProps extends ProjectHeaderProps {
   description: string
   skills: string[]
-  overviewImgSrc: string
+  overviewImgSrc?: string
 }
 
 const SmallProject: React.FC<ProjectProps> = ({
@@ -44,27 +44,29 @@ const SmallProject: React.FC<ProjectProps> = ({
         {description}
         <Skills values={skills} />
       </Typography>
-      <Stack
-        direction={isMobile ? 'column-reverse' : 'row'}
-        justifyContent={'space-between'}
-        height={'90%'}
-      >
+      {overviewImgSrc ? (
         <Stack
-          direction={'column'}
+          direction={isMobile ? 'column-reverse' : 'row'}
           justifyContent={'space-between'}
-          flex={1}
-          paddingTop={'1rem'}
-          height={'100%'}
+          height={'90%'}
         >
-          <Box
-            component={'img'}
-            src={overviewImgSrc}
-            width={'100%'}
+          <Stack
+            direction={'column'}
+            justifyContent={'space-between'}
+            flex={1}
+            paddingTop={'1rem'}
             height={'100%'}
-            sx={{ objectFit: 'contain' }}
-          />
+          >
+            <Box
+              component={'img'}
+              src={overviewImgSrc}
+              width={'100%'}
+              height={'100%'}
+              sx={{ objectFit: 'contain' }}
+            />
+          </Stack>
         </Stack>
-      </Stack>
+      ) : null}
     </Stack>
   )
 }

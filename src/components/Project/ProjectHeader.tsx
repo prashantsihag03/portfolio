@@ -6,7 +6,7 @@ import AdjustIcon from '@mui/icons-material/Adjust'
 export interface ProjectHeaderProps {
   title: string
   type: 'Personal'
-  subType?: 'Large Web App' | 'Small Web App'
+  subType?: 'Large Web App' | 'Small Web App' | 'CLI Tool'
   githubLink?: string
   liveLink?: string
   gutterSize?: string
