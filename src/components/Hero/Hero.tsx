@@ -93,6 +93,7 @@ const Hero: React.FC<InViewSectionProps> = ({
         <Typography
           variant="body1"
           component={'p'}
+          fontFamily={'Michroma Regular'}
           paddingLeft={!isMobile ? '3rem' : 0}
           fontSize={'1.1rem'}
         >
@@ -102,12 +103,16 @@ const Hero: React.FC<InViewSectionProps> = ({
           variant="body1"
           component={'p'}
           width={'100%'}
+          fontFamily={'Michroma Regular'}
           color={'text.primary'}
           paddingLeft={!isMobile ? '3rem' : 0}
         >
           I’m a Software Engineer on the Platform Team at
-          <HighlightText> Alex Solutions</HighlightText>. Currently, I’m based
-          in Adelaide, Australia.
+          <HighlightText fontFamily="Michroma Regular">
+            {' '}
+            Alex Solutions
+          </HighlightText>
+          . Currently, I’m based in Adelaide, Australia.
         </Typography>
       </Stack>
     </Stack>

@@ -89,11 +89,8 @@ const About: React.FC<InViewSectionProps> = ({
             sx={{ backgroundColor: 'background.paper', letterSpacing: '2pt' }}
           >
             As a dynamic full stack developer with almost three years of
-            experience,
-            <HighlightText>
-              I specialize in building robust solutions for React and Java based
-              web applications.
-            </HighlightText>
+            experience, I specialize in building robust solutions for React and
+            Java based web applications.
             <br />
             <br /> My expertise encompasses a wide range of technologies,
             including but not limited to <br />
@@ -113,10 +110,14 @@ const About: React.FC<InViewSectionProps> = ({
             sx={{ backgroundColor: 'background.paper' }}
           >
             With demonstrated track record of delivering projects on time, I
-            have worked on complex projects consisting of microfrontends and
-            microservices, delivering new features, resolving bugs, and ensuring
-            optimal performance along with rapidly adapting to new technologies,
-            and fostering effective team collaboration.
+            have worked on: <br />- complex projects consisting of
+            microfrontends and microservices, <br />
+            - delivering new features,
+            <br />
+            - resolving bugs,
+            <br />- and ensuring optimal performance
+            <br /> along with rapidly adapting to new technologies, and
+            fostering effective team collaboration.
           </Typography>
         </Stack>
       </Stack>

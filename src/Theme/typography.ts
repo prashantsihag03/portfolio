@@ -33,11 +33,13 @@ export const getTypographyTheme = (
     },
     body1: {
       color: palette.text.secondary,
+      fontFamily: 'Inter Regular',
       fontSize: isMobile ? '1rem' : '1rem',
       letterSpacing: '1.2pt',
     },
     body2: {
       color: palette.text.primary,
+      fontFamily: 'Michroma Regular',
       fontSize: isMobile ? '1rem' : '1rem',
       letterSpacing: '1.2pt',
     },

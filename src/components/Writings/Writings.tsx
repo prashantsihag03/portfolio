@@ -67,13 +67,18 @@ const Writings: React.FC<InViewSectionProps> = ({
                 <Box>
                   <Typography
                     variant="h3"
-                    sx={{ display: 'flex', alignItems: 'center' }}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      lineHeight: '1.4rem',
+                    }}
                   >
                     <LibraryBooksIcon />
                     {blog.heading}
                   </Typography>
                   <Typography
                     variant="body2"
+                    fontFamily={'Inter Regular'}
                     sx={{ color: 'text.secondary' }}
                     padding={'0.5rem 1rem'}
                     paddingBottom={0}

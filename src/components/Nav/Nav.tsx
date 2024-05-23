@@ -18,6 +18,42 @@ interface NavProps {
   active: NavOptions
 }
 
+const NavItems: React.FC<{
+  color?: string
+  value: string
+}> = ({ color, value }: { color?: string; value: string }) => {
+  return (
+    <Typography
+      component={'li'}
+      variant="body1"
+      position={'relative'}
+      fontFamily={'Michroma Regular'}
+      color={color}
+      sx={{
+        cursor: 'pointer',
+        '&:after': {
+          cursor: 'pointer',
+          content: '""',
+          display: 'block',
+          borderBottomWidth: '0.25rem',
+          borderBottomStyle: 'solid',
+          borderBottomColor: 'secondary.main',
+          width: 0,
+          position: 'absolute',
+          right: 0,
+          marginTop: '0.25rem',
+          transition: '0.25s linear',
+        },
+        '&:hover:after': {
+          width: '100%',
+        },
+      }}
+    >
+      {value}
+    </Typography>
+  )
+}
+
 const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
   const isMobile = useMediaQuery('(max-width:1000px)')
   const [open, setOpen] = React.useState<boolean>(false)
@@ -46,6 +82,7 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
             variant="h1"
             position={'relative'}
             color={'text.secondary'}
+            fontFamily={'Michroma Regular'}
             sx={{
               cursor: 'pointer',
               transition: '0.25s linear',
@@ -61,120 +98,28 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
         {!isMobile ? (
           <>
             <Link href="#projects">
-              <Typography
-                component={'li'}
-                variant="body1"
-                position={'relative'}
+              <NavItems
                 color={active === 'projects' ? 'secondary' : undefined}
-                sx={{
-                  cursor: 'pointer',
-                  '&:after': {
-                    cursor: 'pointer',
-                    content: '""',
-                    display: 'block',
-                    borderBottomWidth: '0.25rem',
-                    borderBottomStyle: 'solid',
-                    borderBottomColor: 'secondary.main',
-                    width: 0,
-                    position: 'absolute',
-                    right: 0,
-                    marginTop: '0.25rem',
-                    transition: '0.25s linear',
-                  },
-                  '&:hover:after': {
-                    width: '100%',
-                  },
-                }}
-              >
-                Projects
-              </Typography>
+                value="Projects"
+              />
             </Link>
             <Link href="#about">
-              <Typography
-                component={'li'}
-                variant="body1"
-                position={'relative'}
+              <NavItems
                 color={active === 'about' ? 'secondary' : undefined}
-                sx={{
-                  cursor: 'pointer',
-                  '&:after': {
-                    content: '""',
-                    cursor: 'pointer',
-                    display: 'block',
-                    borderBottomWidth: '0.25rem',
-                    borderBottomStyle: 'solid',
-                    borderBottomColor: 'secondary.main',
-                    width: 0,
-                    position: 'absolute',
-                    right: 0,
-                    marginTop: '0.25rem',
-                    transition: '0.25s linear',
-                  },
-                  '&:hover:after': {
-                    width: '100%',
-                  },
-                }}
-              >
-                About
-              </Typography>
+                value="About"
+              />
             </Link>
             <Link href="#writings">
-              <Typography
-                component={'li'}
-                variant="body1"
-                position={'relative'}
+              <NavItems
                 color={active === 'writings' ? 'secondary' : undefined}
-                sx={{
-                  cursor: 'pointer',
-                  '&:after': {
-                    cursor: 'pointer',
-                    content: '""',
-                    display: 'block',
-                    borderBottomWidth: '0.25rem',
-                    borderBottomStyle: 'solid',
-                    borderBottomColor: 'secondary.main',
-                    width: 0,
-                    position: 'absolute',
-                    right: 0,
-                    marginTop: '0.25rem',
-                    transition: '0.25s linear',
-                  },
-                  '&:hover:after': {
-                    width: '100%',
-                  },
-                }}
-              >
-                Writings
-              </Typography>
+                value="Writings"
+              />
             </Link>
             <Link href="#contact">
-              <Typography
-                component={'li'}
-                variant="body1"
-                position={'relative'}
+              <NavItems
                 color={active === 'contact' ? 'secondary' : undefined}
-                sx={{
-                  cursor: 'pointer',
-                  '&:after': {
-                    cursor: 'pointer',
-                    content: '""',
-                    display: 'block',
-                    borderBottomWidth: '0.25rem',
-                    borderBottomStyle: 'solid',
-                    borderBottomColor: 'secondary.main',
-                    width: 0,
-                    position: 'absolute',
-                    right: 0,
-                    marginTop: '0.25rem',
-                    transition: '0.25s linear',
-                  },
-                  '&:hover:after': {
-                    width: '100%',
-                  },
-                }}
-              >
-                Contact
-              </Typography>
+                value="Contact"
+              />
             </Link>
           </>
         ) : null}

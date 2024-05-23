@@ -41,9 +41,6 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
         alignItems={'center'}
         paddingTop={isMobile ? '1rem' : 0}
       >
-        {/* <Button variant="outlined" color="primary">
-          <Typography variant="body2">Tour Video</Typography>
-        </Button> */}
         {githubLink ? (
           <GithubIcon href={githubLink} size="1.5rem" color="text.primary" />
         ) : null}

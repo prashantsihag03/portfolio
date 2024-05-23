@@ -96,7 +96,7 @@ const App: React.FC = () => {
               ]}
             />
             <SmallProject
-              title="Portfolio Website"
+              title="Portfolio Site"
               description="Built using React, Typescript and Material UI, its the very website you are seeing this on."
               type="Personal"
               subType="Small Web App"
