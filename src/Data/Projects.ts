@@ -72,14 +72,19 @@ const PROJECT_DIALOGUE: ProjectData = {
   ],
   imgMap: [
     {
+      light: './images/dialogue/login_light.png',
+      dark: './images/dialogue/login_light.png',
+      title: 'login page',
+    },
+    {
+      light: './images/dialogue/signup_light.png',
+      dark: './images/dialogue/signup_light.png',
+      title: 'signup page',
+    },
+    {
       light: './images/dialogue/chat_overview.png',
       dark: './images/dialogue/chat_overview.png',
       title: 'overview',
-    },
-    {
-      light: './images/dialogue/tour_light.png',
-      dark: './images/dialogue/tour_dark.png',
-      title: 'Interactive Guided Tour for Onboarding',
     },
     // {
     //   light: './images/dialogue/message_light.png',
