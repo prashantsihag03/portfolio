@@ -52,7 +52,7 @@ const PROJECT_DIALOGUE: ProjectData = {
   bgColor: '#becef4',
   bgColorDark: '#192031',
   description:
-    ' Highly sophisticated web app connecting users with each other over multiple channels such as text, voice, and video and provide media sharing platform while giving them full control of their data.',
+    ' Highly sophisticated and responsive web app connecting users with each other over multiple channels such as text, voice, and video and provide media sharing platform while giving them full control of their data.',
   features: [
     'Video/Audio Calls',
     'Media Sharing with persistent storage in S3',
@@ -82,9 +82,19 @@ const PROJECT_DIALOGUE: ProjectData = {
       title: 'signup page',
     },
     {
+      light: './images/dialogue/mobile_auth_light.png',
+      dark: './images/dialogue/mobile_auth_light.png',
+      title: 'mobile auth pages',
+    },
+    {
       light: './images/dialogue/chat_overview.png',
       dark: './images/dialogue/chat_overview.png',
       title: 'overview',
+    },
+    {
+      light: './images/dialogue/mobile_chats_light.png',
+      dark: './images/dialogue/mobile_chats_light.png',
+      title: 'mobile auth pages',
     },
     // {
     //   light: './images/dialogue/message_light.png',

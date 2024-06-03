@@ -19,7 +19,12 @@ const Skills: React.FC<{ values: string[] }> = ({
             key={skill}
             sx={{ margin: '0.25rem', backgroundColor: 'background.default' }}
             label={
-              <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>
+              <Typography
+                variant="subtitle1"
+                fontSize="0.75rem"
+                fontFamily="Inter Regular"
+                sx={{ color: 'text.primary' }}
+              >
                 {skill}
               </Typography>
             }
