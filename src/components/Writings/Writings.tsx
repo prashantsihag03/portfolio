@@ -78,7 +78,7 @@ const Writings: React.FC<InViewSectionProps> = ({
                   </Typography>
                   <Typography
                     variant="body2"
-                    fontFamily={'Inter Regular'}
+                    fontFamily={'Inter'}
                     sx={{ color: 'text.secondary' }}
                     padding={'0.5rem 1rem'}
                     paddingBottom={0}

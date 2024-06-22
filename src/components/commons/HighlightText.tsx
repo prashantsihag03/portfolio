@@ -21,7 +21,7 @@ const HighlightText: React.FC<{
     <Typography
       variant="body1"
       component={'span'}
-      fontFamily={fontFamily ? fontFamily : 'Inter Regular'}
+      fontFamily={fontFamily ? fontFamily : 'Inter'}
       color={color ? color : 'secondary.main'}
       sx={{
         textDecorationLine: underline ? 'underline' : undefined,

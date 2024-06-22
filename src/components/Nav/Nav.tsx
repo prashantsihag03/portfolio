@@ -27,7 +27,7 @@ const NavItems: React.FC<{
       component={'li'}
       variant="body1"
       position={'relative'}
-      fontFamily={'Michroma Regular'}
+      fontFamily={'Michroma'}
       color={color}
       sx={{
         cursor: 'pointer',
@@ -82,7 +82,7 @@ const Nav: React.FC<NavProps> = ({ active }: NavProps) => {
             variant="h1"
             position={'relative'}
             color={'text.secondary'}
-            fontFamily={'Michroma Regular'}
+            fontFamily={'Michroma'}
             sx={{
               cursor: 'pointer',
               transition: '0.25s linear',

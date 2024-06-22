@@ -12,8 +12,8 @@ export const getTypographyTheme = (
       letterSpacing: '0.5pt',
       fontFamily:
         palette.mode === 'light'
-          ? '"Michroma Regular", "Helvetica", -apple-system, system-ui, serif'
-          : '"Michroma Regular", "Helvetica", -apple-system, system-ui, serif',
+          ? '"Michroma", "Helvetica", -apple-system, system-ui, serif'
+          : '"Michroma", "Helvetica", -apple-system, system-ui, serif',
     },
     h1: {
       color: palette.text.primary,
@@ -33,13 +33,13 @@ export const getTypographyTheme = (
     },
     body1: {
       color: palette.text.secondary,
-      fontFamily: 'Inter Regular',
+      fontFamily: 'Inter',
       fontSize: isMobile ? '1rem' : '1rem',
       letterSpacing: '1.2pt',
     },
     body2: {
       color: palette.text.primary,
-      fontFamily: 'Michroma Regular',
+      fontFamily: 'Michroma',
       fontSize: isMobile ? '1rem' : '1rem',
       letterSpacing: '1.2pt',
     },

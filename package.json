@@ -22,7 +22,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@fontsource/roboto": "^4.5.8",
+    "@fontsource/inter": "^5.0.18",
+    "@fontsource/michroma": "^5.0.20",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "axios": "^1.6.2",

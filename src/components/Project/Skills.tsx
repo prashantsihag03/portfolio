@@ -22,7 +22,7 @@ const Skills: React.FC<{ values: string[] }> = ({
               <Typography
                 variant="subtitle1"
                 fontSize="0.75rem"
-                fontFamily="Inter Regular"
+                fontFamily="Inter"
                 sx={{ color: 'text.primary' }}
               >
                 {skill}
