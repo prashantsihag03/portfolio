@@ -32,12 +32,13 @@ const PROJECT_DIALOGUE: ProjectData = {
   skills: [
     'React',
     'Typescript',
+    'Node.js',
+    'Express.js',
     'WebRTC',
     'WebSocket',
     'Redux',
-    'AWS',
-    'Dynamodb',
-    'S3',
+    'AWS Dynamodb',
+    'AWS S3',
   ],
   demo: {
     media: 'video',
