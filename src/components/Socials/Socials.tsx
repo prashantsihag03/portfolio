@@ -1,5 +1,5 @@
 import { Stack, SxProps, Theme } from '@mui/material'
-import CodepenIcon from '../Icon/CodepenIcon'
+// import CodepenIcon from '../Icon/CodepenIcon'
 import GithubIcon from '../Icon/GithubIcon'
 import LinkedInIcon from '../Icon/LinkedInIcon'
 import MediumIcon from '../Icon/MediumIcon'
@@ -28,12 +28,12 @@ const Socials: React.FC<SocialsProp> = ({
       flex={1}
       sx={containerStyle ? containerStyle : {}}
     >
-      <CodepenIcon
+      {/* <CodepenIcon
         href={SocialLinks.codepen.href}
         size={size ? `${size}rem` : '0.9rem'}
         color={'text.secondary'}
         style={iconStyle ? iconStyle : {}}
-      />
+      /> */}
       <LinkedInIcon
         href={SocialLinks.linkedIn.href}
         size={size ? `${size + 0.4}rem` : '1.3rem'}

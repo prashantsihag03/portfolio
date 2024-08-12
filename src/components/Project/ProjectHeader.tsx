@@ -29,8 +29,18 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
       paddingLeft={gutterSize}
       paddingRight={gutterSize}
     >
-      <Typography component={'h3'} variant="h3" fontSize={'2rem'}>
-        <Typography variant="subtitle1" color="secondary" borderRadius={1}>
+      <Typography
+        component={'h3'}
+        variant="h3"
+        fontSize={'1.5rem'}
+        color="secondary"
+      >
+        <Typography
+          variant="subtitle1"
+          color="primary"
+          borderRadius={1}
+          fontSize={'0.8rem'}
+        >
           {type} Project
         </Typography>
         {title}

@@ -35,7 +35,7 @@ const Project: React.FC<InViewSectionProps> = ({
       paddingTop={'3rem'}
     >
       <ProjectHeader
-        title="Dialogue"
+        title={PROJECT_DIALOGUE.title}
         type="Personal"
         githubLink={PROJECT_DIALOGUE.github}
         liveLink={PROJECT_DIALOGUE.href}

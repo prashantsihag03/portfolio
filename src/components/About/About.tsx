@@ -88,7 +88,7 @@ const About: React.FC<InViewSectionProps> = ({
             minWidth={'300px'}
             sx={{ backgroundColor: 'background.paper', letterSpacing: '2pt' }}
           >
-            As a dynamic full stack developer with almost three years of
+            As a dynamic full stack developer with more than three years of
             experience, I specialize in building robust solutions for React and
             Java based web applications.
             <br />

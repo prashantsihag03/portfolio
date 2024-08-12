@@ -18,6 +18,7 @@ import Footer from '../Footer/Footer'
 import { NavOptions } from '../commons/types'
 import Contact from '../Contact/Contact'
 import SmallProject from '../Project/SmallProject'
+import PROJECT_DIET_LENS from '../../Data/DietLens'
 
 const contentStyles: SxProps<Theme> = {
   boxSizing: 'border-box',
@@ -110,6 +111,16 @@ const App: React.FC = () => {
                 'Axios',
                 'Intersection Observer API',
               ]}
+            />
+            <SmallProject
+              title="Diet Lens"
+              description={PROJECT_DIET_LENS.description}
+              type="Personal"
+              subType="Small Web App"
+              overviewImgSrc={PROJECT_DIET_LENS.imgMap[0].dark}
+              githubLink={PROJECT_DIET_LENS.github}
+              liveLink={PROJECT_DIET_LENS.href}
+              skills={PROJECT_DIET_LENS.skills}
             />
           </Stack>
           <Stack
