@@ -1,6 +1,7 @@
 import webRTCImg from '../assets/images/webRTC.png'
 import dynamoDbImg from '../assets/images/dynamoDBBlog.jpg'
 import facebookImg from '../assets/images/facebookBlog.png'
+import reduxSocketMdw from '../assets/images/reduxSocketMdw.png'
 import scientificMethodImg from '../assets/images/scientifcMethodForDataAnalysis.png'
 
 interface BlogItem {
@@ -11,6 +12,13 @@ interface BlogItem {
 }
 
 const BlogItems: BlogItem[] = [
+  {
+    link: 'https://prashant-sihag.medium.com/implementing-real-time-interactivity-into-your-react-app-websocket-06debc669ef1',
+    img: reduxSocketMdw,
+    heading:
+      'Implementing Real-time interactivity into your React App — WebSocket',
+    desc: "In this blog, we'll explore how to effectively integrate a WebSocket connection within a Redux store, allowing you to manage real-time communication seamlessly in your React app.",
+  },
   {
     link: 'https://prashant-sihag.medium.com/brief-explanation-of-webrtc-and-how-its-components-work-together-to-provide-real-time-communication-83cf4d2315da',
     img: webRTCImg,
