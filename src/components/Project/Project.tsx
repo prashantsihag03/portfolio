@@ -38,7 +38,7 @@ const Project: React.FC<InViewSectionProps> = ({
         title={PROJECT_DIALOGUE.title}
         type="Personal"
         githubLink={PROJECT_DIALOGUE.github}
-        liveLink={PROJECT_DIALOGUE.href}
+        // liveLink={PROJECT_DIALOGUE.href}
         gutterSize={isMobile ? '1.5rem' : '3rem'}
       />
       {isMobile ? (

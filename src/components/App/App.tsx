@@ -87,7 +87,7 @@ const App: React.FC = () => {
               subType="Small Web App"
               overviewImgSrc="./images/githubProfiler/main.png"
               githubLink="https://github.com/prashantsihag03/github-profiler"
-              liveLink="https://prashantsihag-github-profiler.vercel.app/"
+              // liveLink="https://prashantsihag-github-profiler.vercel.app/"
               skills={[
                 'Next.js',
                 'TailwindCSS',
@@ -103,7 +103,7 @@ const App: React.FC = () => {
               subType="Small Web App"
               overviewImgSrc="./images/portfolio/main.png"
               githubLink="https://github.com/prashantsihag03/portfolio"
-              liveLink="https://www.prashantsihag.com/"
+              // liveLink="https://www.prashantsihag.com/"
               skills={[
                 'React.js',
                 'Typescript',
@@ -119,7 +119,7 @@ const App: React.FC = () => {
               subType="Small Web App"
               overviewImgSrc={PROJECT_DIET_LENS.imgMap[0].dark}
               githubLink={PROJECT_DIET_LENS.github}
-              liveLink={PROJECT_DIET_LENS.href}
+              // liveLink={PROJECT_DIET_LENS.href}
               skills={PROJECT_DIET_LENS.skills}
             />
           </Stack>

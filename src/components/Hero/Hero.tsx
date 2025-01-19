@@ -107,9 +107,9 @@ const Hero: React.FC<InViewSectionProps> = ({
           color={'text.primary'}
           paddingLeft={!isMobile ? '3rem' : 0}
         >
-          I’m a Software Engineer on the Platform Team at
-          <HighlightText fontFamily="Michroma"> Alex Solutions</HighlightText>.
-          Currently, I’m based in Adelaide, Australia.
+          I’m a Software Engineer on the Systems Team at
+          <HighlightText fontFamily="Michroma"> Performio</HighlightText>.
+          Currently, I’m based in Melbourne, Australia.
         </Typography>
       </Stack>
     </Stack>
