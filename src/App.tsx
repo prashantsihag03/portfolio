@@ -37,7 +37,7 @@ function App() {
         </p>
         <a
           className="w-auto my-2 underline underline-offset-6 hover:text-blue-500"
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://apps.apple.com/au/app/nutryq/id6749808809"
           target="_blank"
           rel="noopener noreferrer"
         >
