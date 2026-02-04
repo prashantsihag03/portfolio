@@ -6,7 +6,7 @@ function App() {
       </h1>
       <p className="text-zinc-700 dark:text-zinc-300 my-2">
         A full stack developer with almost 5 years experience crafting robust
-        web applications. My proficiency extends into cloud computing with AWS,
+        web applications with Java and React. My proficiency extends into cloud computing with AWS,
         automation scripting with Python, and CI/CD development with Gitlab CI
         and buildkite.
       </p>
